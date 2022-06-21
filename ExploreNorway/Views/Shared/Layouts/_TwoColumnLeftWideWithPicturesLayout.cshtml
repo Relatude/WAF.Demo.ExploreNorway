@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "_TwoColumnLeftWideLayout.cshtml";
+}
+
+
+
+
+
+<div class="normalPageMargin">
+    @Html.Partial("Partials/_Breadcrumbs")
+</div>
+<div class="clear"></div>
+
+<div class="itemPageFlex">
+    <div id="picture-list">
+        @RenderSection("pics")
+    </div>
+    <div id="main-text">
+        @RenderBody()
+    </div>
+</div>
+
+@section header{
+    @RenderSection("header")
+}
+
+@section sideRow{
+    @RenderSection("sideRow")
+}
+
+
+
+@section head{
+    @RenderSection("head", false)
+}
+@section scripts{
+    @RenderSection("scripts", false)
+}

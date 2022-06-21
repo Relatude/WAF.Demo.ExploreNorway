@@ -1,0 +1,15 @@
+﻿@model ModulePageViewModel
+@using WAF.Engine.Content.TripsToNorwayDemo
+@{
+    Layout = "~/Views/Shared/Layouts/_BaseLayout.cshtml";
+}
+
+
+
+<div class="module-page">
+    <h1 @WAFAttribute.NameAndValue("Name", Model.Content)>
+        @Model.Content.Name
+    </h1>
+
+    @Html.DisplayFor(model => model.Modules)
+</div>

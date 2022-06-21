@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "_BaseLayout.cshtml";
+}
+
+
+<div id="main-column">
+
+    <div id="pageHeading">
+        @*<asp:ContentPlaceHolder runat="server" ID="cphHeader" />*@
+        @RenderSection("header")
+    </div>
+    <div class="clear"></div>
+    @RenderBody()
+
+</div>
+
+<div id="right-side-column">
+    @RenderSection("sideRow")
+    @*        <asp:ContentPlaceHolder runat="server" ID="cphSideRow"></asp:ContentPlaceHolder>*@
+</div>
+
+
+@section head{
+    @RenderSection("head", false)
+}
+@section scripts{
+    @RenderSection("scripts", false)
+}

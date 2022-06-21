@@ -1,0 +1,37 @@
+﻿@model ListPageViewModel<Region>
+@inject WAFNativeContext wafContext
+
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+}
+@section header{
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+
+
+
+
+<div>
+    @if (Model.Picture.IsImage())
+    {
+        <img src="@Model.Picture.GetUrl(270)" alt="Main picture" class="content-image" />
+    }
+    <div>@Html.Raw(Model.Content)</div>
+</div>
+
+<div>
+    @foreach(var region in Model.ListItems)
+    {
+        <div class="region-list-box">
+            <h3><a href="@wafContext.GetUrl(region)">@region.Name</a></h3>
+            <p>@region.Ingress</p>
+        </div>
+    }
+</div>
+
+
+@section sideRow{
+    @Html.Partial("Partials/_RelatedArticles")
+}

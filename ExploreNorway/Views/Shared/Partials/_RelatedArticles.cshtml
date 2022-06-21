@@ -1,0 +1,36 @@
+﻿@inject WAFNativeContext wafContext
+
+@{
+    var hc = wafContext.Request.GetContent<HierarchicalContent>();
+    var relatedArticles = new List<HierarchicalContent>();
+    if (hc != null)
+    {
+        if (hc is Article)
+        {
+            Article art = (Article)hc;
+            relatedArticles = art.RelatedArticles.Get();
+        }
+        else if (hc is SimpleArticle)
+        {
+            SimpleArticle sart = (SimpleArticle)hc;
+            relatedArticles = sart.RelatedArticles.Get();
+        }
+        else if (hc is TouristItem)
+        {
+            TouristItem item = (TouristItem)hc;
+            relatedArticles = item.RelatedArticles.Get();
+        }
+    }
+}
+
+@foreach (var article in relatedArticles)
+{
+    <div class="small-text-box-sidecol">
+        <h4>@article.Name</h4>
+        <p>
+            @Helper.GetArticleIngressClip(article)
+            <a class="morelink" href="@wafContext.GetUrl(article.NodeId)">More</a>
+        </p>
+    </div>
+    <div style="clear:both;"></div>
+}

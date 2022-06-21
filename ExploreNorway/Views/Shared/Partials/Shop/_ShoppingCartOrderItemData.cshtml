@@ -1,0 +1,73 @@
+﻿@using WAF.Common
+
+@model OrderItem
+@*
+@{
+    var currencySign = WAFShopHelper.GetCurrentCurrency().Sign;
+
+    var prod = Model.Product.Get();
+    var itemPriceNoDiscount = Model.GetItemUnitPriceIncVat(false, WAFContext.Session);
+    var itemPriceDiscount = Model.GetItemUnitPriceIncVat(true, WAFContext.Session);
+    var totalPriceNoDiscount = Model.GetItemTotalPriceIncVat(false);
+    var totalPriceDiscount = Model.GetItemTotalPriceIncVat(true);
+}
+
+@if (prod != null)
+{
+
+    <td style="width: 40px; text-align: center; line-height: 22px;">
+        <input type="checkbox" class="chk-product" />
+    </td>
+    <td>
+        <a href="@WAFContext.GetUrl(prod)">@prod.Name</a>
+        @if (prod is ProductBundle)
+        {
+            var bundle = prod as ProductBundle;
+
+            <div class="bundle-contents">
+                <ul>
+                    @foreach (var option in Model.SelectedBundleOptions.GetAll())
+                    {
+                        <li>- @option.Product.Get().Name @(option.Quantity > 1 ? "x" + option.Quantity : "")</li>
+                    }
+                </ul>
+            </div>
+        }
+    </td>
+    <td style="width: 40px; text-align: center; line-height: 22px;">
+        <input type="text" class="qnty-input" value="@Model.Quantity" data-oldvalue="@Model.Quantity" style="width:30px;" />
+    </td>
+    <td style="width: 40px; text-align: center; line-height: 22px;">
+        <button class="btn-update-prod">Update</button>
+    </td>
+
+    <td style="text-align: right; line-height: 22px;">
+        @if (itemPriceNoDiscount != itemPriceDiscount)
+        {
+            <text>(</text><span style="text-decoration: line-through;">@itemPriceNoDiscount.ToString("0.00")</span><text>)</text>
+        }
+        else
+        {
+            <text>&nbsp;</text>
+        }
+        <br />
+        @currencySign @itemPriceDiscount.ToString("0.00")
+
+    </td>
+    <td style="text-align: right; line-height: 22px;">
+        @if (totalPriceDiscount != totalPriceNoDiscount)
+        {
+            <text>(</text><span style="text-decoration: line-through;">@totalPriceNoDiscount.ToString("0.00")</span><text>)</text>
+        }
+        else
+        {
+            <text>&nbsp;</text>
+        }
+        <br />
+        @currencySign @totalPriceDiscount.ToString("0.00")
+
+    </td>
+    <td style="text-align: right; line-height: 22px;">
+        <button class="btn-remove-prod">Remove</button>
+    </td>
+}*@

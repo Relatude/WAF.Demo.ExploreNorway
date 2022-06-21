@@ -1,0 +1,63 @@
+﻿@using WAF.Engine.Content;
+@using WAF.Presentation.Web;
+@using WAF.Engine.Content.TripsToNorwayDemo;
+@using WAF.Definition;
+@using WAF.Engine.Property;
+
+@model HierarchicalContent
+@inject WAFNativeContext wafContext
+
+@{
+    List<ItemReview> reviews = null;
+
+    if (Model is TouristItem)
+    {
+        TouristItem ti = Model as TouristItem;
+        reviews = ti.RelatedReviews.Get();
+    }
+    else if (Model is Recipe)
+    {
+        Recipe recipe = Model as Recipe;
+        reviews = recipe.Reviews.Get();
+    }
+}
+
+
+@if (reviews != null && reviews.Count > 0)
+{
+    int totalAggregateRating = (from r in reviews select r.RatingValue).Sum();
+    int averageRating = totalAggregateRating / reviews.Count;
+
+    if (averageRating > 0)
+    {
+
+        MemDefProperty prop = wafContext.Engine.Definition.Property["ItemReview.RatingValue"];
+        IntegerPropertySettings settings = prop.GetSettings(ItemReview.ContentClassId) as IntegerPropertySettings;
+        //MemDefContentClass ct = wafContext.Engine.Definition.ContentClass["ItemReview"];
+        //IntegerPropertySettings settings = prop.GetSettings(ct.Id) as IntegerPropertySettings;
+
+
+        <div class="ratingBox">
+            <div class="starbar">
+                @for (int i = 0; i < settings.MaxValue; i++)
+                {
+                    if (i < averageRating)
+                    {
+                        <span class="star"></span>
+                    }
+                    else
+                    {
+                        <span></span>
+                    }
+                }
+            </div>
+
+            <div>
+                <span>@averageRating</span> of
+                <span>@settings.MaxValue</span> stars
+                <br />
+                (<span>@reviews.Count</span> reviews)
+            </div>
+        </div>
+    }
+}

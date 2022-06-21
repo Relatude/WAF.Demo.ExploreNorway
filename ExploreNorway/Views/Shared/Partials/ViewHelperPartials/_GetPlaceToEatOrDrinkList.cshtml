@@ -1,0 +1,47 @@
+﻿@using WAF.Engine.Property
+@model List<PlaceToEatOrDrink>
+@inject WAFNativeContext wafContext
+
+@foreach (var item in Model)
+{
+        
+    var imgUrl = "";
+    var adjust = new ImageAdjustments();
+    adjust.CanvasX = 430;
+    adjust.CanvasY = 322;
+
+    if (item.TopPicture.IsImage())
+    {
+        imgUrl = item.TopPicture.GetUrl(adjust);
+    }
+    else if (item.Pictures.Count > 0)
+    {
+        var file = item.Pictures.GetByIndex(0);
+        if (file.File.IsImage())
+        {
+            imgUrl = file.File.GetUrl(adjust);
+        }
+    }
+    else
+    {
+        imgUrl = "/images/Blank.gif";
+    }
+        
+    <div class="item-list-container">
+        <div>
+
+            <img src="@imgUrl" alt="Place to eat or drink picture" />
+        </div>
+        <div class="item-list-container-text">
+            @if (item.Location.IsSet())
+            {
+                <p class="location-name-subhead">@item.Location.Get().Name</p>
+            }
+            <h3><a href="@wafContext.GetUrl(item)">@item.Name</a></h3>
+            <p>
+                @Html.Raw(item.Ingress)
+                <div class="item-list-website-link"><a href="@item.Website" target="_blank">@item.Website</a></div>
+            </p>
+        </div>
+    </div>
+}

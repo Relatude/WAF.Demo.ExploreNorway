@@ -1,0 +1,86 @@
+﻿@using WAF.Engine.Content.Native
+@inject WAFNativeContext wafContext
+
+@{
+    var site = wafContext.Session.GetSite();
+    var cp = Helper.GetInstance(wafContext).ControlPanel;
+    var searchPageUrl = cp.SearchPage.IsSet() ? wafContext.GetUrl(cp.SearchPage.GetId()) : "";
+    var startPage = site.StartNode.Get();
+    var menuItems = Helper.GetInstance(wafContext).GetMainMenuItems().Where(x => x.NodeId != startPage.NodeId);
+
+}
+
+<div>
+    <div id="topbar">
+        @{
+            var globalMenuItems = Helper.GetInstance(wafContext).GetGlobalMenuItems();
+        }
+        <ul>
+            @foreach (var item in globalMenuItems)
+            {
+                <li><a href="@wafContext.GetUrl(item.NodeId)">@item.Name</a></li>
+            }
+
+
+            <li>
+                @if (wafContext.Session.IsAnonymous())
+                {
+                    @Html.ActionLink("Login", "Index", "Login")
+                }
+                else
+                {
+                    @Html.ActionLink("Log out", "LogOff", "Login")
+                }
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div id="menubar">
+            <div id="logo" style="background-color:@cp.SiteColor;"><a href="@wafContext.GetUrl(startPage)">@site.Name</a></div>
+        <ul class="navigation">
+            @foreach (var item in menuItems)
+            {
+                var url = wafContext.GetUrl(item);
+                var name = item is ForumCategory ? "Forum" : item.Name;
+
+                <li class="@(wafContext.Request.NodeId == item.NodeId ? "active": "")">
+                    <a href="@url">@name</a>
+                </li>
+            }
+        </ul>
+
+
+        <div class="searchbox">
+
+            <div>
+                <form action="@searchPageUrl" method="get">
+
+                    <input id="q"
+                           name="q"
+                           class="text"
+                           type="text" />
+
+                    <input type="image" src="~/images/search_icon.gif" class="searchGoButton" />
+                </form>
+            </div>
+        </div>
+        <div id="mobile-navigation"><img alt="hamburger-menu" src="../images/hamburgerIconWhite.png" width="30px" height="30px" /></div>
+    </div>
+    <div id="mobile-menu">
+        <ul>
+            @foreach (var item in menuItems)
+            {
+                var url = wafContext.GetUrl(item);
+                var name = item is ForumCategory ? "Forum" : item.Name;
+
+                <li class="@(wafContext.Request.NodeId == item.NodeId ? "active": "")">
+                    <a href="@url">@name</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+

@@ -1,0 +1,132 @@
+﻿@model Recipe
+@inject WAFNativeContext wafContext
+
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+
+    var recipesPage = Helper.GetInstance(wafContext).ControlPanel.RecipesPage.Get();
+    var topRecipes = recipesPage.GetAllChildren();
+    var recipeRegions = Model.RelatedRegions.Get();
+}
+
+
+@section header{
+    @Html.Partial("Partials/TouristItem/_StarRating", Model)
+
+
+    <h1>@Model.Name</h1>
+    <p>@Model.ShortDescription</p>
+}
+
+
+
+    <div>
+        <div>
+            @Html.Partial("Partials/_Breadcrumbs")
+        </div>
+
+        <div class="recipeFlex">
+
+            <div class="maintextInnerRightColumn">
+                <img src="@Model.Picture.GetUrl(260)" />
+                @if (!string.IsNullOrEmpty(Model.ImageCopyright))
+                {
+                    <span class="inlineimagecopyright">@Model.ImageCopyright</span>
+                }
+                <div class="clear"></div>
+
+                @if (Model.RecipeIngredients.Count > 0)
+                {
+                    <div class="maintextInnerBoxRight">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            @foreach (var ingredient in Model.RecipeIngredients.GetAll())
+                            {
+                                <li>@ingredient.ShortText</li>
+                            }
+                        </ul>
+                    </div>
+                }
+
+                <div class="maintextInnerBoxRight">
+                    <h4>Nutritional information (per 100g)</h4>
+
+                    <ul>
+                        <li>Fat: @Model.ContentFat</li>
+                        <li>Proteins: @Model.ContentProtein</li>
+                        <li>Carbohydrates: @Model.ContentCarbs</li>
+                        <li>Calories: @Model.ContentCalories</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div>
+                <div id="recipeHeader">
+                    <div id="cookingTime" class="recipeHeaderInfo">
+                        @Model.CookingTime minutes
+                    </div>
+                    <div id="cookingYield" class="recipeHeaderInfo">
+                        @Model.RecipeYield
+                    </div>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.History))
+                {
+                    <div>
+                        @Html.Raw(Model.History)
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(Model.Instructions))
+                {
+                    <div>
+                        @Html.Raw(Model.Instructions)
+                    </div>
+                }
+
+
+                <div class="clear"></div>
+                @Html.Partial("Partials/TouristItem/_Reviews", Model)
+
+
+            </div>
+        </div>
+    </div>
+
+
+        @section sideRow{
+
+            @if (topRecipes.Count > 0)
+            {
+                <div class="side-menu">
+                    <h3>Latest recipes</h3>
+                    <ul>
+                        @foreach (var hc in topRecipes)
+                        {
+                            if (hc is Recipe)
+                            {
+                                var recipe = (Recipe)hc;
+
+                                <li>
+                                    <a href="@wafContext.GetUrl(recipe)" title="@Helper.GetIngressClip(recipe.ShortDescription, 95)">@recipe.Name</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+
+            @if (recipeRegions.Count > 0)
+            {
+                <div class="side-menu">
+                    <h3>Traditionally from</h3>
+                    <ul class="navigation">
+                        @foreach (var region in recipeRegions)
+                        {
+                            <li><a class="morelink" href="@wafContext.GetUrl(region)">@region.Name</a></li>
+                        }
+                    </ul>
+                </div>
+            }
+
+        }

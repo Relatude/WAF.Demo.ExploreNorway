@@ -1,0 +1,175 @@
+﻿@model Location
+@inject WAFNativeContext wafContext
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithPicturesLayout.cshtml";
+
+    var defaultType = "about";
+    var requestType = !string.IsNullOrEmpty( Context.Request.Query["type"]) ? Context.Request.Query["type"].ToString() : defaultType;
+    var page = 1;
+    if (!string.IsNullOrEmpty( Context.Request.Query["page"]))
+    {
+        int.TryParse(Context.Request.Query["page"], out page);
+    }
+}
+
+@section header{
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+
+@section head{
+    @if (requestType != defaultType)
+    {
+
+        <style type="text/css">
+            #picture-list {
+                display: none;
+            }
+
+            #item-list .item-list-container div {
+                margin-left: 0px;
+            }
+        </style>
+    }
+}
+
+
+@* MAIN *@
+@{
+
+}
+@switch (requestType)
+{
+    case "lodging":
+    {
+        var vm = ViewModelHelper.GetInstance(wafContext).GetLodgingViewModel(null, page, 0, 0, Model.NodeId);
+
+        <div id="item-list">
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetAccommodationList.cshtml", vm.ListItems)
+
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPaging.cshtml", new GetPagingVM { pageIndex = vm.PageIndex, pageCount = vm.PageCount})
+        </div>
+        @section pics {
+        }
+    }
+    break;
+    case "activities":
+    {
+        var vm = ViewModelHelper.GetInstance(wafContext).GetActivityViewModel(null, page, 0, 0, Model.NodeId);
+
+        <div id="item-list">
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetActivityList.cshtml", vm.ListItems)
+
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPaging.cshtml", new GetPagingVM { pageIndex = vm.PageIndex, pageCount = vm.PageCount})
+        </div>
+
+        @section pics {
+        }
+    }
+    break;
+    case "attractions":
+    {
+        var vm = ViewModelHelper.GetInstance(wafContext).GetAttractionViewModel(null, page, 0, 0, Model.NodeId);
+
+        <div id="item-list">
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetAttractionList.cshtml", vm.ListItems)
+
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPaging.cshtml", new GetPagingVM { pageIndex = vm.PageIndex, pageCount = vm.PageCount})
+        </div>
+        @section pics {
+        }
+    }
+    break;
+    case "shopping":
+    {
+
+        var vm = ViewModelHelper.GetInstance(wafContext).GetShoppingViewModel(null, page, 0, 0, Model.NodeId);
+
+        <div id="item-list">
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetShoppingItemList.cshtml", vm.ListItems)
+
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPaging.cshtml", new GetPagingVM { pageIndex = vm.PageIndex, pageCount = vm.PageCount})
+        </div>
+        @section pics {
+        }
+    }
+    break;
+    case "eatdrink":
+    {
+        var vm = ViewModelHelper.GetInstance(wafContext).GetEatOrDrinkViewModel(null, page, 0, 0, Model.NodeId);
+
+        <div id="item-list">
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPlaceToEatOrDrinkList.cshtml", vm.ListItems)
+
+            @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPaging.cshtml", new GetPagingVM { pageIndex = vm.PageIndex, pageCount = vm.PageCount})
+
+        </div>
+
+        @section pics {
+        }
+    }
+    break;
+    default:
+    {
+
+        <div>
+            @Html.Raw(Model.Description)
+        </div>
+
+        @section pics {
+            @Html.Partial("Partials/_ItemPictures", Model)
+        }
+    }
+    break;
+}
+
+
+@* /MAIN *@
+
+
+@section sideRow{
+    <div class="side-menu locationmenu">
+        <h3>
+            @Model.Name
+        </h3>
+        <ul class="navigation">
+            @{
+
+                var typeOptions = new List<Tuple<string, string>> {
+                    new Tuple<string, string>(defaultType, "About"),
+                    new Tuple<string, string>("lodging","Lodging"),
+                    new Tuple<string, string>("activities","Activities"),
+                    new Tuple<string, string>("attractions","Attractions"),
+                    new Tuple<string, string>("shopping","Shopping"),
+                    new Tuple<string, string>("eatdrink","Places to eat & drink")
+                };
+            }
+            @foreach (var option in typeOptions)
+            {
+                var itemClass = "";
+                if (option.Item1 == requestType)
+                {
+                    itemClass = "current";
+                }
+                
+                <li class="@itemClass"><a href="@wafContext.GetUrl(Model.NodeId, "type=" + option.Item1)">@option.Item2</a></li>
+            }
+        </ul>
+    </div>
+
+    <div class="side-menu-small locationmap">
+        <p>
+            @*<span id="map_canvas"></span>*@
+            <span class="latLongArea">
+                Latitude:
+                <span>@Model.Latitude</span>
+                <br />
+                Longitude:
+                <span>@Model.Longitude</span>
+            </span>
+        </p>
+
+    </div>
+}
+

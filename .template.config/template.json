@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Relatude",
+    "classifications": ["Web", "Relatude"],
+    "identity": "Relatude.Demo.ExploreNorway",
+    "name": "Relatude Explore Norway demosite",
+    "description": "A demo site using Relatude CMS and MVC",
+    "shortName": "relatude.demo.explorenorway",
+    "defaultName": "RelatudeDemoExploreNorway",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sources": [{
+        "modifiers": [{
+            "exclude": [
+                "**/.vs/**",
+                "**/.git/**",
+                "**/WAF.Data/Temp/**",
+                "**/_cached_*"
+            ]
+        }]
+    }]
+}

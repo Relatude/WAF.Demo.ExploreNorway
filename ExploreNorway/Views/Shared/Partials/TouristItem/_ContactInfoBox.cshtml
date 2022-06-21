@@ -1,0 +1,80 @@
+﻿@model TouristItem
+
+<div class="info-box">
+    <h3>Contact information</h3>
+
+    @if (!string.IsNullOrEmpty(Model.Website))
+    {
+        <span class="prop-label"><b>Website:</b></span><span class="prop-value"><a href="@Model.Website">@Model.Website</a></span>
+        <br />
+    }
+
+    @if (!string.IsNullOrEmpty(Model.Phone))
+    {
+        <span class="prop-label"><b>Phone number:</b></span><span class="prop-value"><a href="tel:@Model.Phone">@Model.Phone</a></span>
+        <br />
+    }
+
+    @if (!string.IsNullOrEmpty(Model.Email))
+    {
+        <span class="prop-label"><b>Email:</b></span><span class="prop-value"><a href="mailto:@Model.Email">@Model.Email</a></span>
+        <br />
+    }
+
+    <div>
+
+        @if (!string.IsNullOrEmpty(Model.AddressStreet))
+        {
+            <span class="prop-label"><b>Visit address:</b></span><span class="prop-value">@Model.AddressStreet</span>
+            <br />
+        }
+
+        <span class="prop-label"><b>Postal address:</b></span>
+        <span class="prop-value">
+@*            @GetStringSpan(Model.AddressCompanyName, true)
+            @GetStringSpan(Model.AddressPostBox, true, "Postbox ")
+            @GetStringSpan(Model.AddressPostalCode, false)
+            @GetStringSpan(Model.AddressLocality, true)
+            @GetStringSpan(Model.AddressRegion, true)*@
+            @if(!string.IsNullOrEmpty(Model.AddressCompanyName))
+            {
+                <span>@Model.AddressCompanyName</span>
+                <br />
+            }
+               @if(!string.IsNullOrEmpty(Model.AddressPostBox))
+            {
+                <span>Postbox @Model.AddressPostBox</span>
+                <br />
+            }
+               @if(!string.IsNullOrEmpty(Model.AddressPostalCode))
+            {
+                <span>@Model.AddressPostalCode</span>
+            }
+               @if(!string.IsNullOrEmpty(Model.AddressLocality))
+            {
+                <span>@Model.AddressLocality</span>
+                <br />
+            }
+               @if(!string.IsNullOrEmpty(Model.AddressRegion))
+            {
+                <span>@Model.AddressRegion</span>
+                <br />
+            }
+        </span>
+        <br />
+    </div>
+    <div class="clear"></div>
+</div>
+
+@*@helper GetStringSpan(string s, bool breakLine, string pre = "")
+{
+    if (!string.IsNullOrEmpty(s))
+    {
+        <span>@(pre + s)</span>
+        if (breakLine)
+        {
+            <br />
+        }
+    }
+
+}*@

@@ -1,0 +1,95 @@
+﻿@model VacantPosition
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+
+}
+
+
+@section header{
+    Vacant position
+
+    <h1>@Model.Name</h1>
+    <p>@Model.Description</p>
+}
+
+
+<div class="maintextInnerRightColumn">
+    <div class="maintextInnerBoxRight">
+
+        <h4>Salary</h4>
+        <span>@Model.Salary</span>
+        <span>@Model.SalaryCurrency</span>
+
+        <h4>Employment type</h4>
+        <span>@Model.EmploymentType</span>
+
+        <h4>Industry</h4>
+        <span>@Model.Industry</span>
+
+        <h4>Normal work hours</h4>
+        <span>@Model.WorkHours</span>
+
+        <h4>Job posted</h4>
+        <span>@Model.DatePosted.ToShortDateString()</span>
+
+
+        <h4>Job location</h4>
+        <span>@Model.JobLocation</span>
+
+        <h4>Contact</h4>
+        <span>@Model.HiringOrganization</span>
+
+
+
+    </div>
+</div>
+
+
+<p>
+    Please visit our <a href="/about-explorenorway-com">about section</a> to learn more about us.
+</p>
+
+
+<h3>Responsibilities</h3>
+<span>@Model.Responsibilities</span>
+
+<h3>Benefits</h3>
+<span>@Model.Benefits</span>
+
+<div>
+    <h3>Skills required</h3>
+    <div>
+        @Html.Raw(Model.Skills)
+    </div>
+</div>
+
+
+<div>
+    <h3>Qualifications required</h3>
+    <div>
+        @Html.Raw(Model.Qualifications)
+    </div>
+</div>
+
+<h3>Education required</h3>
+<span>@Model.EducationRequirements</span>
+
+
+<div>
+    <h3>Experience required</h3>
+    <div>
+        @Html.Raw(Model.ExperienceRequirements)
+    </div>
+</div>
+
+
+<p>@Model.AdditionalInfo</p>
+
+
+<p>BLS O*NET-SOC Category: @Model.OccupationalCategory</p>
+
+
+
+@section sideRow{
+    @Html.Partial("Partials/_RelatedArticles")
+}

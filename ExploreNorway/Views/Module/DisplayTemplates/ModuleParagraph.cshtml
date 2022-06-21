@@ -1,0 +1,67 @@
+﻿@model ModuleParagraph
+
+@{
+    string contentClass = "", imageClass = "", textClass = "";
+    var imageUrl = "";
+    if (Model.Picture.IsImage() && Model.PicturePosition != ParagraphPicturePosition.Hidden)
+    {
+        var firstClass = " first";
+        var secondClass = "second";
+        var rowClass = "row";
+        var columnClass = "column";
+
+        switch (Model.PicturePosition)
+        {
+            case ParagraphPicturePosition.Above:
+            {
+                contentClass = columnClass;
+                imageClass = firstClass;
+                textClass = secondClass;
+                imageUrl = Model.Picture.GetUrl(800);
+                break;
+            }
+            case ParagraphPicturePosition.Below:
+            {
+                contentClass = columnClass;
+                imageClass = secondClass;
+                textClass = firstClass;
+                imageUrl = Model.Picture.GetUrl(800);
+                break;
+            }
+            case ParagraphPicturePosition.Left:
+            {
+                contentClass = rowClass;
+                imageClass = firstClass;
+                textClass = secondClass;
+                imageUrl = Model.Picture.GetUrl(500);
+                break;
+            }
+            case ParagraphPicturePosition.Right:
+            {
+                contentClass = rowClass;
+                imageClass = secondClass;
+                textClass = firstClass;
+                imageUrl = Model.Picture.GetUrl(500);
+                break;
+            }
+        }
+    }
+}
+
+<div class="module-wrapper">
+    <div class="module paragraph-module">
+        @if (!string.IsNullOrEmpty(Model.ParagraphTitle))
+        {
+            <h2 @WAFAttribute.NameAndValue(ModuleParagraph.PropertyIdParagraphTitle, Model)>@Model.ParagraphTitle</h2>
+        }
+        <div class="paragraph-content @contentClass">
+            <div class="@imageClass">
+                <img src="@imageUrl" class="paragraph-image" />
+            </div>
+            <div class="paragraph-text @textClass" @WAFAttribute.NameAndValue(ModuleParagraph.PropertyIdContent, Model)>
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+    </div>
+</div>
+

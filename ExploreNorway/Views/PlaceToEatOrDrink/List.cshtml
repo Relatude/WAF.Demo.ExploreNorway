@@ -1,0 +1,30 @@
+﻿@model ListPageViewModel<PlaceToEatOrDrink>
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+}
+
+@section header{
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+
+<div>
+    @Html.Raw(Model.Content)
+    @if (Model.Picture.IsImage())
+    {
+        <img src='@Model.Picture.GetUrl(270)' alt="Main picture" style="float:right;margin-top:10px;" />
+
+    }
+</div>
+
+<div id="item-list">
+
+    @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPlaceToEatOrDrinkList.cshtml", Model.ListItems)
+    @Html.Partial("~/Views/Shared/Partials/ViewHelperPartials/_GetPaging.cshtml", new GetPagingVM { pageIndex = Model.PageIndex, pageCount = Model.PageCount})
+
+</div>
+@section sideRow{
+    @*@Html.Partial("Partials/_RelatedArticles")*@
+    @*@Html.Partial("Partials/_TouristItemCategoryFilters", Model.SideMenuFilters)*@
+}

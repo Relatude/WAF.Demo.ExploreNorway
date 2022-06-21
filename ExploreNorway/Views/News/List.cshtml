@@ -1,0 +1,34 @@
+﻿@model ListPageViewModel<NewsArticle>
+@inject WAFNativeContext wafContext
+
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+}
+
+
+@section header{
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+
+
+@foreach (var item in Model.ListItems)
+{
+    <h3>
+        <a href="@wafContext.GetUrl(item)">@item.Name</a>
+        <span style="padding-left:0px;color:#666666;font-size:10px;">
+            - @String.Format("{0:d}", item.PublishDate)
+        </span>
+    </h3>
+    <p class="news-item-list-ingress">
+        <img src="@item.IngressPicture.GetUrl(120)" align="left" />
+        @item.Ingress
+    </p>
+    <div class="clear"></div>
+}
+
+
+@section sideRow{
+    @Html.Partial("Partials/_RelatedArticles")
+}

@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_TwoColumnLeftWideLayout.cshtml";
+}
+
+
+
+
+
+
+<div id="main-text-full">
+    @RenderBody()
+</div>
+
+@section header{
+    @RenderSection("header")
+}
+
+@section sideRow{
+    @RenderSection("sideRow")
+}
+
+
+
+@section head{
+    @RenderSection("head", false)
+}
+@section scripts{
+    @RenderSection("scripts", false)
+}

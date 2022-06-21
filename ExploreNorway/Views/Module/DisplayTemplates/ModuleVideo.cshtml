@@ -1,0 +1,17 @@
+﻿@model ModuleVideo
+
+<div class="module-wrapper">
+    <div class="module video-module">
+        <div class="video-container">
+            @if (Model.VideoFile.ContainsFile()) {
+            <video controls>                
+                <source src="@Model.VideoFile.GetUrl()" type="video/mp4">
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+            } else if(!string.IsNullOrEmpty(Model.VideoEmbedCode)) {
+                @Html.Raw(Model.VideoEmbedCode)
+            }
+
+        </div>
+    </div>
+</div>

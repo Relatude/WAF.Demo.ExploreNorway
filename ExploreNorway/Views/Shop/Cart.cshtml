@@ -1,0 +1,134 @@
+﻿@using WAF.Common
+@model Article
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+
+    var order = ShopHelper.GetCurrentOrder();
+    var numItemsInCart = order != null ? order.GetNumberOfItemsInCart() : 0;
+
+    var checkoutPageId = WAFShopHelper.GetCurrentShop().CheckoutPage.GetId();
+}
+
+@section header{
+}
+@section sideRow{
+}
+
+<h1>@Model.Name</h1>
+
+<br /><br />
+
+@if (numItemsInCart > 0)
+{
+
+    <div>
+        <div class="ordertable-wrapper">
+            @Html.Partial("Partials/Shop/_ShoppingCartOrderTable", order)
+        </div>
+
+        <button class="shopping-cart-details-button btn-cart-remove-selected">Remove selected</button>
+        <button class="shopping-cart-details-button btn-cart-update">Update</button>
+        <button class="shopping-cart-details-button btn-goto-checkout" data-url="@WAFContext.GetUrl(checkoutPageId)">Checkout now!</button>
+        <br />
+        <br />
+    </div>
+}
+else
+{
+    <h2>
+        Cart is empty.
+    </h2>
+}
+
+@section scripts{
+    <script>
+
+        function updateCartQuantity(itemlist) {
+            var url = "/Partials/Shop/UpdateCartQuantity"; // the script where you handle the form input.
+            var data = { list: JSON.stringify(itemlist) };
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: data,
+                success: function (cartResult) {
+                    $(".ordertable-wrapper").html(cartResult);
+                }
+            });
+        }
+
+        function getCheckedBoxes() {
+            var list = [];
+            var boxes = $(".shopping-cart-details-table").find("input[type=checkbox]");
+
+            if (boxes.length > 0) {
+                for (var i = 0; i < boxes.length; i++) {
+                    if (boxes[i].checked) {
+                        list.push(boxes[i]);
+                    }
+                }
+            }
+            return list;
+        }
+
+        function getQuantityItem(id, qnty) {
+            return { ItemId: id, Quantity: qnty };
+        }
+
+        $(".btn-goto-checkout").click(function (e) {
+            var url = e.target.dataset.url;
+            window.location.href = url;
+        });
+
+        $(".btn-remove-prod").live("click", function (e) {
+            var nodeId = e.target.closest("tr").dataset.nodeid;
+            updateCartQuantity([getQuantityItem(nodeId, 0)]);
+        });
+
+        $(".btn-update-prod").live("click", function (e) {
+            var row = e.target.closest("tr");
+            var oiNodeId = row.dataset.nodeid;
+
+            var input = $(row).find(".qnty-input");
+            var oldValue = input[0].dataset.oldvalue;
+            var newValue = input.val();
+
+            if (oldValue !== newValue) {
+                updateCartQuantity([getQuantityItem(oiNodeId, newValue)]);
+            }
+
+        });
+
+        $(".btn-cart-remove-selected").live("click", function (e) {
+            var boxes = getCheckedBoxes();
+            if (boxes.length > 0) {
+                var itemsToRemove = [];
+                for (var i = 0; i < boxes.length; i++) {
+                    var id = boxes[i].closest("tr").dataset.nodeid;
+                    itemsToRemove.push(getQuantityItem(id, 0));
+                }
+                if (itemsToRemove.length > 0)
+                    updateCartQuantity(itemsToRemove);
+            }
+        });
+
+        $(".btn-cart-update").live("click", function (e) {
+
+            var itemsToUpdate = [];
+
+            var rows = $(".shopping-cart-details-table tbody tr");
+            for (var i = 0; i < rows.length; i++) {
+                var id = rows[i].dataset.nodeid;
+                var input = $(rows[i]).find(".qnty-input");
+                var oldValue = input[0].dataset.oldvalue;
+                var newValue = input.val();
+                if (oldValue !== newValue) {
+                    itemsToUpdate.push(getQuantityItem(id, newValue));
+                }
+            }
+            if (itemsToUpdate.length > 0)
+                updateCartQuantity(itemsToUpdate);
+
+        });
+
+    </script>
+}

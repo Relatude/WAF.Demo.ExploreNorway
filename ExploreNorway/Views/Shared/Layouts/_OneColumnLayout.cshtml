@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "_BaseLayout.cshtml";
+}
+
+
+<h1>
+    @ViewBag.PageTitle
+</h1>
+
+@RenderBody()
+
+@section head{
+    @RenderSection("head", false)
+}
+@section scripts{
+    @RenderSection("scripts", false)
+}

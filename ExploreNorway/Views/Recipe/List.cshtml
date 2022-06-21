@@ -1,0 +1,40 @@
+﻿@model ListPageViewModel<Recipe>
+@inject WAFNativeContext wafContext
+
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+}
+
+@section header{
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+
+
+
+
+<div>
+    @Html.Raw(Model.Content)
+</div>
+<div id="item-list">
+    @foreach (var item in Model.ListItems)
+    {
+        <div class="item-list-container recipe">
+            <img src="@item.Picture.GetUrl(430, 323)" />
+            <div class="item-list-container-text">
+
+                <h3><a href="@wafContext.GetUrl(item)">@item.Name</a></h3>
+                <div>
+                    Cooking time: @item.CookingTime minutes, calories: <span>@item.ContentCalories</span>
+                </div>
+                <p>@item.ShortDescription</p>
+            </div>
+        </div>
+    }
+</div>
+
+
+@section sideRow{
+    @Html.Partial("Partials/_RelatedArticles")
+}

@@ -1,0 +1,136 @@
+﻿
+body, html, form,select
+{
+    font-family: arial;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    background: #fff;
+    font-size: 1em;
+}
+.page
+{
+    padding: 10px;
+}
+
+ul.navigation
+{
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+ul.navigation li
+{
+    list-style: none;
+    border: 1px solid #aaa;
+    margin: 0 5px 5px 0;
+    border-radius: 4px;
+    background:#ddd;
+    background-image: linear-gradient(bottom, rgb(207,207,207) 41%, rgb(237,237,237) 79%);
+    background-image: -o-linear-gradient(bottom, rgb(207,207,207) 41%, rgb(237,237,237) 79%);
+    background-image: -moz-linear-gradient(bottom, rgb(207,207,207) 41%, rgb(237,237,237) 79%);
+    background-image: -webkit-linear-gradient(bottom, rgb(207,207,207) 41%, rgb(237,237,237) 79%);
+    background-image: -ms-linear-gradient(bottom, rgb(207,207,207) 41%, rgb(237,237,237) 79%);
+    background-image: -webkit-gradient( 	linear, 	left bottom, 	left top, 	color-stop(0.41, rgb(207,207,207)), 	color-stop(0.79, rgb(237,237,237)) );
+}
+ul.navigation li a
+{
+    display: block;
+    color: #000;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 1px;
+    padding: 10px 25px 10px 10px;
+    text-decoration: none;
+    background: url("../images/mobileArrow.png") no-repeat scroll right center; 
+    
+}
+
+ul.navigation li.back a
+{    
+     background: url("../images/mobileArrowBack.png") no-repeat scroll 10px  center transparent;   
+    text-indent: 20px;
+}
+
+
+ul.navigation li:hover
+{
+    background: #fff;
+}
+
+#topimagecontainer
+{
+    margin-bottom: 10px;
+}
+
+#header
+{
+    background: none repeat scroll 0 0 #172C7C;
+    display: block;
+    margin: 0 0 10px 0;
+    padding: 10px;
+}
+
+#logo a
+{
+    color: White;
+    text-decoration: none;
+}
+
+.clear{ clear:both}
+
+h1{ margin-top:4px}
+h3,h4{ margin-bottom:7px}
+
+#map_canvas
+{
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+
+
+
+
+
+.starbar span 
+{
+background-position: 0 0 !important;
+background: url("../images/star.gif") no-repeat scroll 0 0 transparent;  
+border: 0 none;
+display: block;
+height: 16px; text-indent:40px; overflow:hidden;
+float:left;
+width: 16px;
+}
+
+.starbar span.star 
+{
+background-position: 0 -32px !important;
+}
+
+.ratingBox     
+{
+float: right;
+height: 100px;
+text-align: center;
+padding: 5px;
+width: 82px; font-size:0.8em;
+}
+
+
+
+.reviewHeading{ margin-top: 15px;}
+.reviewHeading .reviewAuthor div{ float:left}
+
+.reviewslisting{ font-size:0.86em;   }
+
+.recipeHeaderInfo{text-indent:20px; font-weight:bold; margin-right:20px; float: left;}
+#cookingTime {background-position: 0 3px !important;background: url("../images/time.png") no-repeat scroll 0 0 transparent;   }
+#cookingYield {background-position: 0 3px !important;background: url("../images/food.png") no-repeat scroll 0 0 transparent; }
+#recipeHeader{ width:100%;height: 30px;}
+
+
+.prop-value
+{
+      display: block;
+}
+
+.item-dropdown{ margin-bottom:10px; width:250px}

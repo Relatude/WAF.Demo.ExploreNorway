@@ -1,0 +1,38 @@
+﻿@using ExploreNorway.Code.Enums
+@model Region
+@inject WAFNativeContext wafContext
+
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithPicturesLayout.cshtml";
+
+    var regionsPage = Helper.GetInstance(wafContext).ControlPanel.RegionsPage.Get();
+    var allRegions = regionsPage.Children.Get();
+
+    var locations = Model.Locations.Get().Cast<HierarchicalContent>().ToList();
+
+    var recipes = Model.RelatedRecipe.Get().Cast<HierarchicalContent>().ToList();
+
+    var highlights = Model.SelectedDestinations.Get().Cast<HierarchicalContent>().ToList();
+}
+
+
+@section header{
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+@section pics {
+    @Html.Partial("Partials/_ItemPictures", Model)
+}
+
+<div>
+    @Html.Raw(Model.Description)
+</div>
+
+
+@section sideRow{
+    @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = allRegions, Title = "All regions" })
+    @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Large, LinkItems = locations, Title = "Locations" })
+    @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = highlights, Title = "Highlights" })
+    @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = recipes, Title = "Traditional recipes" })
+}

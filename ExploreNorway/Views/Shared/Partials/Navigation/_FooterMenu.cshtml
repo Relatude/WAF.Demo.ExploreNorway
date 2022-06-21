@@ -1,0 +1,17 @@
+﻿@inject WAFNativeContext wafContext
+
+<footer class="footer">
+    <div id="footerMenu">
+        @{
+            var footerItems = Helper.GetInstance(wafContext).GetFooterItems();
+        }
+        <ul>
+            @foreach (var item in footerItems)
+            {
+                <li><a href="@wafContext.GetUrl(item)">@item.Name</a></li>
+            }
+        </ul>
+    </div>
+    Explore Norway and Explore Sweden are demo sites created with <a href="http://relatude.com">Relatude CMS</a>. Copyright 2009-@(DateTime.Now.Year.ToString()).
+
+</footer>

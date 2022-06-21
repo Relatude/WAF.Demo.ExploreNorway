@@ -1,0 +1,75 @@
+﻿@using ExploreNorway.Code.Enums
+@using WAF.Engine.Query.TripsToNorwayDemo
+
+@model TouristItem
+@{
+    var title = "";
+    List<HierarchicalContent> hcItems = new List<HierarchicalContent>();
+    if (Model is Accommodation)
+    {
+        //find alternative accommodation options
+        title = "Other lodgings nearby";
+        Accommodation a = (Accommodation)Model;
+        Location location = a.Location.Get();
+        List<Accommodation> accommodations = location.Accommodations.Query<Accommodation>().Where(AqlAccommodation.NodeId != a.NodeId).Execute(8);
+        if (accommodations.Count > 0)
+        {
+            hcItems = accommodations.Cast<HierarchicalContent>().ToList();
+        }
+
+    }
+    else if (Model is TouristAttraction)
+    {
+        TouristAttraction att = (TouristAttraction)Model;
+        title = "Other attractions nearby";
+        Location location = att.Location.Get();
+        List<TouristAttraction> attractions = location.Attractions.Query<TouristAttraction>().Where(AqlTouristAttraction.NodeId != att.NodeId).Execute(8);
+        if (attractions.Count > 0)
+        {
+            hcItems = attractions.Cast<HierarchicalContent>().ToList();
+        }
+
+    }
+    else if (Model is TouristActivity)
+    {
+        TouristActivity act = (TouristActivity)Model;
+        Location location = act.Location.Get();
+        title = "Other activities nearby";
+        List<TouristActivity> activities = location.Activities.Query<TouristActivity>().Where(AqlTouristActivity.NodeId != act.NodeId).Execute(8);
+        if (activities.Count > 0)
+        {
+            hcItems = activities.Cast<HierarchicalContent>().ToList();
+        }
+
+    }
+    else if (Model is Shopping)
+    {
+        Shopping a = (Shopping)Model;
+        Location location = a.Location.Get();
+        title = "Shopping nearby";
+        List<Shopping> shoppings = location.Shopping.Query<Shopping>().Where(AqlShopping.NodeId != a.NodeId).Execute(8);
+        if (shoppings.Count > 0)
+        {
+            hcItems = shoppings.Cast<HierarchicalContent>().ToList();
+        }
+
+    }
+    else if (Model is PlaceToEatOrDrink)
+    {
+        PlaceToEatOrDrink a = (PlaceToEatOrDrink)Model;
+        title = "Alternatives";
+        Location location = a.Location.Get();
+        List<PlaceToEatOrDrink> placesToEatOrDrink = location.FoodAndDrink.Query<PlaceToEatOrDrink>().Where(AqlPlaceToEatOrDrink.NodeId != a.NodeId).Execute(6);
+        if (placesToEatOrDrink.Count > 0)
+        {
+            hcItems = placesToEatOrDrink.Cast<HierarchicalContent>().ToList();
+        }
+
+    }
+}
+
+@if (hcItems != null && hcItems.Count > 0)
+{
+
+    @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = hcItems, Title = title })
+}

@@ -1,0 +1,38 @@
+﻿@model GetPagingVM
+@inject WAFNativeContext wafContext
+@{
+
+        var hc = wafContext.Request.GetContent<HierarchicalContent>();
+
+        int regionId = 0;
+        int catId = 0;
+        int locationId = 0;
+        if (!string.IsNullOrEmpty(Context.Request.Query["region"]) )
+        {
+            int.TryParse(Context.Request.Query["region"], out regionId);
+        }
+        if (!string.IsNullOrEmpty(Context.Request.Query["cat"]))
+        {
+            int.TryParse(Context.Request.Query["cat"], out catId);
+        }
+        if (!string.IsNullOrEmpty(Context.Request.Query["location"]))
+        {
+            int.TryParse(Context.Request.Query["location"], out locationId);
+        }
+}
+@if (Model.pageCount > 1)
+    {
+
+        <div class="paging-links">
+            @if (Model.pageIndex > 1)
+            {
+                <a href="@Helper.ListPageFilters.GetInstance(wafContext).GetFilterUrl(hc.NodeId, catId, regionId, locationId, Model.pageIndex - 1)">Previous</a>
+            }
+            @if (Model.pageIndex < Model.pageCount)
+            {
+                <a href="@Helper.ListPageFilters.GetInstance(wafContext).GetFilterUrl(hc.NodeId, catId, regionId, locationId, Model.pageIndex + 1)">Next</a>
+            }
+
+        </div>
+
+    }

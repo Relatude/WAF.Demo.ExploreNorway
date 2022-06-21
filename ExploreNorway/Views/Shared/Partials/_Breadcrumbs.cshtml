@@ -1,0 +1,121 @@
+﻿@using WAF.Common
+@inject WAFNativeContext wafContext
+
+@{
+    HierarchicalContent item = wafContext.Request.GetContent<HierarchicalContent>();
+    var cp = Helper.GetInstance(wafContext).ControlPanel;
+    HierarchicalContent secondNode = null; //region
+    HierarchicalContent thirdNode = null; // location
+    string firstNodeText = cp.Country.Get().Name;
+    string firstNodeUrl = wafContext.GetUrl(wafContext.Request.GetSite().StartNode.GetId());
+
+    if (item is TouristItem)
+    {
+        firstNodeUrl = wafContext.GetUrl(Helper.GetInstance(wafContext).ControlPanel.RegionsPage.GetId());
+
+        if (item is TouristActivity)
+        {
+            TouristActivity act = (TouristActivity)item;
+            if (act.Location.IsSet())
+            {
+                thirdNode = act.Location.Get();
+            }
+        }
+        else if (item is TouristAttraction)
+        {
+            TouristAttraction att = (TouristAttraction)item;
+            if (att.Location.IsSet())
+            {
+                thirdNode = att.Location.Get();
+            }
+        }
+        else if (item is Shopping)
+        {
+            Shopping shop = (Shopping)item;
+            if (shop.Location.IsSet())
+            {
+                thirdNode = shop.Location.Get();
+            }
+        }
+        else if (item is Accommodation)
+        {
+            Accommodation acc = (Accommodation)item;
+            if (acc.Location.IsSet())
+            {
+                thirdNode = acc.Location.Get();
+            }
+        }
+        else if (item is PlaceToEatOrDrink)
+        {
+            PlaceToEatOrDrink eat = (PlaceToEatOrDrink)item;
+            if (eat.Location.IsSet())
+            {
+                thirdNode = eat.Location.Get();
+            }
+        }
+
+        if (thirdNode != null && thirdNode is Location && ((Location)thirdNode).Region.IsSet())
+        {
+            secondNode = ((Location)thirdNode).Region.Get();
+            if (secondNode is Region && ((Region)secondNode).Country.IsSet())
+            {
+                var country = ((Region)secondNode).Country.Get();
+                firstNodeText = country.Name;
+            }
+        }
+    }
+    else if (item is Region)
+    {
+        firstNodeUrl = wafContext.GetUrl(Helper.GetInstance(wafContext).ControlPanel.RegionsPage.GetId());
+
+        if (((Region)item).Country.IsSet())
+        {
+            var country = ((Region)item).Country.Get();
+            firstNodeText = country.Name;
+        }
+    } else if(item is Recipe && Helper.GetInstance(wafContext).ControlPanel.RecipesPage.IsSet())
+    {
+        firstNodeUrl = wafContext.GetUrl(Helper.GetInstance(wafContext).ControlPanel.RecipesPage.GetId());
+        firstNodeText = "All recipes";
+    } 
+    //else if(item is ProductCategory)
+    //{
+    //    var shop = WAFShopHelper.GetCurrentShop();
+    //    firstNodeUrl = wafContext.GetUrl(shop);
+    //    firstNodeText = "Shop";
+
+    //} 
+    //else if(item is ProductBase)
+    //{
+    //    var shop = WAFShopHelper.GetCurrentShop();
+    //    firstNodeUrl = wafContext.GetUrl(shop);
+    //    firstNodeText = "Shop";
+
+    //    secondNode = ((ProductBase)item).ProductCategory.Get();
+    //} 
+    else if(item is BlogPost post)
+    {
+        if (post.Blog.IsSet())
+        {
+            var blog = post.Blog.Get();
+            firstNodeUrl = wafContext.GetUrl(blog);
+            firstNodeText = blog.Name;
+        }
+    }
+
+
+}
+<div class="item-breadcrumb-container">
+    <div class="breadcrumb-item-first"><a href="@firstNodeUrl">@firstNodeText</a></div>
+
+    @if (secondNode != null)
+    {
+        <div class="breadcrumb-item"><a href="@wafContext.GetUrl(secondNode.NodeId)">@secondNode.Name</a></div>
+    }
+    @if (thirdNode != null)
+    {
+        <div class="breadcrumb-item"><a href="@wafContext.GetUrl(thirdNode.NodeId)">@thirdNode.Name</a></div>
+    }
+    <div class="breadcrumb-item">@item.Name</div>
+</div>
+<div style="clear:both;"></div>

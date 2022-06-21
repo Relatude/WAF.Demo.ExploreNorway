@@ -1,0 +1,44 @@
+﻿@using System.Drawing;
+@using WAF.Engine.Property
+
+@model HierarchicalContent
+
+@{
+    List<InnerFile> pictures = null;
+    if (Model is WAF.Engine.Content.TripsToNorwayDemo.Region)
+    {
+        var region = (WAF.Engine.Content.TripsToNorwayDemo.Region)Model;
+        pictures = region.Pictures.GetAll();
+    }
+    else if (Model is TouristItem)
+    {
+        var touristItem = (TouristItem)Model;
+        pictures = touristItem.Pictures.GetAll();
+    } else if(Model is Location)
+    {
+        var location = (Location)Model;
+        pictures = location.Pictures.GetAll();
+    }
+}
+
+@if (pictures != null)
+{
+
+    foreach (var image in pictures)
+    {
+        if (image.File.IsImage())
+        {
+            var linkAdjust = new ImageAdjustments();
+            linkAdjust.CanvasX = 720;
+            linkAdjust.CanvasY = 576;
+            linkAdjust.ZoomMode = AutoZoomMode.Fit;
+            linkAdjust.BackgroundColor = Color.White;
+
+            <span>
+                <a href="@image.File.GetUrl(linkAdjust)" rel="prettyPhoto[pic-list]">
+                    <img src="@image.File.GetUrl(194, 143)" alt="picture" />
+                </a>
+            </span>
+        }
+    }
+}

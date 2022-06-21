@@ -1,0 +1,42 @@
+﻿@using WAF.Common
+@*@{
+    var shop = WAFShopHelper.GetCurrentShop();
+    var cartPageId = shop.ShoppingCartPage.GetId();
+    var checkoutPageId = shop.CheckoutPage.GetId();
+
+
+    var order = ShopHelper.GetCurrentOrder();
+    int itemsInCart = order != null ? order.GetNumberOfItemsInCart() : 0;
+
+    var currentUrl = Request.Url.ToString();
+
+    var currencySign = WAFShopHelper.GetCurrentCurrency().Sign;
+}
+
+<div id="cart-container">
+
+    @if (itemsInCart == 0)
+    {
+        <text>Your shopping cart is empty</text>
+    }
+    else
+    {
+
+        <div class="shopping-cart-status-head">
+            CART
+        </div>
+        <div class="shopping-cart-status-details">
+            @itemsInCart
+            products -
+            @currencySign @order.GetCurrentCartPriceIncVat().ToString("0.00")
+        </div>
+        <div class="shopping-cart-action-links">
+            <a href="#" class="btn-clear-cart">Empty</a>
+
+            <a href="@WAFContext.GetUrl(cartPageId)">Shopping cart</a>
+            <a href="@WAFContext.GetUrl(checkoutPageId)">Checkout</a>
+        </div>
+
+    }
+</div>
+*@

@@ -1,0 +1,11 @@
+﻿@model List<FilterItem>
+
+<div class="side-menu">
+    <h3>Filter by type</h3>
+    <ul class="navigation">
+        @foreach (var filter in Model)
+        {
+            <li><a href="@filter.Url" class="@(filter.Active ? "cat-menu-selected" : "")">@filter.Text</a></li>
+        }
+    </ul>
+</div>

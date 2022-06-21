@@ -1,0 +1,38 @@
+﻿@model List<Shopping>
+@inject WAFNativeContext wafContext
+
+@foreach (var item in Model)
+    {
+        <div class="item-list-container shopping">
+            @{
+                var imageUrl = "";
+                if (item.TopPicture.IsImage())
+                {
+                    imageUrl = item.TopPicture.GetUrl(430, 322);
+                }
+                else if (item.Pictures.Count > 0)
+                {
+                    InnerFile file = item.Pictures.GetByIndex(0);
+                    if (file.File.IsImage())
+                    {
+                        imageUrl = file.File.GetUrl(430, 322);
+                    }
+                }
+            }
+            <div>
+
+                <img src="@imageUrl" />
+            </div>
+            <div class="item-list-container-text">
+
+                <p class="location-name-subhead">
+                    @(item.Location.IsSet() ? item.Location.Get().Name : "")
+                </p>
+                <h3><a href="@wafContext.GetUrl(item)">@item.Name</a></h3>
+                <p>
+                    @item.Ingress
+                    <div class="item-list-website-link"><a href="@item.Website" target="_blank">@item.Website</a></div>
+                </p>
+            </div>
+        </div>
+    }

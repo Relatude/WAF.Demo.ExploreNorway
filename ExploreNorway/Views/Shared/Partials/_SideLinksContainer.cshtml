@@ -1,0 +1,35 @@
+﻿@using ExploreNorway.Code.Enums
+@model SideLinksViewModel
+@inject WAFNativeContext wafContext
+
+@{
+    string cssClass = "";
+    switch (Model.ContainerClass)
+    {
+        case SideLinksContainerSize.Large:
+            cssClass = "side-menu";
+            break;
+        case SideLinksContainerSize.Small:
+            cssClass = "side-menu-small";
+            break;
+    }
+}
+@if (Model.LinkItems.Count > 0)
+{
+
+    <div class="@cssClass">
+        @if (!string.IsNullOrEmpty(Model.Title))
+        {
+            <h3>@Model.Title</h3>
+        }
+
+        <ul class="navigation">
+            @foreach (var linkItem in Model.LinkItems)
+            {
+                <li>
+                    <a href="@wafContext.GetUrl(linkItem.NodeId)">@linkItem.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+}

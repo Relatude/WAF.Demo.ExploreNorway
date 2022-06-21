@@ -1,0 +1,93 @@
+﻿@model SearchViewModel
+@inject WAFNativeContext wafContext
+
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+
+    var cp = Helper.GetInstance(wafContext).ControlPanel;
+
+    var searchPageId = cp.SearchPage.IsSet() ? cp.SearchPage.GetId() : 0;
+
+    var searchTerm = !string.IsNullOrEmpty( Context.Request.Query["q"]) ? Context.Request.Query["q"].ToString() : "";
+
+    int currentPage = 0;
+    if (!string.IsNullOrEmpty( Context.Request.Query["page"]))
+    {
+        int.TryParse(Context.Request.Query["page"], out currentPage);
+        if (currentPage > 0)
+        {
+            currentPage--;
+        }
+    }
+}
+
+@section header{
+    <h1>@Model.ContentName</h1>
+}
+
+
+
+<div class="searchPage">
+
+    <div class="searchbox">
+
+        <form action="@wafContext.GetUrl(searchPageId)" method="get">
+
+            <input id="q"
+                   name="q"
+                   class="text"
+                   value="@searchTerm"
+                   type="text" />
+
+            <input type="image" src="~/images/search_icon.gif" class="searchGoButton" />
+        </form>
+    </div>
+
+
+    <div id="item-list">
+        @if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+        {
+            foreach (var result in Model.SearchResults)
+            {
+                <div class="item-list-container-text-wide">
+                    <p class="location-name-subhead">@result.ClassName</p>
+                    <h3><a href="@wafContext.GetUrl(result.NodeId)">@result.Name</a></h3>
+                    <p>
+                        @Html.Raw(result.FormatSample(result.Body, 255, "<b>", "</b>"))
+                        <span class="relevance">Relevance: @(result.ScorePercentage)%</span>
+                    </p>
+                </div>
+            }
+        }
+        else
+        {
+            <p>No results matching your query.</p>
+        }
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="search-paging paging-links">
+        <asp:Literal runat="server" ID="litSearchPaging" EnableViewState="false"></asp:Literal>
+        @if (Model.PageCount > 0)
+        {
+            <b>Page @(currentPage + 1) of @Model.PageCount</b><br />
+
+            if (currentPage > 0)
+            {
+                <a href="@wafContext.GetUrl(searchPageId, "page=" + currentPage + "&q=" + searchTerm)">Previous</a>
+            }
+            if (Model.PageCount > (currentPage + 1))
+            {
+                <text>&nbsp; &nbsp;<a href="@wafContext.GetUrl(searchPageId, "page=" + (currentPage + 2) + "&q=" + searchTerm)">Next</a></text>
+            }
+        }
+    </div>
+</div>
+
+
+
+
+@section sideRow{
+    @Html.Partial("Partials/_RelatedArticles")
+}

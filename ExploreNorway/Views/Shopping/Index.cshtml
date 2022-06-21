@@ -1,0 +1,25 @@
+﻿@model Shopping
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithPicturesLayout.cshtml";
+}
+
+
+@section header{
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+@section pics {
+    @Html.Partial("Partials/_ItemPictures", Model)
+}
+
+<div>
+    @Html.Raw(Model.Description)
+</div>
+
+
+@section sideRow{
+    @Html.Partial("Partials/TouristItem/_Alternatives", Model)
+    @Html.Partial("Partials/_RelatedArticles")
+    @Html.Partial("Partials/TouristItem/_RelatedItems", Model)
+}

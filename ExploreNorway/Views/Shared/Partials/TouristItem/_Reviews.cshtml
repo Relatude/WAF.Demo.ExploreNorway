@@ -1,0 +1,72 @@
+﻿@using WAF.Engine.Property
+@model HierarchicalContent
+
+
+@inject WAFNativeContext wafContext
+
+@{
+
+    List<ItemReview> reviews = null;
+    if (Model is Recipe)
+    {
+        var recipe = (Recipe)Model;
+        reviews = recipe.Reviews.Get();
+    }
+    else if (Model is Accommodation)
+    {
+        var acc = (Accommodation)Model;
+        reviews = acc.RelatedReviews.Get();
+    }
+}
+@if (reviews != null)
+{
+    <div>
+        <h3>Reviews</h3>
+        @if (reviews.Count > 0)
+        {
+            var prop = wafContext.Engine.Definition.Property["ItemReview.RatingValue"];
+            IntegerPropertySettings propSettings = prop.GetSettings(ItemReview.ContentClassId) as IntegerPropertySettings;
+
+            foreach (var review in reviews)
+            {
+
+                <div class="reviewslisting">
+                    <div class="reviewHeading">
+                        <h4>@review.Name</h4>
+                        <strong>
+                            @if (review.ReviewedByUser.IsSet())
+                            {
+
+                                <span class="reviewAuthor">@review.ReviewedByUser.Get().Name - </span>
+                            }
+                            <span>@review.DateAdded.ToShortDateString()</span>
+                        </strong>
+                        <div class="starbar">
+                            @for (int i = 0; i < propSettings.MaxValue; i++)
+                            {
+                                if (review.RatingValue > i)
+                                {
+                                    <span class="star">*</span>
+                                }
+                                else
+                                {
+                                    <span>*</span>
+                                }
+                            }
+                        </div>
+                        <span class="ratingText">
+                            (@review.RatingValue of @propSettings.MaxValue stars)
+                        </span>
+                    </div>
+                    <div class="reviewBody">
+                        @Html.Raw(review.ReviewBody.Replace(System.Environment.NewLine, "<br />"))
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <text>No reviews added</text>
+        }
+    </div>
+}

@@ -1,0 +1,47 @@
+﻿@model List<Accommodation>
+@inject WAFNativeContext wafContext
+
+    @foreach (var item in Model)
+    {
+
+        <div class="item-list-container">
+            @{
+
+                var x_size = 430;
+                var y_size = 322;
+                string imageUrl = "";
+                if (item.TopPicture.IsImage())
+                {
+                    imageUrl = item.TopPicture.GetUrl(x_size, y_size);
+                }
+                else if (item.Pictures.Count > 0)
+                {
+                    var file = item.Pictures.GetByIndex(0);
+                    if (file.File.IsImage())
+                    {
+                        imageUrl = file.File.GetUrl(x_size, y_size);
+                    }
+                }
+            }
+            <div>
+
+                <img src="@imageUrl" alt="Accommodation picture" />
+            </div>
+
+            <div class="item-list-container-text">
+                <p class="location-name-subhead">@(item.Location.IsSet() ? item.Location.Get().Name : "")</p>
+                <h3><a href="@wafContext.GetUrl(item.NodeId)">@item.Name</a></h3>
+                <p>
+                    <label>@item.Ingress</label>
+
+                    @{
+                        var uri = new Uri(item.Website);
+                        var baseUrl = uri.Host;
+                    }
+
+                    <div class="item-list-website-link"><a href="@item.Website" target="_blank">Read more on @baseUrl</a></div>
+                </p>
+            </div>
+
+        </div>
+    }

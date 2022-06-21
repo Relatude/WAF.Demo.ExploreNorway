@@ -1,0 +1,58 @@
+﻿@using WAF.Common
+@model BreadcrumbsViewModel
+@inject WAFNativeContext wafContext
+
+@{
+    var hc = wafContext.Request.GetContent<HierarchicalContent>();
+
+    var currentRegionId = Utils.GetIntegerOnly(Context.Request.Query["region"]);
+    var currentCatId = Utils.GetIntegerOnly(Context.Request.Query["cat"]);
+
+    var rootUrl = wafContext.GetUrl(hc);
+    var urlNoRegion = Helper.ListPageFilters.GetInstance(wafContext).GetFilterUrl(hc.NodeId, currentCatId, 0, 0);
+    var urlNoLocation = Helper.ListPageFilters.GetInstance(wafContext).GetFilterUrl(hc.NodeId, currentCatId, currentRegionId, 0);
+
+    var regionsVisible = Model.Regions != null && Model.Regions.Count > 0;
+    var locationsVisible = regionsVisible && Model.Locations != null && Model.Locations.Count > 0;
+    var cp = Helper.GetInstance(wafContext).ControlPanel;
+
+}
+
+<div class="breadcrumbs-wrapper">
+    <div class="item-list-breadcrumb-container">
+        <div class="breadcrumb-item-first">
+            <a href="@rootUrl">@cp.Country.Get().Name</a>
+        </div>
+        @if (regionsVisible)
+        {
+            <div class="breadcrumb-item">
+                <select class="item-dropdown redirect-dropdown">
+                    <option value="0" data-href="@urlNoRegion">-- No region selected --</option>
+
+                    @foreach (var region in Model.Regions)
+                    {
+                        <option value="@region.NodeId" data-href="@region.Url" @(region.Active ? "selected" : "")>@region.Text</option>
+                    }
+                </select>
+            </div>
+
+            if (locationsVisible)
+            {
+                <div class="breadcrumb-item">
+                    <select class="item-dropdown redirect-dropdown">
+                        <option value="0" data-href="@urlNoLocation">-- No region selected --</option>
+
+                        @foreach (var location in Model.Locations)
+                        {
+                            <option value="@location.NodeId" data-href="@location.Url" @(location.Active ? "selected" : "")>@location.Text</option>
+                        }
+                    </select>
+                </div>
+            }
+        }
+
+        <div class="breadcrumb-item">
+            @hc.Name
+        </div>
+    </div>
+</div>

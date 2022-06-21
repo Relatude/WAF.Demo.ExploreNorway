@@ -1,0 +1,9 @@
+﻿@model ModuleCallToAction
+
+    <div class="module-wrapper">
+        <div class="module call-to-action-module">
+            <div class="call-to-action-container">
+                <a href="@Model.CallToActionLink.GetUrl()" class="call-to-action" @WAFAttribute.NameAndValue(ModuleCallToAction.PropertyIdButtonText, Model)>@Model.ButtonText</a>
+            </div>
+        </div>
+    </div>

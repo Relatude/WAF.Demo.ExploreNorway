@@ -1,0 +1,189 @@
+﻿@using WAF.Engine.Query.TripsToNorwayDemo
+@model FrontPage
+@inject WAFNativeContext wafContext
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnSplitLayout.cshtml";
+
+    var GMModel = GoogleMapsHelper.GetGoogleMapsModel(wafContext);
+    bool googleMapsShouldInit = GMModel != null;
+
+}
+@section head{
+    @{
+        var q = wafContext.Session.CreateQuery();
+                q.From<Location>();
+                q.Select<Location>();
+                q.Where(AqlLocation.SiteId == wafContext.Session.SiteId);
+                List<Location> locations = q.Execute<Location>();
+    }
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            function initializeGoogleMaps() {
+                var latlng = new google.maps.LatLng(@GMModel.Latitude,@GMModel.Longitude);
+                var myOptions = {
+                    zoom: @GMModel.Zoom,
+                    center: latlng,
+                    panControl: false,
+                    zoomControl: @GMModel.ZoomControl.ToString().ToLower(),
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    overviewMapControl: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+            var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            @foreach (Location location in locations)
+            {
+                if(!string.IsNullOrEmpty(location.Latitude) && !string.IsNullOrEmpty(location.Longitude))
+                {
+                    <text>
+                            var myLatlng@(location.NodeId) = new google.maps.LatLng(@location.Latitude, @location.Longitude);
+                            var marker@(location.NodeId) = new google.maps.Marker({
+                            position: myLatlng@(location.NodeId),
+                            map: map,
+                            url: '@wafContext.GetUrl(location.NodeId)',
+                            title: "@Html.Raw(location.Name)"
+                            });
+                            google.maps.event.addListener(marker@(location.NodeId), 'click', function()
+                            {
+                            window.location.href = marker@(location.NodeId).url;
+                            });
+                    </text>
+                }
+            }
+
+
+            }
+
+        </script>
+}
+
+<h1>@Model.MainHeading</h1>
+@Html.Raw(Model.AboutSite)
+
+<div class="video-box">
+    @if (Model.Video.IsVideo())
+    {
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+        @*@Html.Raw(Model.Video.GetVideoPlayer(521, 293, 1024, false))*@
+    }
+   
+</div>
+<div class="text-box-with-background">
+    @Html.Raw(Model.IntroductionText)
+</div>
+<div id="selected-articles-container">
+
+    @{
+        var selectedArticles = Model.SelectedArticles.Get();
+        var counter = 1;
+    }
+    @foreach (var article in selectedArticles)
+    {
+        var isRightArticle = counter % 2 == 0;
+
+
+        <div class="small-text-box@(isRightArticle ? " noRightGutter":"")">
+            <h4><a href="@wafContext.GetUrl(article)">@article.Name</a></h4>
+            <p>@Helper.GetArticleIngressClip(article) <a href="@wafContext.GetUrl(article)">More</a></p>
+        </div>
+
+
+        counter++;
+    }
+
+</div>
+
+@{
+    var cp = Helper.GetInstance(wafContext).ControlPanel;
+}
+@if (cp.VacantPositionsFolder.IsSet())
+{
+
+
+    var vacantPositions = cp.VacantPositionsFolder.Get().Children.Get();
+
+    if (vacantPositions.Count > 0)
+    {
+
+        <div class="text-box-with-background">
+            <h2>Vacant positions</h2>
+            <div>
+                <ul>
+                    @foreach (var pos in vacantPositions)
+                    {
+                        <li><a href="@wafContext.GetUrl(pos)">@pos.Name</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+}
+
+
+@section sideRow{
+
+    <h2>Follow us</h2>
+    <ul id="followus">
+        <li class="twitter">
+            <a rel="nofollow external" title="twitter" href="http://www.twitter.com/webnodes" target="_blank">Twitter</a>
+        </li>
+        <li class="youtube">
+            <a rel="nofollow external" title="YouTube" href="http://www.youtube.com/webnodes" target="_blank">YouTube</a>
+        </li>
+        <li class="rss">
+            <a rel="nofollow external" title="RSS Feed" href="http://www.webnodes.com/waf/view/rss.aspx?nid=1886" class="tooltip-anchor" target="_blank">RSS </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+
+    <h2>Where do you want to go?</h2>
+    <div id="frontpageMap">
+        <div id="map_canvas"></div>
+    </div>
+
+
+
+
+
+
+    @{
+        var selectedAttractions = Model.SelectedAttractions.Get();
+    }
+    @if (selectedAttractions.Count > 0)
+    {
+
+        <div id="tag-cloud-container">
+            <h2>Most popular attractions</h2>
+            @foreach (var attraction in selectedAttractions)
+            {
+                <a href="@wafContext.GetUrl(attraction)">@attraction.Name</a><text>,&nbsp;</text>
+            }
+        </div>
+    }
+
+
+    <div class="clear"></div>
+
+
+
+}
+
+@section scripts{
+
+    <script type="text/javascript">
+        @if (googleMapsShouldInit)
+        {
+            <text>
+            $(document).ready(function () {
+                initializeGoogleMaps();
+            });
+            </text>
+        }
+    </script>
+}

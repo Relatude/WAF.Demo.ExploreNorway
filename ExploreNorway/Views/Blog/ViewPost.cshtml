@@ -1,0 +1,40 @@
+﻿@model WAF.Engine.Content.Native.BlogPost
+
+    <div id="main-column">
+        <div id="pageHeading">
+            <h1>@Model.Name</h1>
+            @if (!string.IsNullOrEmpty(Model.Ingress))
+            {
+                <p>@Model.Ingress</p>
+            }
+        </div>
+
+        <div class="clear"></div>
+        <div class="normalPageMargin">
+            @Html.Partial("Partials/_Breadcrumbs")
+        </div>
+        <div class="clear"></div>
+        
+        <div class="itemPageFlex">
+            <div id="picture-list">
+                <span><img src='@Model.IngressPicture.GetUrl(194,143)' alt="@Model.IngressPicture.Description" /></span>
+                @foreach (var pic in Model.Files.GetAll())
+                {
+                    if (pic.File.IsImage())
+                    {
+                        <span><img src='@pic.File.GetUrl(194,143)' alt="@pic.File.Description" /></span>
+                    }
+                }
+            </div>
+            <div id="main-text">
+                @if (!string.IsNullOrEmpty(Model.Content))
+                {
+                    <div>@Html.Raw(Model.Content)</div>
+                }
+                @if (!string.IsNullOrEmpty(Model.AuthorName))
+                {
+                    <div style="margin-top:30px;font-style:italic;">Written by @Model.AuthorName</div>
+                }
+            </div>
+        </div>
+    </div>

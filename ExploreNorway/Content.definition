@@ -1,0 +1,2613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definition Name="Website" Build="107" Guid="92566d7a-9541-4903-aa44-9bdf0f1bc93c">
+  <Cultures>
+    <Culture LCID="1033" Name="English" />
+  </Cultures>
+  <ContentClasses>
+    <ContentClass Guid="6469869a-b2e3-433c-ae29-bcbba3c77b85" ClassName="Country" Namespace="TripsToNorwayDemo" TableName="country">
+      <Globalization>
+        <Lang LCID="1033" Name="Country" />
+      </Globalization>
+      <Properties>
+        <Property Guid="e6a3e7fb-86fb-4cc6-8354-e2755e24f524" CodeName="Regions" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Regions" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="e1b5664a-1e7e-4355-941f-c3e5e481e571" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="5fc3a1f7-10c1-4baf-aef3-fa58811af222" CodeName="Pictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Pictures" />
+          </Globalization>
+          <Settings>
+            <String Key="InnerTableName" Value="irel_country_pictures" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/photos" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="350d9a93-6fde-4908-903a-63b17a1a2b36" CodeName="About" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="1dcfbc6f-73f7-496e-84b9-2d8a3b26591d" Key="Value" Name="about" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="About" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="200px" />
+            <Dimension Key="Height" Value="350px" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="1b5de2a2-07e2-4095-a126-2577d8e82986" CodeName="Flag" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="f3d0cd38-be7b-4df8-902e-2854c850ef04" Key="Filename" Name="flag_filename" />
+            <ShortString Guid="b0fcdc75-61a2-458a-9202-6bd23393b5fe" Key="Type" Name="flag_type_name" />
+            <ShortString Guid="03b55f37-7cbd-4b86-a889-75bb46f44ea4" Key="Extension" Name="flag_extension" />
+            <Float Guid="fcd7c7d7-e5f8-4c25-83d6-2483523d02da" Key="Bytes" Name="flag_bytes" />
+            <LongString Guid="e07c465b-d488-4142-99b0-5e28508cb7ed" Key="Info" Name="flag_info" />
+            <Integer Guid="7552a524-0644-4b87-a6d8-762c05b782dc" Key="Reference" Name="flag_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Flag" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="1df596bb-b22b-463d-8a53-162fa12b30b0" CodeName="Latitude" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="40a62fb6-9cc2-425a-841f-dbcefab855ae" Key="Value" Name="latitude" />
+          </DataValues>
+        </Property>
+        <Property Guid="4dc761db-dd40-4464-8aa9-be71b7c2a8ad" CodeName="Longitude" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="c29c407f-a14a-429b-9a60-ba5ffaa9e6dc" Key="Value" Name="longitude" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <String Key="ODataName" Value="CountryLocal" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIxSURBVDjLpdNdSFNhGAdwKSNyg6ALC8GLoE8so49VRHVRFFQISlJeREXQBxWSSZDUpNrOTDoxSGvhmokV1TazLeekTBda9rVKmW5lYq6slgutOI7j1vn3vKc4rCAv3MXDgfPy/73Pc3hOEoCkROq/B6v2GdIWHLnhmK1v7ZtZ3PIuo9DmOr17iaUkLx1Ud6g2jgqo+JCU4x7Bs5AEe4+EhbYYMsv9iEYGcU+/VEZkYNkew7iJnHBrgl4YSeYEJJcIGF8qoKw9Bv8g8GkY8IaBthDgqatCsNGAq4czGbBLBhbv5VWT+EiL2Q9cfg2YA0DDe+AxBeqDQPvX3+/PdwKmfA0+PDDCuGM6A9JkYP5Byyy1SexgQM5dIJvqpJdCb4DWz8BDKguhhzxDor1Ig+7afBaG8hFnFDiyp1ZFgxa6JbcR2NoEnCLg2ltqfQBwUzcVhJc1+4c8/Br0urV/A9OKvJyxQ/qmfQ5so/D2ZoB7CVh7gN4fwP1+wEWjGK/XoKt6C9rOrWeATwHUugEn3RBjrW9oAI4TdJPCno80RlfsZ27d9+Eslxitcdpk4HbxCgboFEB1JvKk3CfhSjdQTXM7+yRorCLUZ8PSposvvMZX0bydtf2Vi9JT4avcjIr9GQxYrQBzC2zmVG2nkGIISyncF2mKLiDOKbQ+it8JCqy9dGCe3EH8/KMu0j9AqePEyoSAwFNTVkKAHG7i1ykrPCbAfmw5A46OBbjw5y9kz8nxZ78A90vOcDVd+i0AAAAASUVORK5CYII=</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="c081d11c-f337-44af-91ec-6a32b34a022f" ClassName="Region" Namespace="TripsToNorwayDemo" TableName="region">
+      <Globalization>
+        <Lang LCID="1033" Name="Region" />
+      </Globalization>
+      <Properties>
+        <Property Guid="d19e0fe5-093b-4dc7-96a8-e188ae1f6cb2" CodeName="TopPicture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="92049705-4c92-4389-9d63-f8c85f893676" Key="Filename" Name="toppic_filename" />
+            <ShortString Guid="87c6c85b-dd04-435f-adbb-28e883ed47dd" Key="Type" Name="toppic_type_name" />
+            <ShortString Guid="c9ef883c-1169-413e-a366-e2d9ec9a0935" Key="Extension" Name="toppic_extension" />
+            <Float Guid="1c74481f-30ba-4aba-b5e4-31dab855d70d" Key="Bytes" Name="toppic_bytes" />
+            <LongString Guid="0f344805-25d0-4f4b-aaee-9b66035826aa" Key="Info" Name="toppic_info" />
+            <Integer Guid="38c3510e-68b6-4375-94a1-e5e6f02a6ca3" Key="Reference" Name="toppic_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Top picture" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="b6fdd34c-8460-44f3-a3d6-9338e81d9806" CodeName="Country" PropertyClassGuid="cad63455-302a-4474-a412-b99ab05d9aa4">
+          <Globalization>
+            <Lang LCID="1033" Name="Country" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="e1b5664a-1e7e-4355-941f-c3e5e481e571" />
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/containedIn" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="containedIn" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Place" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="b65271d2-5772-4ad3-8a69-617c1dedb53e" CodeName="Locations" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Locations" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="f0c5bdb4-11af-45f1-8427-cab7399c8a21" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="ed6652a4-1340-47d5-9476-9e86c4ac466c" CodeName="Pictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Pictures" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="native_irel_region_pics" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/photos" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="5a3112ea-fd42-4cf2-8c24-6317c996a1fd" CodeName="Ingress" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="7b41bb46-b760-4f7d-999e-b25bae1619ef" Key="Value" Name="ingress" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Ingress" />
+          </Globalization>
+          <Settings>
+            <Int Key="MaxLength" Value="255" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="7255ef67-bc75-43ab-ad19-45ecfa3ff4c7" CodeName="Description" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="eadfa839-300d-4903-9360-26d379a6658f" Key="Value" Name="description" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Description" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="200px" />
+            <Dimension Key="Height" Value="350px" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="b18a3de7-31d3-4724-9cb7-0bb325a64c55" CodeName="SelectedDestinations" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Selected destinations" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="fb1631cb-24a6-41c0-9181-fad043d861b4" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="78c81b02-fa9e-4da6-975a-9781c2ef35d2" CodeName="RelatedRecipe" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Settings>
+            <RelationReference Key="Relation" Value="6c63e5cb-70eb-4c92-8f24-0bfe46e29158" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Int Key="DefaultTemplateId" Value="42" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASxQTFRFJykTAGnAZYM7Zo89cnJyAWi+dnZ2Amq/Amq+KSsUc3NzKi4fAWTAPEZAjIJ9b29vKywdKCkSDGKuNl9oAmS1F2KqAmDAWoTJDVajAlXqMDQqElelKCoXAmvAqq2qcFFHgGPYDV/Ef2a0a2trKYG2dHR0LEE4amtmPEy2BWC2BGq5KCwbAGa7cXRvf4J7IiwZIiwYJykVf3p1AGW9AGW+c2lnaXnZClKlKCoZAmS3FGGuAGa2AFC3v7THIyoWUH27A16tClXdOE40Amm/WFxLAWCwEk3Bfnt1CmCtCVKlLTInAGjAFXWzKCoUKi8iAWK4AE67I2Wte4SAj01KemPQKywcKCoacGexMoC1AWnAJCoWSlJNd3d3KCoTJykSZY48YII3dK9GdqBJ////SyhyQwAAAGR0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ACaMbT0AAADCSURBVHjaYkhGAnws7skMSHxdVTYWPaBAUiIEJhspc8VwAQUS4oEQIqbOxs8AVQAWjTd1cWIAK4AIxssrSjoiqwh2C7DRAKtIggiK+6hEaDEkc3PzJjAxg6AHI6M3I0NYXGxcqIBvLKdgiAkHq7MQg0xcLIO+nUFULKcCI3ukDtClXnFxcQxxDLFq0p7mEg4gp/tFW8TGxhra81j6u1pD/BKkzRBnJsYhGwhkQz0nJazJzmocjhCQs7USEVUCsQACDAB6Dkgu5Bd9QQAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="787b66bd-7e69-44a8-8c08-d1adf1026eab" ClassName="Location" Namespace="TripsToNorwayDemo" TableName="location">
+      <Globalization>
+        <Lang LCID="1033" Name="Location" />
+      </Globalization>
+      <Properties>
+        <Property Guid="56500c39-1ec2-4d34-8526-cac10f04cadc" CodeName="TopPicture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="ef039c9d-7eed-402e-b4a9-e5b6f9b9db4c" Key="Filename" Name="toppic_filename" />
+            <ShortString Guid="e25fd665-10d3-4d41-8d8c-e6b117cb61da" Key="Type" Name="toppic_type_name" />
+            <ShortString Guid="cf4ab9f7-e048-4a3f-8761-a6df240cada0" Key="Extension" Name="toppic_extension" />
+            <Float Guid="8f0eb2a7-7ecc-44e7-aa56-913e8f89b1d4" Key="Bytes" Name="toppic_bytes" />
+            <LongString Guid="3c2b8d5d-84ef-4345-9ecf-aeccd00743c5" Key="Info" Name="toppic_info" />
+            <Integer Guid="21399924-99ea-481c-9f03-77aa90847d5a" Key="Reference" Name="toppic_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Top picture" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="486f617c-8946-4ef2-b567-06dbeb89da4f" CodeName="Region" PropertyClassGuid="cad63455-302a-4474-a412-b99ab05d9aa4">
+          <Globalization>
+            <Lang LCID="1033" Name="Region" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="f0c5bdb4-11af-45f1-8427-cab7399c8a21" />
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/containedIn" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="containedIn" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Place" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="7be79d29-bf3f-40f0-b686-d63da32ebc78" CodeName="Ingress" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="cd9b3a8c-dba2-4f3b-9c06-76461bbf20e4" Key="Value" Name="ingress" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Ingress" />
+          </Globalization>
+          <Settings>
+            <Int Key="MaxLength" Value="255" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="5be8c834-f167-47af-9bab-67290df31bc6" CodeName="Pictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Pictures" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_location_pics" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="99283b4f-33bb-4852-a845-a021bf74f3dc" CodeName="Description" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="d5c233bc-b7c7-45ee-8218-f17bc7afc4a2" Key="Value" Name="description" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Description" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="200px" />
+            <Dimension Key="Height" Value="350px" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="b7702ede-0a11-425f-b2f9-bdd5291b8e9e" CodeName="Attractions" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Attractions" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="8b19b911-b92c-449a-974b-046cb999fea4" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="1e915686-9c7f-486e-a9bb-fc4fb4681679" CodeName="Activities" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Activities" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="12c82ea0-262b-4e0f-84ce-16c6c3f8af90" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="d3069e79-9b01-4aa5-b936-7787a699d582" CodeName="Accommodations" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Accommodations" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="c8b0002f-2878-4432-bd62-3403a3f4a000" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="a7882715-4fea-4447-ad8c-c03e792b52ad" CodeName="FoodAndDrink" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Food and Drink" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="734ea4e1-2735-4de1-9d59-8cae984fc3c7" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="7245a0b6-f66b-4a61-a4a6-f692b6f2ea7b" CodeName="Shopping" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Shopping" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="7cfe6a05-0b19-4578-98fd-b6a7d70a0417" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="c459269d-709d-407a-8601-d133807d2874" CodeName="Longitude" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="3f0c3a6b-d638-4a4b-b7a4-38a75227129c" Key="Value" Name="longitude" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Longitude" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/longitude" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="geo" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/GeoCoordinates" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="269f6bca-8bf4-4b39-85fe-a535e9ff5590" CodeName="Latitude" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="5b23f26e-0922-4383-9e75-02cf6a601c96" Key="Value" Name="lattitude" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Lattitude" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/latitude" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="geo" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/GeoCoordinates" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Int Key="DefaultTemplateId" Value="28" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAgNJREFUOE9jYMACKivKNXKyM58FuTr/D3Oy/x8RFPC/qbFh2fNnj3WwqUcRmz9/7uQoW8ufe6KD/n8tyfj/szz7/7PcpP+drvb/0+PjXp46eUwXpyFVVRWa4Ramb54ANfyvyP7/H6gZhv8A+cuCvP6XFxfew2lARVnJrU0R/kDNOf//lGX9P5cQ9n9LiM//13nJYIO+lGb+T7a1/Ltzx7ZErIaEe3k8e5wDtB2o+Gpy5H9lAf7/HCzM//NN9CEuARrc5+X8PysrMxurAWFuzs+e56eAFZ+MC/kvwM7+H6jwf6iGCtyAaX7u/xMS4rEbkJma/OxUYjjY/1+K0v5PcrH9n2Wo8/9UXCjYgF/lWf8L7a3+z5kzC7sBjQ316UV2lt+/Af2KHIAQ52f/Pwv0VlpUxM+rVy/54wzIkvzcAxO9XP7/BAYisiF3MuP/xzvZ/1i4YF4e3rRw5PBBqZjgwBObwiGxAQ59YHoocLb7v2jhfNxRiGzq0iWLXRNdHL6/BAUo0JCNob7/S4tz/z96eK+VYEqEKSgtKti7AphwvgG9kmhp+n/atCkT3r59qUC0AcuWLvaq9PX8fykt+n+Mv++vG9eveBGtGaTwxo1rXjnhYf+nezr9T0yIP0eSZpDiu0/eKJbl5t+PNjX6P3PmzJMkGwDS0Fxfe1RfTfV/e1srTucDAERfK5Kkv/X/AAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="5bbadc74-378c-4a7a-a994-3719a949c1cd" ClassName="TouristItem" Namespace="TripsToNorwayDemo" TableName="touristitem">
+      <Globalization>
+        <Lang LCID="1033" Name="Tourist item" />
+      </Globalization>
+      <Properties>
+        <Property Guid="c8b7c018-1373-4737-8367-754ae3ad977e" CodeName="TopPicture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="5e337358-3342-4625-8d9f-2b48072aa24d" Key="Filename" Name="toppic_filename" />
+            <ShortString Guid="206ef12b-7de4-4b92-80e1-4b1dfd89a953" Key="Type" Name="toppic_type_name" />
+            <ShortString Guid="1ffef939-5d13-4ae8-9f2e-e5f5c516167f" Key="Extension" Name="toppic_extension" />
+            <Float Guid="b8e20b26-91e7-44b3-9588-9402c154e858" Key="Bytes" Name="toppic_bytes" />
+            <LongString Guid="f2560a00-b3d6-4962-98b4-a731ae0483a1" Key="Info" Name="toppic_info" />
+            <Integer Guid="6dca7c1d-2d3f-4af5-905b-c297a82a2fed" Key="Reference" Name="toppic_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Top picture" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="c6af1170-2bb9-4739-a6e9-423dcc4516cd" CodeName="Ingress" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="c294b117-9fc4-4411-8749-0dc5aafa091d" Key="Value" Name="ingress" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Ingress" />
+          </Globalization>
+          <Settings>
+            <Int Key="MaxLength" Value="255" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="11a38463-1ce1-4aae-8a43-b3cf21776e86" CodeName="Pictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Pictures" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_touristitem_pics" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="ed6cb390-367d-4b05-b137-6a14eae0d7b4" CodeName="Description" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="b88577f4-3c1d-4391-b503-127ba887afa9" Key="Value" Name="description" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Description" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="200px" />
+            <Dimension Key="Height" Value="350px" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="d1861dff-b400-40c6-a314-ff4ce604894a" CodeName="RelatedArticles" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Related articles" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="7d56046a-07ac-4cb9-a0f7-c24268b171bc" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="61b410be-d6fd-456a-8a02-84ef1c203fdc" CodeName="Phone" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="e421e037-0cab-4b90-b688-d9721e0ae8fe" Key="Value" Name="phone" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Phone" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/telephone" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="6d70f265-c878-41b9-a5b0-0a8a99d8b3f5" CodeName="Email" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="c893d748-7459-4dbf-a5ee-ccfd003f7ce9" Key="Value" Name="email" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Email" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/email" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="d0109497-7cc4-4020-b18a-b7af4a4ac387" CodeName="Website" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="16e5015b-55b9-4fcb-8d9b-9c317b6db826" Key="Value" Name="website" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Website" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/url" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="9b54897b-cb5a-4336-b687-d9a1a2c3b6e2" CodeName="AddressPostalCode_old" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="30eb181e-ae51-443d-aad6-90ad15e4e41f" Key="Value" Name="post_address" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Post address" />
+          </Globalization>
+          <Settings>
+            <Int Key="Columns" Value="50" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/postalCode" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="6b4e17db-5476-4a35-ac14-52e3d67b8c79" CodeName="AddressRegion" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="8e7534f5-87c9-4bab-b76b-f154fa09b9a3" Key="Value" Name="addressregion" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/addressRegion" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+          </Settings>
+        </Property>
+        <Property Guid="2d0b050f-bb12-4625-8b82-e4571b057d19" CodeName="AddressLocality" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="9309d2b4-c1cb-463d-9c3c-e8ccac31d361" Key="Value" Name="addresslocality" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/addressLocality" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+          </Settings>
+        </Property>
+        <Property Guid="eb9e7712-10de-406b-a6c2-2c7ecb1a7535" CodeName="AddressPostBox" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="77737ae9-01d6-4e26-8fb7-ff78f5571b02" Key="Value" Name="addresspostbox" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/postOfficeBoxNumber" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+          </Settings>
+        </Property>
+        <Property Guid="2c4dae90-e7f8-4e50-b642-9ba38ac9662b" CodeName="AddressStreet" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="5228593a-81bd-4778-8eb8-2bb7e7bc416f" Key="Value" Name="addressstreet" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/streetAddress" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+          </Settings>
+        </Property>
+        <Property Guid="49a44898-d36a-45ef-9d86-df5ed3d7d489" CodeName="AddressPostalCode" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="09910c9d-1ee1-41e4-8642-d7218fb7e672" Key="Value" Name="addresspostalcode" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/postalCode" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+          </Settings>
+        </Property>
+        <Property Guid="4dea6711-b053-4e61-8b3e-e36c9fbb321e" CodeName="AddressFindingDirections" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="2e529255-4dbf-46cd-9910-2f2245aa80fa" Key="Value" Name="addressfindingdirections" />
+          </DataValues>
+        </Property>
+        <Property Guid="4c7eefe0-4e48-4a22-8fa2-71aa9fd045fe" CodeName="AddressCompanyName" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="d86975ed-c007-4b96-b7e3-4e856eea5171" Key="Value" Name="addresscompanyname" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/name" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
+          </Settings>
+        </Property>
+        <Property Guid="fc5ac14c-aaa0-43ee-8c8d-19d2d3c0782e" CodeName="RelatedReviews" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Settings>
+            <RelationReference Key="Relation" Value="96e9894e-6d8f-4d6e-aa1e-038c79b7ae58" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/reviews" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="reviews" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Review" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAANCSURBVBgZBcHbT1t1AMDx72lPKS29UCiz0BUMQxwwJptMSIAZzRgu6oOJ+jKjkQdjTAx/gI9mezAmJkb3ppKYqHsxe9oMOh0ZODd3xYVtFOLK1dG0pYWensvv4udjaK0BAACYmp8cAz4GjgEtgAmUgeta6XNfjn33CwAAgKG1BmBqftIEpoE3X8+cCCZCLVSsBiwXhLQRPOHy1iUhhfxVCPn2N6d+2gMwtNZMzU8GgD8Gk30jJzMvUbGDOLgsVwzqdJCCpdDCJYTFlnOVm5s3F4Qnjv/w1oWyDwCYPtrcPTLaNkhRung+AyF81EQdFnUUnSDbdoj1coD2yAsMpp497DrejwD+0vjqKPDZ6e7X/PdllS1q1JRgz45QdAJUbMhu7FKuVgkmChjxLMPJg1xevNH5/fXpe/6hySNfTLQNHTL8IbZ8AvQ+WmWEW0/81Gwfixt7qPoSwY5HOLEseVXCLEkONWd8tx4/bDKBY5lYmrvWJvl6H73+AygEuW0X264RT2kqTTMsqx1wNI0iSDbvcOLpo3iO6DeB5rDZQM7aZNuxiIY72XGjlEqKeIvNvoRFXg6QvnMOaVfJZw5S3AkTCUXxXNHo01obhgbXqaCtVkxPcukvD6M+xNayydpqjDYnhPA0+5M9BJfv4Nk10BohhGFKoYoVt5Ju9jcSrX+O9byJ7QVoVR8RD0ucDY/dnCDd1EVPaohdu8rC+u8UqxNIocqm8MTtx8XVdFc4w2//zdMY7qLOn0Eol/G+95BaIZVEodksr9G/f4Q9t8YnFz4Euh/4PFd89fPDWdERacG0NigX/iSRcLCFi9SKXCHLv4UlVvKL7NQK5IorDGTGeCb1PLuBe6O+b189P+M63sWZxVleTA8Q9zeQiChsYSOk4KlYO6lYB63xTgL+EC3RNLfX5rm2csOyXGImgOd471zJ3p1zau7hiSPHebRt8o9wmL72Oa5ysYXLgWQvw50n+Ts3x5WlWScs23uWz2ZrhtYagFe+fjkqPHFeeHL83ZH3TWQKrcMYPoNkvMKnF0/T1zrM1aW53Qbd3rtwZmkdwNBaAwAAMHJm6A0p5AdSqn4lVQIAKO/47yeFIlBTMrB9VgsAgP8BON24AjtZfcoAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="2be1a934-671e-4c62-94de-585f353bc00f" ClassName="TouristActivity" Namespace="TripsToNorwayDemo" TableName="tourist_activity">
+      <Globalization>
+        <Lang LCID="1033" Name="Tourist activity" />
+      </Globalization>
+      <Properties>
+        <Property Guid="ac4bfa71-f468-4bc1-8118-603397fa30c7" CodeName="Location" PropertyClassGuid="cad63455-302a-4474-a412-b99ab05d9aa4">
+          <Globalization>
+            <Lang LCID="1033" Name="Location" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="12c82ea0-262b-4e0f-84ce-16c6c3f8af90" />
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="c79779e2-4e01-4afd-81f3-6ba77573acfe" CodeName="Categories" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Categories" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="03a5b8c5-a84a-4be0-a329-2eb1c8fcb742" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Int Key="DefaultTemplateId" Value="29" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/TouristAttraction" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAANjSURBVDjLbZNdTFtlAEDPd+9tKS20HS1/tbAuDNyEEMffIv5hMkW3RU2my96ci/HF6IPZgz65LEZnYnzQxFezJYtREzaJ06hkA8zGgs4hIOOnAyZdadpy296WS2+5vdfXYTzv57wdYds2D1JQE62amjyiZycfMwvzdaWsXsL76Iw/2HGxubP/Nv9BPBhQ48uvpefOfewPtTRKspui6WJ7s8i2niMRX425Gl7+rC4U+jKyr8vYEdALmje9On9RMc8fLd+W2TU4SNlQEdsq+XQcWYQo5jdI3/2DRF5bjHS98VzHoZP3AER+c1NJR7+9oYi13kBdLxtjo1S1ezDUGbJTcTwtu6j2N6L49iM5aogv/cnC32tzT5w61+8NtuXkd996/Z3UF2dPNT1/jPLmIoYxQeqnW+j3szQ+eRCH0we2DcUUhhqjOtSNc2u9Njo96/d4nCPym6+Gf/D19bgzP49R3eykkIyRm82w+/ABHLKAchnJtLDMEnapRDGrU9nQydK1S10YxSnFKs4FvOHjbKjnSc2ukJ9XaTvezf2bsxRzZYRTwRV0ozideNwKFY4c5epmlGCHdHloZFBJz8YI790m/MIzLF4YpmyBwxUk8tTjYJYQNmjJJJZhkk1qbOdKONYnqfVUoydXDyj6+CT603EU28LhdxJoDXLr61/pOjaAjMAWMr7aemzTwOtzIUwDXAGyWeiPVOWl0CsDaMsZ5i9fhapKwi3tNPXsYeL7CdRUHiHZ2AhsIYEMWCaSqwajkCGRtdYU05T0itYGd1W6HT21RCGToi7cgMsXYPq3eYSQ2d8XwV8FkmUiXB6E4mHj3iqFItfEX9988lFmc+X9UGA3lcY0mfUkbY+EQAgsRSGnFrnz+xqYFhVuiYbuw8yMjPPdldFL0aJ0UqTuXK+6MfT5dUPb6jx64ggz4zd5OLKFSyqBDbYsYQsbWfFTkFr5Z2KSqxeGNK2jvv3MUCImBff1F7yhrpcWlu9Gp0Z+IfhQE/nKXjYdESylHlHRjBzsB9ce5OURtOiVFa25+tkzQ4nYjpmGPz3tSSSi79VkZ9/2+lt8NXvbUO1KPLaGV1/HiI0Z0ThfzSWsD86Oa8n/vRHgwxM9A35LPeRUswf9TjxJtzM9GbUWVhPZ0Rf7/D+eHk7uEP4FZ6iVh4fSzgIAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="483109fa-c68c-45e1-9300-4526ac8fa4c9" ClassName="TouristAttraction" Namespace="TripsToNorwayDemo" TableName="tourist_attraction">
+      <Globalization>
+        <Lang LCID="1033" Name="Tourist attraction" />
+      </Globalization>
+      <Properties>
+        <Property Guid="213d5f0e-5dfc-47f6-ad1e-c5317d95ef2d" CodeName="Location" PropertyClassGuid="cad63455-302a-4474-a412-b99ab05d9aa4">
+          <Globalization>
+            <Lang LCID="1033" Name="Location" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="8b19b911-b92c-449a-974b-046cb999fea4" />
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="4c2fd0db-7b1e-4c72-bf1e-98aa44ed16fc" CodeName="Categories" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Categories" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="8ba2e8a6-dde9-42ab-8c06-eb57e18a522a" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Int Key="DefaultTemplateId" Value="24" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/TouristAttraction" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURSomJywpKkNBQkdFRkhFRklGR0pHSExHSUpISEpISUtJSktKSkxISUxISkxKS1ZUVVlWV11aW2hnaGpoaXRyc3VzdAF3wwB5wAB5wQB4wgB4wwB4xF2o1mCq12Wt1mev2Hu53H652n2523y53IOAgYKBgoSCg4WDhIiGhpeWl6OhoqOio6Sjo6akpKalpaupqquqq7OysrOys7Sys7WztLW0tLW1tbi4uLq5uYvB4YvC4IvC4YvC4ozC4IzC4ZrI4ZrI4pvJ5ZvJ5qbP6KbQ6K3T6a3T6rHV6djY2NnY2d/f3t/e38zj7NPm7uDf3+Dg3+jn6Ojo6PDw8PLy8vPz8/f39/n5+fr6+vv7+/z8+/38/P39/f7+/f3+/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANpi1gkAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAMtJREFUKFNj8FVURgJKPgwO0lJSklAAZNkyOEjJuLrBgJykDYO9hFOsgapnbKyfuk6Us4Q1g724o5mQOVNELKeRiJ6zuBVIQFM7lj8oiifWWAMi4BTAzcXIxsfAxewFEnCQcoqNDRcMDuUMi45xkQAJOMbGhgmEhHKGgwSsGRzEHAP52BlZeRl4WPydJS0Z7MWghrLFGmqArRVzNBW2AFrLYSKqCxIAaonVV/GIjfVW04oEaXGQknWHA3mQGVLSSEDKjsFXWQEJKPsAALRcMEzpw/B9AAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="b36aa7d6-dea4-4eb4-bfd1-2cb084869252" ClassName="Accommodation" Namespace="TripsToNorwayDemo" TableName="accommodation">
+      <Globalization>
+        <Lang LCID="1033" Name="Accommodation" />
+      </Globalization>
+      <Properties>
+        <Property Guid="ac88f9ea-6a51-422e-b3d6-4858d8a95124" CodeName="Location" PropertyClassGuid="cad63455-302a-4474-a412-b99ab05d9aa4">
+          <Globalization>
+            <Lang LCID="1033" Name="Location" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="c8b0002f-2878-4432-bd62-3403a3f4a000" />
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="99858316-3405-442a-a927-701c77e18a20" CodeName="Categories" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Categories" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="1dd43406-1714-47e5-8a6f-f8bd40ce0a15" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Int Key="DefaultTemplateId" Value="26" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/LodgingBusiness" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAG+SURBVDjLnZNNSwJRFIbfGccPCKJMoqSwdBcEobUQWrmIChJs07pVuA36By0KWrTtB7hqGSQSFBGCbdq0ECkhSmgxldmHOuP9aO4VpSEV6cDhHu7c85z3nLkXnHP048/RKO+0r6JPO9nc7LivCErL8vk8p5SCEILWKlzXdWSzWfj9foRCIcTjcaWVo/2mNRoNBINBGf8GizgWi8k1k8nYFNgAopqwi0KzM2oxKAMYZ5YiYHmGwDCM7gDTNGWV8Fi54yCBof4AudKwrEpYUwGxqjPGkZgjqNfrvQHCFsZfuvzO4d4KxEdx8PLBa/XPpQJGm7PgloKN+UZvBRX6LgGLk3oXBV588c/OgJ1ccso15MEKX7X6ZUilUlBVFYqiyDWRSKBivONxvGgDtG+ilTStOh3IV25lNU3TEA6HEYlEZCyg5VoZrgEX1o6W122A7ezWIKhyPuL04ayUlodFkvCWihqpYv9qFwFfAMSkB0uHsdk2gBKaNEyT3+kFfL9Wkbk5BXMyOByONiR9nYZWd+Ht40VcOD8lbLc9A3rs2ZMPw/IqKAq4l/JKxZKtX68yitenMibMgNtteuJ/HtN/7AcakErwOe40HwAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="e058b05f-3ec5-457d-8087-d728c0848b0d" ClassName="Shopping" Namespace="TripsToNorwayDemo" TableName="shopping">
+      <Globalization>
+        <Lang LCID="1033" Name="Shopping" />
+      </Globalization>
+      <Properties>
+        <Property Guid="65d1237b-df97-4f00-9dc2-702121de2914" CodeName="Location" PropertyClassGuid="cad63455-302a-4474-a412-b99ab05d9aa4">
+          <Globalization>
+            <Lang LCID="1033" Name="Location" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="7cfe6a05-0b19-4578-98fd-b6a7d70a0417" />
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="6ca597d5-b0dd-4453-9ca1-bebd2de69e2c" CodeName="Categories" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Categories" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="c8acb67e-71eb-4890-8aaf-6d3d93042c34" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Int Key="DefaultTemplateId" Value="194" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Store" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="08fa5b0b-8fdc-4dce-910f-48904c9859d0" ClassName="PlaceToEatOrDrink" Namespace="TripsToNorwayDemo" TableName="place_to_eat_and_drink">
+      <Globalization>
+        <Lang LCID="1033" Name="Place to eat or drink" />
+      </Globalization>
+      <Properties>
+        <Property Guid="5e6c579f-07d7-481e-98d1-f1b8b1015e36" CodeName="Location" PropertyClassGuid="cad63455-302a-4474-a412-b99ab05d9aa4">
+          <Globalization>
+            <Lang LCID="1033" Name="Location" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="734ea4e1-2735-4de1-9d59-8cae984fc3c7" />
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="dc4bf465-6913-44db-9216-921ff1e55589" CodeName="Categories" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Categories" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="7cbd8db3-8818-439b-a730-304cd4adf656" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateDialogueGroupId" Value="-1" />
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Int Key="DefaultTemplateId" Value="193" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/FoodEstablishment" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJGSURBVDjLpZNLTxpRFMdd+EX8BixZ6VfxQ9imq3YzSdNVE2MNyEMYAeUNofIKEBjA8CoiM4BCgiQgaJqWtjySAc2/585iogG76eI/czN3/r9z7jnnbgDY+B8pj3w+v5nNZncEQdhLp9N8KpUqJhKJYTwel2OxmByJRIbn5+fFUCjEB4PBPZ/Pt+PxeDZVAJm5SqUCURTRarVUNZtNdd1oNFCtVkHBEA6H4XK5OBWQyWQwnU4xHA7RbrdRr9eVn8vlsiK2ZnC2NxqNMB6PcXZ2BhVAacu3t7eYTCYQbr4jIP2ErzWHt/0I780jnOIUjsoDYlcDjH//UYAOh0NWAXTmbTrzUmpew3bRA196gONqAndrARfJevkLXzJ9fI5dwxkvwG63L09OTrZVABMVTBuNRpfVegPWlIRPvhI+nF7gHZ/FG4sAzl2AP1V8YX4BYKJKa6nSy8srEZakiPeneby1CvjoKeJrurRiXgEwUZu0fr9/+a16iVStC9/FNSLCevNaAJPX69W63e6nxWKhdIfMT+vMrwKYnE6nl7WtVCqB53nbPyfxuSjyFvV4l9pU6Xa7yOVysFgsebPZvGs0GrdeBdBoami6ioFAADQXoPHFYDBQ3lQXUHFxfHwMnU5XPDw81KwAyPxDkiTIsozZbIa7uztFDHJ/f698Y3vJZBIHBwejFQClzbFIhUIBnU4H/X4f8/lcUa/XQ61WU+7A0dER9vf3ubU1sNlsGqvVylGqWZPJ1DEYDNDr9SztLqWdpcgcmTXPPX8BpLUNr3FYePgAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="6af697af-b9bc-4e6e-9ab9-9d13c167e73e" ClassName="Article" Namespace="TripsToNorwayDemo" TableName="article">
+      <Globalization>
+        <Lang LCID="1033" Name="Article">
+          <Description>Basic web page. </Description>
+        </Lang>
+      </Globalization>
+      <Properties>
+        <Property Guid="99b1ca08-c6a4-43ea-8fcc-85ddb718447d" CodeName="Ingress" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="a4943cf9-7689-4b0f-98fe-c2908414dd4d" Key="Value" Name="ingress" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Ingress" />
+          </Globalization>
+          <Settings>
+            <Int Key="MaxLength" Value="255" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="dfb20f02-220e-4079-862f-1f525a99ce8b" CodeName="IngressPicture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="b1b1ae99-f57e-4c19-b2d8-715798698faa" Key="Filename" Name="ingress_pic_filename" />
+            <ShortString Guid="d6f58b54-97a5-49e0-9b81-36b0ce0ec09a" Key="Type" Name="ingress_pic_type_name" />
+            <ShortString Guid="74ca946d-e55a-4f91-80e0-fe180ca91a79" Key="Extension" Name="ingress_pic_extension" />
+            <Float Guid="54c06d48-383a-4285-9bf2-022a62b629bc" Key="Bytes" Name="ingress_pic_bytes" />
+            <LongString Guid="646e11c9-c1a2-4ea9-a0c8-20fbd124a599" Key="Info" Name="ingress_pic_info" />
+            <Integer Guid="0a849aa0-c420-4828-b40d-4f0e7e334a75" Key="Reference" Name="ingress_pic_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Picture" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="0a4a7610-a9f5-4c40-aa48-0b437fa0ef1a" CodeName="Paragraphs" PropertyClassGuid="d13fc7be-804b-4ebf-a69a-9823c8dd71da">
+          <Globalization>
+            <Lang LCID="1033" Name="Paragraphs" />
+          </Globalization>
+          <Settings>
+            <String Key="InnerTableName" Value="irel_article_paragraphs" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="e3a0c4a5-8368-49f8-94a3-727b6d24a500" />
+                <ClassReference ClassGuid="e4c5b52a-3b54-49db-8766-4b4bf333ff05" />
+                <ClassReference ClassGuid="e0285d40-cf82-437a-a2a5-c559acb7d6ba" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="d26b2ed7-e0ba-4b8a-a424-9b112308f4f0" CodeName="Files" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Files" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_article_images" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="40746398-4e54-4904-85b8-ee48e0890b4c" CodeName="RelatedArticles" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Related articles" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="713b731c-e6e5-4e39-aa65-3f958b0911bb" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="0b160d77-0fe4-481e-a6f1-ee4fc253cbae" CodeName="RelatedTouristItems" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Globalization>
+            <Lang LCID="1033" Name="Related tourist items" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="7d56046a-07ac-4cb9-a0f7-c24268b171bc" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="DefaultTemplateId" Value="23" />
+        <Boolean Key="CreateAsPreliminaryFromWizard" Value="True" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/CreativeWork" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAH/SURBVBgZBcE/jN9zHAfg5/35fn6/6/XqVEmkISHif2KQRsQgLEg4g4TJYrExYTXabJIbDZJOFoNRQssgERNiYJFeOE21QfTuft/v5+V5Konn3r/0xvbu1uutXMApFCikyDCP8euNa/mi/r7+3uX9vROASuLFD765/MnbFx5prc6GSQBIIK7+u3Hxuxv++O34v59++Pnc1/t7x9ChTfXQuk9nf/zT1KooMlgyzHPc3CyefeAWTz7YfTuuns54+Pozb31+21cfvXTcoKrOJJnWU7Nq9GJqTEUVTWE4v7u298R5996/td13dz6GBqGgoRWtSqvSqrQqbSq//3XTPWc2Hj1X3nzqdtNqeg06QEKfKCVVxhJa6RPrNL9ci5MxG+PE0/dtqd5m6JAQ9GoigmqlkEGmxpo2yhiTaFQDHYKBKkoJggxWE6CaWkpaDCRAhzGTMFBIAlrDKH0KKUKUZbAMoMMYkYQQASBAKRV6Y+DUimUO6LAMlpDBABAwwjIIRkixmpr5ZAYdxhwjsf/lywAAAADgsVc/szkeoMM8L5YFuPuuOwEAAMCVg0MZsTmaQYf5eIx5jKCuHBwCAAAA6L2NeRkzdNgcLYc76+mOd174dCdJEwbg1u0OErZXTZWxmuqfZR4H0KEqHz7/7qVXqurxyGkAIYgAAUdjjO97cxH+Bxjp+96ObDbVAAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="e3a0c4a5-8368-49f8-94a3-727b6d24a500" ClassName="ParagraphText" Namespace="TripsToNorwayDemo" TableName="paragraph_text">
+      <Globalization>
+        <Lang LCID="1033" Name="Text paragraph" />
+      </Globalization>
+      <Properties>
+        <Property Guid="73b550d3-d203-4226-88ab-43ee69cf42e6" CodeName="Title" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="8791b366-fbcb-406c-ad2c-92571fc78375" Key="Value" Name="title" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Paragraph title" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="55e5c6b4-5cda-4525-927d-a55125fffa44" CodeName="Picture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="3459e686-5f87-4130-84fc-13b28e7e4d2e" Key="Filename" Name="name" />
+            <ShortString Guid="01897bbb-d8eb-4b79-8f9e-389edda8470f" Key="Type" Name="type_name" />
+            <ShortString Guid="e78a364e-e326-4bae-b9b7-f2239ba4fc24" Key="Extension" Name="extension" />
+            <Float Guid="248683ec-5200-4c72-a73a-21e603d8ad54" Key="Bytes" Name="bytes" />
+            <LongString Guid="b4b7c482-6b0a-480a-a5a5-4b79c95ffbaa" Key="Info" Name="info" />
+            <Integer Guid="437d002d-7e35-4ccb-a429-35b8b1264e39" Key="Reference" Name="reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Picture" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="14dddde5-7b5f-45bc-97bd-77a988f8f74b" CodeName="PicturePosition" PropertyClassGuid="7d08c6fb-28f7-4d30-b407-439e018d2402">
+          <DataValues>
+            <Integer Guid="51ebaac4-39a1-4ed1-b2bf-6e23d7a8eab6" Key="Value" Name="picture_position" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Picture position" />
+          </Globalization>
+          <Settings>
+            <EnumerationReference Key="Enumeration" Value="a0d90a5b-a054-48ed-8cff-3875f47f724f" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="f74bb119-ac7f-420d-b7f8-2d095b46ade9" CodeName="PictureWidth" PropertyClassGuid="7d08c6fb-28f7-4d30-b407-439e018d2402">
+          <DataValues>
+            <Integer Guid="758c1a97-b08f-4f37-b96b-a7c2650f8fe5" Key="Value" Name="picture_width" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Picture width" />
+          </Globalization>
+          <Settings>
+            <EnumerationReference Key="Enumeration" Value="dbcd9c75-8689-4c98-94dc-52abb0d1cd6d" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="c239e3d8-036f-42c8-9cc4-e68034257bca" CodeName="Text" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="ff5fba59-53b1-4a1b-ae97-cf0bbce05b3d" Key="Value" Name="text" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Text" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="300px" />
+            <Dimension Key="Height" Value="300px" />
+            <Enumeration Key="Layout" Value="NoTitle" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <ClassType>InnerContentClass</ClassType>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAAA0AAAARCAMAAAAxIdauAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFAGPGAGPOCGvOGHPWOYzWWlpaa2trc3Nze7XnlJSU9/f3/5wp/86U/+fO//fn////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////oiumZQAAAElJREFUeNpiYGZgZGBkBBMsXAyM/+GAkRPI4wUCPhCPgRXI4wYCHrAcJo8HCHjhKhGmgHhQCzjoI8cE9xADEysDFxsrHLABBBgAOfxZlhcxh8UAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>202372f4-8e04-4f51-b7c9-13553a307b85</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="e4c5b52a-3b54-49db-8766-4b4bf333ff05" ClassName="ParagraphVideo" Namespace="TripsToNorwayDemo" TableName="paragraph_video">
+      <Globalization>
+        <Lang LCID="1033" Name="Video paragraph" />
+      </Globalization>
+      <Properties>
+        <Property Guid="c05f4da6-3d1f-407f-8be1-ee975716d3d4" CodeName="Title" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="76e0c8b4-d28e-4cc7-aa6c-3d570cf23715" Key="Value" Name="title" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Paragraph title" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="d7078f96-3f2d-4cf2-8cb8-a5ba500075c7" CodeName="Video" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="8e664547-df27-4a78-bdea-02db0a83687b" Key="Filename" Name="name" />
+            <ShortString Guid="4bcdef64-af93-465f-82d2-6d27c95c0b31" Key="Type" Name="type_name" />
+            <ShortString Guid="f2ca42d1-2f78-42a3-a152-c0ef9daedc41" Key="Extension" Name="extension" />
+            <Float Guid="2c965238-5c2c-40b1-84b7-385cf200c25f" Key="Bytes" Name="bytes" />
+            <LongString Guid="84809edf-6899-41c7-be44-88fad8df068a" Key="Info" Name="info" />
+            <Integer Guid="8a2d5f8e-8375-4433-88e5-b42e5fbdd13c" Key="Reference" Name="reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="File" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <ClassType>InnerContentClass</ClassType>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAM4SURBVDiNZZNLTFwFFEDP+7+Z6fCbmDdgGWKnIYGgpWqD1URDglFbW2UzaUxc8HFhEV0BCW6chZ/EvTtQNiaYGBfqpC4kGrVgKGVScNJaECFdDNDQcT7M8N7Muy4QNPEmd3nuubkfRUQAGLg6FgCeAXSAQv4vK7e7dempc+f6F28s7Ucejr9pWXaVf2P5008+3tb/gfXeZ8/fe/65p5vm5r5ne3ubQOAUXV2vU19fz4MHe00XX77w9eNnz1Kt1TioVFi8ect/9crAeS2ZTGo6/mj8kZP9a3fv0traSjwep1AoMDIyQiaToa+vj56eHsLhMIqioGkakcZ65efrv4b1RCJRsm3b6uzoQESYnJykoaGBRCJBKpUiGo0SCoXwPA/P83BdF8/z8H0fBRr1tbU1tVgskk6nGRwcZHp6mpaWFsLhMCKC7/v/gyuVCq7rAqBbluUNDQ0ZjuOwurpKJpNhY2ODpaUlOjs70TSNhYUFdF1ndHSUWq0GwNHwVc/z7ObmZpLJJOl0Gl3XmZiYYH19HYCxsTFyuRzLy8uHRl1H13UsywJAmZmZKUaj0VChUMC2bTRNI5/Po6oqdXV1hxZVJZVKMT4+fmyuVCq8+96H36mGYdQikQiLi4sEg0FmZ2fZ3NwkHA4TiUSIRCI0NjZSLpexLItgMEgwGCQQCBx2pCgK2WyWWCzGysoKvb29uK5LsVhkf38fEUHTNDRNw7bt4yvyfR/fr9V00zSV9vZ2YrEY2WwWRVEwTRMRoamp6Riam5ujWq3xx59biAgrv9320zdv/KAGAgEcx6GtrQ0RIZ/P093dfVzEcRwcxwFg9/4ej3V1cPpUG6Vifu9O5taXTE1N7bquKwcHB1IqlWR+fl7y+bzs7OyI67riuq7kcjm5dPkV8X1fyuWyfJO6dhAMnbgIKApwpuVk61svvfjCsGkYKIqCYRiYpomu6xiGge/7FEr7fPTB+/z40y/u8PAbI/e2Nj4TkaoiIgxcHbOfPNOZ63niUUtVVUzTxLKs41RVlc+/+Mo/EQrcf2d0ZKhULFwTkSqAcrTXC/2vxVVF3gZ5CEH5z9sifs2/cztzff33zLfAphxBwN/8m3/iNeHHZAAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>202372f4-8e04-4f51-b7c9-13553a307b85</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="e0285d40-cf82-437a-a2a5-c559acb7d6ba" ClassName="ParagraphPictureSeries" Namespace="TripsToNorwayDemo" TableName="paragraph_picture_series">
+      <Globalization>
+        <Lang LCID="1033" Name="Picture series paragraph" />
+      </Globalization>
+      <Properties>
+        <Property Guid="a1d50a9c-e878-429c-91f7-5f1f402fd55c" CodeName="Title" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="42fc1546-033e-414b-9b78-6832cf7e24ef" Key="Value" Name="title" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Paragraph title" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="5a9648aa-f025-468d-8fa4-2c29de356b12" CodeName="Pictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Picture series" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_article_pictureseries" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="48d6467d-c031-4380-ba3c-ad27cb555f3a" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <ClassType>InnerContentClass</ClassType>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFAYYAAnjLAFybg8fkw8ZJXJjAR6/b5vn/JZVVTZPJO43BBKsCdaLNAKcAV66tZsD/fMz/HYPOEI0RLJE6ktf/bJ279f//Bq4EZLe3CKcJBosCDHnDDGKcALUAgMPtXJnAT5TCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADNFYTAAAACJ0Uk5T////////////////////////////////////////////AA3Qw3EAAABMSURBVHjazM63EYAAEANB4b03g4frv0lIPoEGuGRDSbwSbnquzoYprjEK/QZTBH1deQmmyMtjigdM0RXzvreYQtnTgqnv7D9+3AIMAFz4F01PAhekAAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>202372f4-8e04-4f51-b7c9-13553a307b85</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="48d6467d-c031-4380-ba3c-ad27cb555f3a" ClassName="SeriesPicture" Namespace="TripsToNorwayDemo" TableName="series_picture">
+      <Globalization>
+        <Lang LCID="1033" Name="Picture" />
+      </Globalization>
+      <Properties>
+        <Property Guid="9bab0e80-e43d-4946-87d9-73dca3ffb5ed" CodeName="Description" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="6da8e2e5-1f96-4beb-b764-70c254d90c34" Key="Value" Name="description" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Description" />
+          </Globalization>
+          <Settings>
+            <Int Key="MaxLength" Value="255" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <ClassType>InnerContentClass</ClassType>
+      <InheritGuid>084af1c0-0efc-409e-83c2-ecef1cadb8a7</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="98cdc721-1b86-4a02-846d-4d95b8133ba8" ClassName="SimpleArticle" Namespace="TripsToNorwayDemo" TableName="simple_article">
+      <Globalization>
+        <Lang LCID="1033" Name="Simple article" />
+      </Globalization>
+      <Properties>
+        <Property Guid="3af8b5bd-ae33-41f9-9fd8-acb0a1e0faa9" CodeName="Ingress" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="214d22d4-58e9-4a9f-809d-38f7622a34b4" Key="Value" Name="ingress" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Ingress" />
+          </Globalization>
+          <Settings>
+            <Int Key="MaxLength" Value="255" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="9477eb8a-e4f5-4d17-9d19-379f288b78a3" CodeName="IngressPicture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="a1ea746c-faf0-4e1f-a14e-32f838fd497b" Key="Filename" Name="ingress_pic_filename" />
+            <ShortString Guid="e75c1c5c-ee89-43ac-9add-70467e2830c5" Key="Type" Name="ingress_pic_type_name" />
+            <ShortString Guid="0934c978-801a-45f9-8a9a-595687f2c532" Key="Extension" Name="ingress_pic_extension" />
+            <Float Guid="85c9690b-4ce7-4183-941b-a1ff0608b592" Key="Bytes" Name="ingress_pic_bytes" />
+            <LongString Guid="2b5929f2-19d2-4154-8ccc-4da3f337e1ba" Key="Info" Name="ingress_pic_info" />
+            <Integer Guid="12e7865d-1e51-4aa6-98b0-e7bb15a73051" Key="Reference" Name="ingress_pic_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Picture" />
+          </Globalization>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="84fa5602-95ec-4f96-94dd-20f73a5780e8" CodeName="Content" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="4a88b151-7551-4b42-a8bf-7e9d5186a42a" Key="Value" Name="content" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Content" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="300px" />
+            <Dimension Key="Height" Value="300px" />
+            <Enumeration Key="Layout" Value="NoTitle" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/articleBody" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="8977339d-7320-4e4d-8082-fe5f95b6e861" CodeName="Files" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Files" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_simplearticle_images" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="f6845a79-34da-4c6b-99b2-c23494b180df" CodeName="RelatedArticles" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Related articles" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="713b731c-e6e5-4e39-aa65-3f958b0911bb" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="5ca6c682-c908-4086-a372-b7932b0e033c" CodeName="RelatedTouristItems" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Globalization>
+            <Lang LCID="1033" Name="Related tourist items" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="7d56046a-07ac-4cb9-a0f7-c24268b171bc" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="DefaultTemplateId" Value="21" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Article" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAINSURBVBgZBcG/r55zGAfg6/4+z3va01NHlYgzEfE7MdCIGISFgS4Gk8ViYyM2Mdlsko4GSf8Do0FLRCIkghhYJA3aVBtEz3nP89wf11VJvPDepdd390+8Nso5nESBQoq0pfvXm9fzWf19453LF85vASqJlz748vInb517dIw6EyYBIIG49u+xi9/c9MdvR//99MPPZ7+4cP4IZhhTPbwzT2d+vGoaVRRp1rRliVvHq+cfvM3TD82+7mun0o/ceO7NT+/4/KOXjwZU1ekk0840bAZzMQ2mooqh0A72d5x/6sB9D5zYnff3PoYBoWBgFKPKqDKqjCpjKr//dcu9p489dra88cydps30KswACfNEKanSaxhlntjJ8Mv12Paie+vZ+0+oeSwwQ0Iw1xAR1CiFNJkGO4wu3ZMY1AAzBI0qSgmCNJsJUEOtJSMaCTBDLyQ0CknAGOgyTyFFiLI2awMzdEcSQgSAAKVUmAeNkxvWJWCGtVlDmgYQ0GFtgg4pNtOwbBcwQy/Rife/2yrRRVI0qYCEBly8Z+P4qMEMy7JaVw72N568e+iwhrXoECQkfH91kY7jwwXMsBx1L93ZruqrK6uuiAIdSnTIKKPLPFcvay8ww/Hh+ufeznTXu49v95IMoQG3784gYXdTqvRmqn/Wpa/ADFX58MW3L71SVU9ETgEIQQQIOOzub+fhIvwPRDgeVjWDahIAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="c4cc7f94-5263-4cf1-888b-a2c10cabcd29" ClassName="FrontPage" Namespace="TripsToNorwayDemo" TableName="front_page">
+      <Globalization>
+        <Lang LCID="1033" Name="Frontpage" />
+      </Globalization>
+      <Properties>
+        <Property Guid="1680e914-9b7b-4fd9-9f38-3d4c893aab86" CodeName="MainImageTitle" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="9726b9a0-aa0e-4621-8619-f3a45e364cec" Key="Value" Name="main_image_title" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Main Image Title" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+            <Boolean Key="HideInEdit" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="02f75dab-c494-4172-9133-b5798010ff82" CodeName="MainImageText" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="807115cb-a4a5-4270-97ad-6210f84683b8" Key="Value" Name="main_image_text" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Main image text" />
+          </Globalization>
+          <Settings>
+            <Int Key="MaxLength" Value="255" />
+            <Boolean Key="CultureIndependent" Value="True" />
+            <Boolean Key="HideInEdit" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="381e2478-024d-47ff-979b-97c365a23a65" CodeName="MainHeading" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="67c382c2-73cc-40ef-b781-c639d619cd44" Key="Value" Name="main_heading" />
+          </DataValues>
+        </Property>
+        <Property Guid="ce2eccfc-3669-445c-9292-32eb27cf5ec5" CodeName="TopPicture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="f6a87ace-1ebc-4eaf-aca8-f4b1f9c796a3" Key="Filename" Name="toppic_filename" />
+            <ShortString Guid="20dc5ab6-7dfd-4df8-95ac-d19e7dfe5fce" Key="Type" Name="toppic_type_name" />
+            <ShortString Guid="c1fb3651-dcf9-4ce6-9d46-4ab914413cd8" Key="Extension" Name="toppic_extension" />
+            <Float Guid="749bc825-5743-43d1-9d7d-785eb770eb03" Key="Bytes" Name="toppic_bytes" />
+            <LongString Guid="3a83d129-0e71-48e5-a5fa-ba578a872fe8" Key="Info" Name="toppic_info" />
+            <Integer Guid="e2f5eea6-dac1-480f-86ff-be50d7ceaad3" Key="Reference" Name="toppic_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="TopPicture" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="b23039b2-acf9-4d29-9860-987e34993ab2" CodeName="Video" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="30a846df-5b90-49d7-9e33-0518981d2c53" Key="Filename" Name="video_filename" />
+            <ShortString Guid="9db005db-29f4-4a58-b367-e3061cf4af70" Key="Type" Name="video_type_name" />
+            <ShortString Guid="27fa61fe-3930-44e4-a5dd-bda902a442f1" Key="Extension" Name="video_extension" />
+            <Float Guid="aee99b7f-25a3-4158-b49b-48433fa06138" Key="Bytes" Name="video_bytes" />
+            <LongString Guid="b7190d07-39a7-468f-9cf7-f16246627b23" Key="Info" Name="video_info" />
+            <Integer Guid="64c2c59b-0b9f-44ae-99c0-9eb70c9c64a1" Key="Reference" Name="video_reference" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Video" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="a8ee34ba-f5c5-41ff-9935-2a7a7a005e66" CodeName="AboutSite" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="9d3b6cd0-976a-410b-ac77-be8df08f7815" Key="Value" Name="about_site" />
+          </DataValues>
+        </Property>
+        <Property Guid="58e091c0-66ce-431b-8551-dade8c9f4445" CodeName="Files" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Files" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_frontpage_images" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="9033c8b1-4e64-4030-a441-b877f98cc126" CodeName="SelectedArticles" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Selected articles" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="10f1e3dd-652a-4c5f-b16d-0708ee2992dc" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="aa18f0bc-b10f-46c8-a2bd-03e05d489c99" CodeName="IntroductionText" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="c0b21c83-0520-4d72-8ae5-612b56d976e8" Key="Value" Name="introduction_text" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Introduction Text" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="300px" />
+            <Dimension Key="Height" Value="300px" />
+            <Enumeration Key="Layout" Value="NoTitle" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="80325560-9be1-40c1-885e-0f8cc13a69d9" CodeName="RandomTopPictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Random top picures" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_frontpage_random_top_pic" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="224e55ea-7796-4a37-951e-b8dfc68bf117" CodeName="MapLinks" PropertyClassGuid="d13fc7be-804b-4ebf-a69a-9823c8dd71da">
+          <Globalization>
+            <Lang LCID="1033" Name="Map links" />
+          </Globalization>
+          <Settings>
+            <String Key="InnerTableName" Value="irel_frontpagemap_links" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="ef2895c7-d807-47b9-a4b7-ed7ef1f7c320" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+          <LoadByDefault>False</LoadByDefault>
+        </Property>
+        <Property Guid="a7572ca7-f805-4635-9361-6b96402a0937" CodeName="SelectedAttractions" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Globalization>
+            <Lang LCID="1033" Name="Selected attractions" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="f3f18c00-f07b-461b-b55e-fc5929a11f67" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGZSURBVBgZpcHPi41hHMbhz/P2oJijzEKSQn4uFRsNK8lKKWZtFvMPKFulrKxZKGzs2MhismI3S5Qpg0YNZUFiaso5Z973e9+eJ45mYWo015VssxGZYur2qyvAXuAUcBxsTEKmaRJNAkkoWNqUvXBkz/YTyFy9eDRhm8u3Xt71f7r56I0LMr+dprg/+50Rs7bpiXHefloaUmQqeRd/HNq5hSol/undlyFVf9BupsgUtrdSGHj/dch6OCJRZArLmWJ6Ypz1UogqU1hOFJPXnzGQkGHmxlnO3ztHr9dDEpKQRETweGoGK6gyhSWqb/2WM8d2M/PiM1WvN8bBA/uobGOL13PzVO6CqqGwTLU8CFqbn8OOKkIkEqt1EVRSR5UpkkQ1HLb02yAGLZUkbAMGG9tEF1TuVqgyhTEjNn91XSAHlW1kEwoqu6PKFOpkIFE8nV1kpDe2jYUPH2nblpW2JbqgSQ2VZVNkipAWgf1zdy6w2oNLD1mL7R8UmSr0ZPLa88O2TyLtkDqwsAKrAweWsA3YoGVo5imSbTbiFyrGMBGmEu5TAAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="0f78c913-4995-4454-aedd-1c4e31ef09a5" ClassName="TouristItemCategory" Namespace="TripsToNorwayDemo" TableName="touristitem_category">
+      <Globalization>
+        <Lang LCID="1033" Name="Touristitem category" />
+      </Globalization>
+      <Properties>
+        <Property Guid="a8288a02-6ac5-4c97-94c1-9fee40b65cfc" CodeName="Content" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="1f392274-7e57-4fa4-9ed3-82ea7aa62661" Key="Value" Name="content" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Content" />
+          </Globalization>
+          <Settings>
+            <Dimension Key="EditorWidth" Value="595px" />
+            <Dimension Key="EditorHeight" Value="300px" />
+            <Dimension Key="Height" Value="300px" />
+            <Enumeration Key="Layout" Value="NoTitle" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="4a71b140-b665-4b69-b363-a6fa144ff43c" CodeName="Files" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Globalization>
+            <Lang LCID="1033" Name="Files" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <String Key="InnerTableName" Value="irel_lodging_cat_files" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="084af1c0-0efc-409e-83c2-ecef1cadb8a7" />
+              </Classes>
+            </InnerContentClassReferences>
+            <Enumeration Key="Layout" Value="TwoRows" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKsSURBVBgZBcFLiJZlGADQ87zfN/N7GSe7UBiIEmUaRKRJRogGpmEmRglRCIZEi2oTRbuojQQRdDGVCDICN4ELISMoJG/jhNm9DLOyMLMyLSXHme9/n86JzHTns3vWTx7uPVTCAkxCgEAGWXW1Hjt7Oj+Kf888vXfLqnGAyEwrN+7f+84TC+aVEtOTRgKQCenP8xO2Hzrr918u/vft10cu27dl1UVooTRx/WDbTP/mD02JIMhKP6uuSxcm+pZeN82tc1qj9c8pWeeeWfL4e5d+vOnuiwUiYigzm8GmGCi0QVNoggiKQDVjeNCqhTPMvrY3uR2e+hYUSAIKSlAilAglQolQmnDy7wtmDU244bLwyG2XawaatdACZNI2hJARaj8poW0YzOKH02m8dmodt/ianmhLBy1kkmijSCkRJQSykk1hkFJDrY1UiAJaSFREEEIikZWBBhBF9EOWVJEJtFA7MqkIZCYoBTW0TZLh1PHvvfvGC4aGhsycmJi0bt3mewrUmjKTJDMBSCCEU8eP2rtzm4WLFnvx5U2OXb1hrNfrvd1Cv9JPslIBJKjJrz8e8eGON82bf7ublqzx6Ib1+jGnPXnm5GALtUs103OfjQupBplB5ZLTX5j2+XbdrEV2TV/l1XVrPP7gaqMHR9rfum52C13X1+8zY3jA/CuLmvSTs9+P+Gr3Vj9NusryFQ849NgKy+6+3yejI74cWDv26QcrTxToLtba1ZrjfUZO9I2c7Iz+3nf0/W0Onxvir589v2ymW1av9893B7y2eWudyLaDFibG+qemDjZXPHPj+NTMLJKK+w4dtvvjA86fO+fg/j127dzhlde31sm9gXP9rp6AFiLypeVP7bk3Im5OOQUgFmw0c9bcXq/lrjsWxnfTHh5b+uS+sVrr4bbYDv8DSZ8/CcPtqE4AAAAASUVORK5CYII=</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="302b41a1-047a-4d11-a01b-266564ce2a98" ClassName="ActivityCategory" Namespace="TripsToNorwayDemo" TableName="activity_category">
+      <Globalization>
+        <Lang LCID="1033" Name="Activity category" />
+      </Globalization>
+      <Properties>
+        <Property Guid="2378fcce-aef8-42d4-a09d-c9f922dc6c2b" CodeName="ActivitiesInThisCategory" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Globalization>
+            <Lang LCID="1033" Name="Activities in this category" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="03a5b8c5-a84a-4be0-a329-2eb1c8fcb742" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHcSURBVDjLhZPZihpBFIbrJeY2wbcQmjxdIGSSTC4zQxLyAK4o7igoKm7TPW49LoiYjqLG3DWpZmx7/tQpsR1xycW5qTr/9/+n+jTTdR3dbhftdhutVgvNZhOapkFVVTQajSsA7FKxTqcDx3GOajqdSki1Wr0IYeRMAsMwpPNkMnEhdCZSoFQqnYUwikzN5EYH9XpdNU0Ttm3LcwJWKhXk8/mTEEauu0YhfhKRDcuysDBt5H5tk4zHYxSLReRyuSMII+dd5M1mAxL//uvgw8Mz3t4DWWN7NxqNKAXS6fQBhIkZ+Wq1kk3r9Rpz4XytPeNLF/iqAx8f9pDhcEgpEI/HXQir1WpvxIx8uVzKps7Kls53AvCjB3x7PIQMBgNKgUgkIiGSUi6XFTEjXywWsunxj433qoM7fQ+51oDMzy2k1+tRCoRCoSt3lkKhoIgZ+Xw+P4J8F4DPTeDm3oK92aZIJpMIBAKvD15UzKdks1k+m81cyDsB+SRGuG2tYVpPL8Ued4SXlclklFQqxWkTCaILyG3bgWXvnf1+v8d9xFPLkUgklFgsxmkTd5+YxOL8QHwWQBWNRr3ipTktWL/fPym+CKAKh8PeYDDISezz+TwnV/l/v6tw9Qrxq3P3/wBazDrstPR7KQAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>0f78c913-4995-4454-aedd-1c4e31ef09a5</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="954809b1-6511-46a2-94e1-0ef843ac33e6" ClassName="AccommodationCategory" Namespace="TripsToNorwayDemo" TableName="accommodation_category">
+      <Globalization>
+        <Lang LCID="1033" Name="Lodging category" />
+      </Globalization>
+      <Properties>
+        <Property Guid="a3f70e0f-bd7e-42d6-8ead-a965f5583ae4" CodeName="AccommodationsInThisCategory" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Globalization>
+            <Lang LCID="1033" Name="Lodgings in this category" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="1dd43406-1714-47e5-8a6f-f8bd40ce0a15" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAH3SURBVDjLhZNJjxJhEIb7T8xVw78g6fh75mJGY/SqTjRGTXTcbu7xxtItPew2YxMgbGkCNMgSQkgDAiHRKNpkWPL61ZfQGcLioS5V9T711tfVQrVaRaVSQblcRqlUQrFYRKFQgK7ryOfzBwCEfSEYhoHlcrkRvV6PQzKZzF6IQJNJYJomn9zpdGwI5ZgLJJPJnRCBLFMzTaNELpfTJ5MJ5vM5zxMwnU5D07StEIGmrhqZ+JxZNqfTKUY/u4gbMq+1220kEgnEYrENiECTV5YXiwVIPP71Hc9Or+ORdAjNkHit1WqRC0QikTWIwHa0xuMxb5rNZhj+6OLk9Bpef7mN92f38JyBVpBms0kuEAgEbIiQzWavsB2t0WjEm76ZOTyWD/FWvYtP2kN8OLu/Bmk0GuQCPp+PQzgllUqJbEdrOBzypnq3gKe+I7xTj23IiXKEWMnF67VajVxAkqQDe5d4PC6yHa3BYLAB+fj1AV4Fb+KlcgvzxYy7CIVC8Hg8l9delO0nqqpq9ft9G/Lk81W88N/Am+gx/vz9fVHssFe4GNFoVAyHwxZdIrdr6kx8B9Nzyxa73W6H/YjbjiMYDIp+v9+iS1x9YhKz/Jp4J4BCURQne2mLDqxer28V7wVQyLLs9Hq9FoldLpdj6yn/73dlU51MfGlX/R/5GCirExPTUwAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>0f78c913-4995-4454-aedd-1c4e31ef09a5</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="9a60f0c1-f8eb-461c-80b4-bd34784d2936" ClassName="AttractionCategory" Namespace="TripsToNorwayDemo" TableName="attraction_category">
+      <Globalization>
+        <Lang LCID="1033" Name="Attraction category" />
+      </Globalization>
+      <Properties>
+        <Property Guid="0c77b6f4-e6f8-4b2d-bb5d-efbcdf359e9d" CodeName="AttractionsInThisCategory" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Globalization>
+            <Lang LCID="1033" Name="Attractions in this category" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="8ba2e8a6-dde9-42ab-8c06-eb57e18a522a" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHVSURBVDjLhZNbi9pQFIXzJ+a1xX8hhP7Q0k47zFPHK4p3FBQVbyhe8YIVsTpJGid1SIiXRFbPPmI6jpc+7Jdz9vrW2ic7Qq/XQ7fbRbvdRqvVQrPZRKPRQL1eR61WuwMg3Cqh0+lgv9+f1Xw+55ByuXwTIpAzCWazGXeeTqcOhM5YChQKhasQgSJTM7nRQbVareu6Dsuy+DkBS6USstnsRYhArsdGJt6yyLP1eo2tuoFRWfG7yWSCfD6PTCZzBhHI+RjZtm2Q2HrZQvsm4eWzBKN8gIzHY0qBZDJ5AhHYjKaqqrxpt9txZ+1ewurHb6x8KrTvsgMZjUaUAtFo1IEIlUrlE5vRVBSFN5kjnTuvPCpeg0u8voMMh0NKgVAoxCGcUiwWRTajKcvyAfLTwPLrO8i9DL14gPT7fUqBQCBw58ySy+VENqMpSdI5xL/En0cF8sMv7K1Ding8Dp/P9/HkRdl8YjqdNheLxT/Il2doDzLUp2dsjM1bscsZ4W2lUikxkUiYtIkcMjagPSmwN7Yj9nq9LucRLy1HLBYTI5GISZt4/MQkZucn4qsAqnA47GYvbdKCDQaDi+KbAKpgMOj2+/0miT0ej+viKv/vd2Wubib+cO3+L9t+PiarnEW1AAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>0f78c913-4995-4454-aedd-1c4e31ef09a5</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="b2f0d39f-df0f-4830-bff8-26b72745c61b" ClassName="ShoppingCategory" Namespace="TripsToNorwayDemo" TableName="shopping_category">
+      <Globalization>
+        <Lang LCID="1033" Name="Shopping category" />
+      </Globalization>
+      <Properties>
+        <Property Guid="4272bc7d-327f-439c-b2c2-76b0a699d5c4" CodeName="ShoppingInThisCategory" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Globalization>
+            <Lang LCID="1033" Name="Shopping in this category" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="c8acb67e-71eb-4890-8aaf-6d3d93042c34" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHpSURBVDjLhZNbbxJhEIb3T/RWw78g2fjLvLE2ppe1TYNtvGuNRo6BcA4kIBBOgXCU3QXploCAmNQE/VY55PWbj7CWcPBibuab95l3ZmelZrOJRqOBWq2GarWKSqWCcrmMUqmEYrF4BEA6FFK9XsdyudyKfr8vILlc7iBEos4k6PV6orOu6yaEctwF0un0XohElqmYulGiUCiUptMp5vO5yBMwm80ikUjshEjUdV3IxX+45Z5hGPj29RcykbF463a7SKVSiMfjWxCJOq8tLxYLkPj72MCbEw3nz1WkwytIp9MhF4hEIhsQic/IJpOJKJrNZqKz7aWGm7Mu3l/quDppmxBN08gFAoGACZHy+fwzPiMbj1dFSvVBdL49v8PHq/stiKqq5AJer1dABCWTych8RjYajURRu/EDtmMV7y7+QWzHGj4FV++tVotcwO12H5mzJJNJmc/IhsPhFuSDTcfb0w6uTz/zr7MQLkKhEJxO59ONjfL55FgsxgaDgQm5fKHg+lUbtxdt/Jwaj8UWc4THEY1G5XA4zOgSxeLqD7h5/QW/jbkpdjgcFnOJu44jGAzKfr+f0SWuPzGJeX5DvBdA4fP5rHzTjA5MUZSd4oMACo/HY3W5XIzEdrvdsvOU//e78q5WLn6y7/0viZYv/mL7AwwAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>0f78c913-4995-4454-aedd-1c4e31ef09a5</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="e2009466-cf26-4ac8-8fa1-b11ccb1a2fab" ClassName="FoodAndDrinkCategory" Namespace="TripsToNorwayDemo" TableName="foodanddrink_category">
+      <Globalization>
+        <Lang LCID="1033" Name="Food and drink category" />
+      </Globalization>
+      <Properties>
+        <Property Guid="8c0fe2bf-5d65-462e-8eff-c17bdd75c56a" CodeName="PlacesToEatAndDrinkInThisCategory" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Globalization>
+            <Lang LCID="1033" Name="Places to eat and drink in this category" />
+          </Globalization>
+          <Settings>
+            <RelationReference Key="Relation" Value="7cbd8db3-8818-439b-a730-304cd4adf656" />
+            <Boolean Key="IncludedInPublicIndexed" Value="True" />
+            <Boolean Key="IncludedInProtectedIndexed" Value="True" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHcSURBVDjLhZPZihpREIb7JeY2wbcQmjxZbrIQ5nKSIYQ8gyuKOwqKihuKKy5xnJ5GRzteTIjTp51e+HPqDDaKSy7qoqvq/+qvYykNBgP0+310u110Oh202220Wi00m000Go0rANKlkHq9HhzHOYr5fC4g1Wr1IkSiySRQVVVMVhTFhVCOu0CpVDoLkcgyNdM0StTr9eZms4FlWSJPwEqlgnw+fxIi0dRdIxe/cMuqYRgw2SO2v9OiNpvNUCwWkcvljiASTd5Ztm0bJLa3GvTpZ+iT9xySErXpdEoukE6nDyAS35Gt12vRZJomTP0R+q9PYPc3MB6+C9AOMplMyAXi8bgLkWq12ju+I9M0TTRtnzp45pOZ8g2G+vMIMh6PyQUikYiACEq5XJb5jmy1Wr1C/vQ55CMM5XYPwr+1hKgPh0NygVAodOXuUigUZL4jWy6Xx5CHH2B313gaXcOxLeEimUwiEAi8PXhRvp+czWbZYrHYg3yAfvcFf6e3eDE2+2KPu8J+ZDIZOZVKMbrEV0gPz/df4ViGK/b7/R73EU8dRyKRkGOxGKNL3P3EJOb5A/FZAEU0GvXyl2Z0YKPR6KT4IoAiHA57g8EgI7HP5/OcPOX//V35VC8XvzlX/we1NDqN64FopAAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>0f78c913-4995-4454-aedd-1c4e31ef09a5</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="ef2895c7-d807-47b9-a4b7-ed7ef1f7c320" ClassName="ImageMapLink" Namespace="TripsToNorwayDemo" TableName="imagemap_link">
+      <Globalization>
+        <Lang LCID="1033" Name="Imagemap link" />
+      </Globalization>
+      <Properties>
+        <Property Guid="4dd8a745-10e8-404f-a4e4-a0f33432ea22" CodeName="PointX1" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="879fbc6a-9e5a-4c64-ad31-d4ca4a713b9e" Key="Value" Name="point_x1" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Point X1" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="df4e8640-4ba0-49c5-9b27-3a8d2af831ab" CodeName="PointY1" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="c3f33f4d-082b-450c-aa5e-ebaa4630f154" Key="Value" Name="point_y1" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Point Y1" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="d21bf7b9-d4bc-468f-a247-860cc5f98163" CodeName="PointX2" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="0004db4b-da46-4d38-be8e-fdee25ddcc5c" Key="Value" Name="point_x2" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Point X2" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="ed2a1aaa-9514-4859-ac6c-07de0e60bda8" CodeName="PointY2" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="1b8ea08a-c61f-4ee1-90b5-d7919da88d1c" Key="Value" Name="point_y2" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Point Y2" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="92b16d97-f3c5-473b-a7c6-838d34ab4689" CodeName="Url" PropertyClassGuid="c0eec912-aa39-4df2-bb43-a8d15c493d03">
+          <DataValues>
+            <ShortString Guid="644da24d-dd96-49c5-9697-2523ac2f7a96" Key="Value" Name="url" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Url" />
+          </Globalization>
+        </Property>
+        <Property Guid="640ec0c9-2bc8-4768-9a7a-fac2ab34845a" CodeName="Tooltip" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="36de398a-ebc8-4c4d-8521-0a152a87d4b9" Key="Value" Name="tooltip" />
+          </DataValues>
+          <Globalization>
+            <Lang LCID="1033" Name="Tooltip" />
+          </Globalization>
+          <Settings>
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <ClassType>InnerContentClass</ClassType>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAALQSURBVBgZBcFfaJVlHADg532/bzvNo9MtY1oXRlRWsCREIlFXoaBmUEIkaH9uCsokEIK6qbtg4UVBIN0kFETQnVQ3FmXOxMwg1BApA9GdTdFJbLqzc87763lSRNjy/i+vDgw2dudkLe5AAgmRiKJbyj83r8eP6b+Zd44d3LEAkCLC9g+PH/ty39qHc07LgkoAEAHh2mzHV7/fNHWpfeuvs+eHJw7uaEMNuUqr++tq2bmrqpwSiSj0ouh2w+1Oz5MPLPH4g7WT5dqiKA/NjL313dDRT59pZ0gpLY6Iqr/K+jJ1ospUiZTIEoqVg/12rFvp3vsbA/Vg8xBkCBJk5EROSU5JTklOSa6S1o3bVi3ueGQ4ee2JO1V91QtQA0RQVyRJpKT0gpzUFf2R/X09LJSuUhZsvK8h1bkLNUQQqFMWQiDlJCEKUWX6ySUppRIyKYMaAgUpkSSBQBT6KkDKUi+JHAoigBpKlwgKEiIC5IyS1FUQiSAkvUKvADWUEiKCYL5927k/jpu8eMby4SFTV69b9/ROA0uGHDt8yMhdQ36dmTE0O1iPjb3brKFX6AWdhY4jh7/WiFkv79ltbm7O5cuX/Tbxrap/wM7nnlXXlVarpe/06frI+cEPaijdUCK8980xq69d9NKeXd7+6HOzF064e+UKo6OjWlf+deDAKZOtKevXrze2aaNLly69nqHb7en1qKfOGh5sgqde2W9+oWPXrl02bNhg27Zttm7d6la7440394GlS5c2aui2S+mWEnnpinS5dRL8dGhc9HrGx8c1m00wNzcnlfDJxwdiy+bN6cqVK/M1dOZ7083+avn+7WuaX3x2NE/8fNSLY4+yadT09LQLFy5oNBpWrVplZGREztnEiVO9ycnJqRQR1u39YW+3E88n8VhemF68/Mb3ffeMLEuNRp+EM3OrO920KNYs+rM/KdFuL5RWa3rm1uzMlv8B/jBGW3bkYMYAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>202372f4-8e04-4f51-b7c9-13553a307b85</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="7e0536e3-77bd-4c88-8055-2c63a834ee20" ClassName="ImageGallery" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_imagegallery">
+      <Properties>
+        <Property Guid="124621c4-4618-4101-a659-78eaec3af7e1" CodeName="Pictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e">
+          <Settings>
+            <Boolean Key="HideAddButtons" Value="True" />
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="72ada119-73b9-426b-8048-68ee476e0a7a" />
+              </Classes>
+            </InnerContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="a700ab67-4657-4bd5-914c-feadce96f98f" CodeName="DisplayedOn" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Settings>
+            <RelationReference Key="Relation" Value="49aaf615-d210-46cc-b576-89bad6f2a566" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="370" />
+        <String Key="LegalParents" Value="355" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJvSURBVDjLjdM/TFNRFMfx733vtdBa0QiUqFEHI3FRw4TooDGGuOpCHPy3sOji4OCgicTRERMHSWcGB/wDhmhwMEZDIkj8g0YFqmCtYJFi7Xv3z3GoUjAO3O0m59587j2/o0SE0dHRI8UH1wfM3DTm6wTtmfFWVrfyamRkZLe19onT5TU+lm83Ojnc82pVp4MgaA16e3vH29raztW+7s+k6gEBrfWKQuccIrJin0gkAPhHYMh3d3Lw5gsGn31kcrpIfkETBD6httQEfvVW5XBzr7uWBPGx/szatIADpRSTX4ocb99OMpn6L38x1NzsU5eDjo6Ondbabtd4Al8Zfjx8hFKKwqIjmUwxPrPA46kLrKubpRRpsvl69m26yt6dm1H4LAmCF/cydQ2CiKCUItIWAxjnSKXyJGIbcIS4+BRfCyWcOCJjWCY4ia8MhQcVQTzmIwLFUkShXMbKTxZ1yPdSmQIhSKWmKnh+N7O2UUBk6cdFoFh2TM3swNW8ZFGXmC9so7mpptrKquAUPobC4BAAobY4B/O/LHuaLtIydZ5X77LMH7iG0QYBIu2qAm/4TqYuLThLRSCCQhj7fBatNcNRRLQxRvSyA601x/cPI7JCcBoPw9zAEEop1qdiiI24cqyPPw9iWZbQWlMb85YJnt7OpNIObKWgecs6bg194MtsiSAeEEWWeNwHqQbJzL7tqiYxKq/xMExeOsPRwfc457DWYowhDENyuRwNDQ2k0+lqGJWqzIIxZlfLm/sfkxsSiMDExATGGIwxS3PgeR65XI5sNovneURRVLnkb8vONNcf2JqKH5r+qT/1vJsbW+04/wbW84QVgHdG+gAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="72ada119-73b9-426b-8048-68ee476e0a7a" ClassName="GalleryImage" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_galleryimage">
+      <Properties>
+        <Property Guid="a7ab4caa-2eea-4560-bfa7-41e10206b360" CodeName="Caption" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="3161f143-9f37-4a5c-8b9c-caf3f1b2de87" Key="Value" Name="caption" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="370" />
+      </Settings>
+      <ClassType>InnerContentClass</ClassType>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGWSURBVBgZpcE/a1NhGMbh3/OeN56cKq2Dp6AoCOKmk4uCn8DNycEOIojilr2TaBfRzVnESQR3Bz+FFDoWA2IjtkRqmpyc97k9qYl/IQV7XSaJw4g0VlZfP0m13dwepPbuiH85fyhyWCx4/ubxjU6kkdxWHt69VC6XpZlFBAhwJgwJJHAmRKorbj94ewvoRBrbuykvT5R2/+lLTp05Tp45STmEJYJBMAjByILxYeM9jzr3GCczGpHGYAQhRM6fO8uFy1fJQoaUwCKYEcwwC4QQaGUBd36KTDmQ523axTGQmEcIEBORKQfG1ZDxcA/MkBxXwj1ggCQyS9TVAMmZiUxJ8Ln/kS+9PmOvcSW+jrao0mmMH5bzHfa+9UGBmciUBJ+2Fmh1h+yTQCXSkJkdCrpd8btIwwEJQnaEkOXMk7XaiF8CUxL/JdKQOwb0Ntc5SG9zHXQNd/ZFGsaEeLa2ChjzXQcqZiKNxSL0vR4unVwwMENMCATib0ZdV+QtE41I42geXt1Ze3dlMNZFdw6Ut6CIvKBhkjiM79Pyq1YUmtkKAAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>084af1c0-0efc-409e-83c2-ecef1cadb8a7</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="4d5db0ef-81d6-49c6-8ba5-0fb4ca462fd5" ClassName="NewsList" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_newslist">
+      <InheritedPropertyChanges>
+        <InheritedPropertyChange Guid="b802729f-0feb-485a-b04e-3959cdf9d2d6" ChangeGuid="cc90eccd-1d77-40c8-aab7-5262842a66e2">
+          <Settings>
+            <Enumeration Key="PositionOfNewRelatives" Value="AddNewFirst" />
+            <Dimension Key="Height" Value="100%" />
+          </Settings>
+        </InheritedPropertyChange>
+      </InheritedPropertyChanges>
+      <Settings>
+        <Int Key="CreateAccessGroupId" Value="369" />
+        <Boolean Key="CreateAsPreliminaryFromWizard" Value="True" />
+        <Int Key="MaximumInstances" Value="1" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIkSURBVDjLjZPLaxpRGMWzsHQTpLvusgiF7rvuqn9L/4Muu/UxvlAUFa0SUWsU32+jg0iLi1KIohhREWnxTdU4aG2E5vS7AxHSWJvFwJ3H79xzzv3mCMDRoSudTksTiUQ+Fotx4XBY8vf7x8CFaDS6CoVCQiAQ4Hw+n+RRAqlUShqPxxm8Ho/HWK1WIPjG4/FwLpfr6UGBOzgSiayHwyFoDYoAQRBwdnb22+FwJG0225O9AslkUkof83cwA8/Pz0FxsFgsRCcECxaLhTOZTJK9MJW1HgwGIPvMNsgRLjsD6NMNxL5+g9lsvjUajSW9Xv9sB1NZUgJ4KkuEyQG8Xi9IFLPZDOaLJt5++IJ3nkt87w9BsKDVal/vhckBqCwx+3Q6RalUwo/ZHO8DFQQ+NZHgP0Oj0Ww5jnsjCtBufDAY3E4mE5AI3G63mJ3BJI5isYher4dGq4uPcZ7BNwS/2pVIcN7v99/2+310Oh3k83kRZg4ymQy63S4ajQayuQuo1eqNUqk8vXeM1LJQq9VwfX2NdruNVqslOmDNX11doVqtIpvNQqVS/ST45MEgUVmjcrksfjSfz9FsNkURtmulUhFdMFihUJzsHWWarOdOp3NbKBTEo2OtL5dL1Ot18DwPyvtLLpef7hu63cJutx9brdYp240dIcudy+UYvCH45b9G/t4NTdaxwWAYsfysQMq7kclkLw79cA8e6HS6Y2p6RLDwP5hdfwD40PFHzWBC4QAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>98cdc721-1b86-4a02-846d-4d95b8133ba8</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="d82633c9-b617-4a40-a7f6-41c461aa3656" ClassName="NewsArticle" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_newsarticle">
+      <Properties>
+        <Property Guid="f5938017-8f4e-4082-a10d-afd56e6747c0" CodeName="RelatedGallery" PropertyClassGuid="3dd79707-cfc0-47a9-8064-f108e2a16193">
+          <Settings>
+            <RelationReference Key="Relation" Value="49aaf615-d210-46cc-b576-89bad6f2a566" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Boolean Key="UseRevisions" Value="True" />
+        <Boolean Key="CreateAsPreliminaryFromWizard" Value="True" />
+        <String Key="SchemaOrgMapping" Value="http://schema.org/NewsArticle" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIRSURBVDjLjZPJa1NRFIera/8ECy7dV7txkb2UOoDgzo0R3YuLrFwWIVglWQRtN0GCLkIixJDJQJKGQOYBA4akmec5eSFT/XnPsXlNsWIffOTdd3O+e+6PezcAbBDiuS7YEmz/hxuCq3LdmmBrOp32F4vFyXK5xEWIeWg0mnfrknXBNhWPx2NIkiQzGAzQ6/XQaDRYUqvVoNVqZQkXGwyGm2q1+k00GkUkEkE4HEYwGGQCgQDS6TSKxSILJpMJaBGdTvdHYjKZHvp8vuNsNot6vc7QavRLq1UqFcTjcbhcLrmLFZyJ2+0u9Pt9hC1f8OHpDt4/uoO3928zmscKHD5/gKPPB8jn8yxpNpuoVqtnAqPRiOFwiPGgB/fhPr7uvcJH5S4Ont3Dp5dP8G3/NX4cfedCi8XCeXQ6nTOBzWaT5vM5J0yTFFy325WhtmkbhN1ux2g04gVlgcfj+UmDUqkEh8OBcrnM7xRaLpdDIpHgcSqVYihEYr0DL61O6fv9fhQKBd4vhUrpk6DdbsNsNrN8Nptxt7JApVK9EMW9TCbDEgqI2qUOSELvJPF6vbw9Kj4nEM81pVJ5V6/XH8diMQ6IaLVaLAmFQnA6nfyNslohC05P4RWFQrFLHVitVoYSF2cEyWSSgxOn9Bx/CWggPv761z24gBNZcCq5JQKSaOIyxeK/I769a4JNklziOq+gq7/5Gx172kZga+XWAAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>98cdc721-1b86-4a02-846d-4d95b8133ba8</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="35cab70a-9b1c-4b55-b2e1-6395fe17621f" ClassName="ItemReview" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_itemreview">
+      <Properties>
+        <Property Guid="46beebd7-a172-4680-8f6f-a6454ad4ba77" CodeName="ReviewBody" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="c863e375-dca4-4d61-bc2d-2585619ade89" Key="Value" Name="reviewbody" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/reviewBody" />
+          </Settings>
+        </Property>
+        <Property Guid="ee12031c-5a89-4207-a007-05f693cdb291" CodeName="RatingValue" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="bce22d3c-9fae-471d-85b0-4d31b733fc5a" Key="Value" Name="ratingvalue" />
+          </DataValues>
+          <Settings>
+            <Int Key="MinValue" Value="1" />
+            <Int Key="MaxValue" Value="5" />
+            <String Key="SchemaOrgMapping" Value="http://schema.org/ratingValue" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="reviewRating" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Rating" />
+          </Settings>
+        </Property>
+        <Property Guid="ab2e5766-879f-46d1-a778-11627395fe9b" CodeName="ReviewedByUser" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="60c69ecc-c068-4ce4-8f14-ad3e88899653" Key="Value" Name="myproperty" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="682b23ea-2712-4c4f-82df-04b4e3f54027" />
+              </Classes>
+            </ContentClassReferences>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/author" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="author" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Person" />
+          </Settings>
+        </Property>
+        <Property Guid="92e51bb0-5415-498d-bc26-23c2d4ce3593" CodeName="DateAdded" PropertyClassGuid="af7f07f2-d2c0-41a4-902c-ee3e2f110ef7">
+          <DataValues>
+            <DateTime Guid="33319a4e-9791-47e3-a1c3-f3b61e4a183b" Key="Value" Name="dateadded" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/datePublished" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Review" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJnSURBVDjLpZPNS9RhEMc/z29t1d1tfSmhCAwjioqoKNYuYkRRFB300MWT3eooeMn6C4TunYoiOgSKkGAUhh0SjJCwsBdtfQMN17Ta2v39nueZ6WBtktGh5jLDMPPhC/Mdo6r8T5T93nCPTUqVDhVOi5BRBRVGRBhQ4drGc5pfO2/WKnCPTbMKN0x9Z4OpzqDxWlCPFnL45VHCd91ZEdprWnRoHcANmhatbu4JtrShiSr8t9dIuIS6IpgKgoqdGBsQztwj/DDUWndee0sAO2hqVZmO7b+bkuAzvpgF+wVxIeqLqxBRTHk9sfL9fBq+kBdh+9Y2/RgAqNARbO9KaRwkzIL7ymBfDiQCH/HkIYjN4z6P4cNJEnu6UuLpAAgARDhrahqRYhZ1BVQsx85UomJRb2lqzqMSojaPW3lOWfUuxHN2LWAv5WnErZSWVCzqItRHP2qL+ggJc0CI9zSUACoU1BXBOx71PmXq7dzqorc/csj05BKDD+ZQsaCKCLFfCjxZbAGIc7R5N+9ezTI7uYD6EBXLTHaZiTfLZBrTmCCB+DJsyETJSCL029zowaC6nkRynqNNDYw9m2L8xSx4S7LSkMlUkUzEKEsfoJCbxkb0l8643GPqRHifarydEvsGnx9HohXUhYj7eUaIJXdi0qeYvn8x7yw7Dl3WxQCgplUXRWj/NnELdBuxdCMmVouKgihBfDMb6k6gieMsvezDRrQfuqyL66w8f8ecFM/15N7OhvimfQQbAhCHCz1f59+yMNyddZZLh6/owB9/AWD2pkmJp1OE096TcRE4y4izDDhL95Grf3mmf4nvrQOLvcb/mlMAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="a9d3c43e-f56d-422e-b005-2f1a4303a7a4" ClassName="RegisteredUser" Namespace="TripsToNorwayDemo" ReplaceClassGuid="682b23ea-2712-4c4f-82df-04b4e3f54027" TableName="tripstonorwaydemo_registereduser">
+      <Settings>
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Person" />
+      </Settings>
+      <InheritGuid>682b23ea-2712-4c4f-82df-04b4e3f54027</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="b7801407-f6ac-4421-9028-2981b8139d02" ClassName="Recipe" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_recipe">
+      <Properties>
+        <Property Guid="5868ab15-e732-4102-99d4-bc3e2d86a88f" CodeName="CookingTime" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="378105fa-753c-4d46-b18d-1c6028a42a4d" Key="Value" Name="cookingtime" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/totalTime" />
+          </Settings>
+        </Property>
+        <Property Guid="a98fab78-34a2-4af2-a186-0c33864e4662" CodeName="CookingMethod" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="c0e467eb-ff51-4c31-8447-ca1f53efdd7f" Key="Value" Name="cookingmethod" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/cookingMethod" />
+          </Settings>
+        </Property>
+        <Property Guid="5e68a1c2-868e-479b-af05-1013aeb32762" CodeName="ShortDescription" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="a501252b-70cd-479b-b1f9-fe3434fd6c7c" Key="Value" Name="shortdescription" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+          </Settings>
+        </Property>
+        <Property Guid="20091c3a-34a1-4a6a-a9b5-b1c549d841d9" CodeName="PrepTime" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="d175b561-dff3-4bcd-84e5-4527d90ec561" Key="Value" Name="preptime" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/prepTime" />
+          </Settings>
+        </Property>
+        <Property Guid="eba120df-6d7d-4d5d-ac3d-69a7253f6ea9" CodeName="Picture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="e8a0fcf8-80de-424b-83f2-2fae5600baac" Key="Filename" Name="toppicture_name" />
+            <ShortString Guid="4c149da7-9aee-4e06-91b6-b8128ee45846" Key="Type" Name="toppicture_type" />
+            <ShortString Guid="94914600-4cb9-4788-b0b4-40f983761d42" Key="Extension" Name="toppicture_extension" />
+            <Float Guid="61c8f972-f963-475b-9d60-67164e7cedb7" Key="Bytes" Name="toppicture_bytes" />
+            <LongString Guid="bdc50c97-3cbb-4835-8108-4538a058df6b" Key="Info" Name="toppicture_info" />
+            <Integer Guid="13cf94a6-2442-438a-a0cc-891839d1f4c5" Key="Reference" Name="toppicture_reference" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
+          </Settings>
+        </Property>
+        <Property Guid="17bd7cfc-c133-4496-ae5c-40432d6ab39b" CodeName="Reviews" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Settings>
+            <RelationReference Key="Relation" Value="cb8e946b-22ea-4fea-888d-e219f28dbe9e" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="7e56a843-0062-4769-9082-c004e24766f0" CodeName="RecipeIngredients" PropertyClassGuid="d13fc7be-804b-4ebf-a69a-9823c8dd71da">
+          <Settings>
+            <InnerContentClassReferences Key="InnerContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="c1d15d5e-e60c-4e70-a6d8-fb6f370e2c73" />
+              </Classes>
+            </InnerContentClassReferences>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/ingredients" />
+          </Settings>
+        </Property>
+        <Property Guid="31f86ec5-f09b-4376-bd0a-340e8ddc3a5f" CodeName="Instructions" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="b90ae58b-5779-46c7-b9a1-5bdc22d2622e" Key="Value" Name="instructions" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/recipeInstructions" />
+          </Settings>
+        </Property>
+        <Property Guid="742b5d7d-5aaa-4d4e-897b-e65d8d645fa3" CodeName="ContentFat" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="ed09e240-fdbd-4072-91f5-9394054ef000" Key="Value" Name="contentfat" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/fatContent" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
+          </Settings>
+        </Property>
+        <Property Guid="22ea0db9-bca6-48b5-bb75-308e2c20b1df" CodeName="ContentCalories" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="f09c5bb1-072e-4e30-9821-03e453236dc1" Key="Value" Name="contentcalories" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/calories" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
+          </Settings>
+        </Property>
+        <Property Guid="3928bb21-def6-4054-8884-0456fae70e42" CodeName="ContentFiber" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="2b458a46-8828-4ec3-9931-0fa144c2898b" Key="Value" Name="contentfiber" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/fiberContent" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
+          </Settings>
+        </Property>
+        <Property Guid="53883b60-c85f-4a4e-b954-decd582655a3" CodeName="ContentProtein" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="5dcc29c5-4267-41d3-bdf5-ff38d6870251" Key="Value" Name="contentprotein" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/proteinContent" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
+          </Settings>
+        </Property>
+        <Property Guid="4cc7d7cb-8e4c-4f96-b8d9-e030390bdc89" CodeName="ContentCarbs" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="f08334b2-d218-4306-b4a3-d1a9733575ed" Key="Value" Name="contentcarbs" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/carbohydrateContent" />
+            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
+            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
+          </Settings>
+        </Property>
+        <Property Guid="98209a1b-faed-4f0e-901c-6700d7d39bc3" CodeName="RecipeYield" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="7580628b-0220-4045-abb4-bd95800ab5d5" Key="Value" Name="recipeyield" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/recipeYield" />
+          </Settings>
+        </Property>
+        <Property Guid="61506720-e488-4420-ac22-6662fd2ca0a7" CodeName="RecipeCategory" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="4128c460-b72b-42bb-a00d-16ad8d042de0" Key="Value" Name="recipecategory" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/recipeCategory" />
+          </Settings>
+        </Property>
+        <Property Guid="a95da0f0-c56f-4ec3-80ed-1c845e00758f" CodeName="History" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="b0658dc1-4916-4c49-b489-ee8e179d358b" Key="Value" Name="history" />
+          </DataValues>
+        </Property>
+        <Property Guid="3dfb87c5-c525-47d9-b6e6-4990a0f421c4" CodeName="RelatedRegions" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Settings>
+            <RelationReference Key="Relation" Value="6c63e5cb-70eb-4c92-8f24-0bfe46e29158" />
+            <Boolean Key="CultureIndependent" Value="True" />
+          </Settings>
+        </Property>
+        <Property Guid="137e5551-15ab-4277-b223-53f129a22ea7" CodeName="ImageCopyright" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="895245b8-3760-4530-a033-d45de5867007" Key="Value" Name="imagecopyright" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <Settings>
+        <String Key="SchemaOrgMapping" Value="http://schema.org/Recipe" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQUFBQUGBQUGBgcHBwYIBwgICAkJCQgKCQ0NDQ4ODhAQEBERERASERUVFRgYGB0dHSAiITk5OT4+PkJCQlBQUGhoaGtra21tbXV1dXV2dXd3d31+foaGhouLi4uNjIyMjJCQkJGRkZSUlJWVlZaWlpycnJ+fn6CgoKKioqOjo6Wmpqurq7CwsLGxsbS1tba2tri4uLm5ubu7u729vb/AwMLEw8XFxcbGxsjIyMrKys3NzdHR0dLS0tPT09PU1NXV1dfX19jY2N3d3d7e3uLi4uPj4+Tk5Orq6u/v7+/x8PDw8PLy8vT09PX19fb29vv7+/v9/Pz8/P39/f7+/v7//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAId3/fcAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41Ljg3O4BdAAAAtklEQVQoU03PhRLDIAwA0A7aubu7dJ1b5+6+Qv7/W0bHeht3cLlHIIkAAERfQPUDQGD7qNYnG6rJsQXloEb9SYVWJdF75tCJ+5MlEsQianKoRXyJPAkgUVToB6oSsqRJWMDmGYeV2+QcwNaDQxp/ovWR/AKSsR2/VeCAR8wrrse3D9ijIQvLP9jhHoOi425krHEXgBb+ALXZXdZ+MzLmqMHClPViwFJqsZlz9pMBZPxkf1yn+vhvCyw+tlL0x4EAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="c1d15d5e-e60c-4e70-a6d8-fb6f370e2c73" ClassName="ParagraphShortText" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_paragraphshorttext">
+      <Properties>
+        <Property Guid="33cfebf3-3a1b-4ebd-bbbd-57ca18246147" CodeName="ShortText" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="8bffe532-abc4-43b5-b3ac-b1980cfd318f" Key="Value" Name="shorttext" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <ClassType>InnerContentClass</ClassType>
+      <InheritGuid>202372f4-8e04-4f51-b7c9-13553a307b85</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="ce6ee110-eac5-49e9-a637-50ea86e01e8e" ClassName="VacantPosition" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_vacantposition">
+      <Properties>
+        <Property Guid="859db19e-aac0-4115-804d-03315ae3fb08" CodeName="Salary" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="eec506a1-911d-4025-a1a5-6ea48e6d3937" Key="Value" Name="salary" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/baseSalary" />
+          </Settings>
+        </Property>
+        <Property Guid="01c2f068-7da5-4c22-a8bc-ea5114570691" CodeName="SalaryCurrency" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="1806be87-3bd8-4cc7-916c-a748e7af39d1" Key="Value" Name="salarycurrency" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/salaryCurrency" />
+          </Settings>
+        </Property>
+        <Property Guid="0904ede9-5fa2-4cf9-b18f-1a9df65ca41a" CodeName="Responsibilities" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="27fab971-586d-4c61-ae94-45f126617361" Key="Value" Name="responsibilities" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/responsibilities" />
+          </Settings>
+        </Property>
+        <Property Guid="7a27533e-895a-4eef-88b6-2309d0685625" CodeName="EmploymentType" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="00d4b547-8438-4665-a07f-99167898992e" Key="Value" Name="employmenttype" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/employmentType" />
+          </Settings>
+        </Property>
+        <Property Guid="4c294867-fb94-4f32-9c4d-36d716d9ffd9" CodeName="WorkHours" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="23db5e2e-7b8e-4a95-bb24-109c0db91036" Key="Value" Name="workhours" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/workHours" />
+          </Settings>
+        </Property>
+        <Property Guid="e6242ba5-8f56-467f-98d2-05223d96d99e" CodeName="Industry" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="3afab358-044e-4c44-a81d-1a7dd64dee1f" Key="Value" Name="industry" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/industry" />
+          </Settings>
+        </Property>
+        <Property Guid="ce07abde-e367-49cd-b9a7-1aede976adb9" CodeName="Description" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="3bc7fa16-e227-419d-af8f-1c251f77c27e" Key="Value" Name="description" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
+          </Settings>
+        </Property>
+        <Property Guid="302f8ec1-7228-4091-b8d1-23e386486456" CodeName="Skills" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="ffa07e89-50c3-4933-ad4a-a1d1ea2286bb" Key="Value" Name="skills" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/skills" />
+          </Settings>
+        </Property>
+        <Property Guid="6a4cd1a0-2fb5-4c98-8b47-c641a389cb0e" CodeName="Qualifications" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="6eeb1488-6ba2-4c04-be91-3f7958c69faf" Key="Value" Name="qualifications" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/qualifications" />
+          </Settings>
+        </Property>
+        <Property Guid="9a19f30c-c055-45c4-b913-31158a176bfa" CodeName="Benefits" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="bea3ebe1-c264-4981-a0f7-73a2ceb7f405" Key="Value" Name="benefits" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/benefits" />
+          </Settings>
+        </Property>
+        <Property Guid="162d585f-dadf-4825-9c43-3d26c9e27138" CodeName="DatePosted" PropertyClassGuid="af7f07f2-d2c0-41a4-902c-ee3e2f110ef7">
+          <DataValues>
+            <DateTime Guid="8a55dd8d-4fcf-4dfd-a14d-b040e8259776" Key="Value" Name="dateposted" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/datePosted" />
+          </Settings>
+        </Property>
+        <Property Guid="92744ad4-7e77-46a0-bca4-bfa931d83019" CodeName="HiringOrganization" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="55829837-cb42-4c29-a0d1-ca6850ddd604" Key="Value" Name="hiringorganization" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/hiringOrganization" />
+          </Settings>
+        </Property>
+        <Property Guid="1e8c1223-2d8c-4bda-99ec-0d6f205b87a5" CodeName="JobLocation" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="24aac8f9-fc45-4fea-aacd-76278c6fe8de" Key="Value" Name="joblocation" />
+          </DataValues>
+        </Property>
+        <Property Guid="e1b1c5a9-3ef2-4de4-aa31-f732279dee4e" CodeName="OccupationalCategory" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="0d04814f-937c-4722-aa52-d6a1c9bf82ea" Key="Value" Name="occupationalcategory" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/occupationalCategory" />
+          </Settings>
+        </Property>
+        <Property Guid="63455570-9d11-4083-abac-2708704872c6" CodeName="AdditionalInfo" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="c56d9f03-3b3b-4fa3-b06f-53e7c9568a53" Key="Value" Name="additionalinfo" />
+          </DataValues>
+        </Property>
+        <Property Guid="76f32b1a-29c8-409b-839e-3fa6b40c94cd" CodeName="EducationRequirements" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="550c9a30-e6d7-4a78-9cc2-bac2e80521ce" Key="Value" Name="educationrequirements" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/educationRequirements" />
+          </Settings>
+        </Property>
+        <Property Guid="ffa5564b-d1ea-48fe-9155-8ef2a7b2899f" CodeName="ExperienceRequirements" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="d84d8f6d-8ebd-4901-80ae-5c50613e0024" Key="Value" Name="experiencerequirements" />
+          </DataValues>
+          <Settings>
+            <String Key="SchemaOrgMapping" Value="http://schema.org/experienceRequirements" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <String Key="SchemaOrgMapping" Value="http://schema.org/JobPosting" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJlSURBVDjLpZNrSJNRGMdlr7qat+zKaoYhjqYphRCWCtKFoCj60CeRpDB0djHUSMOZm0JhGEmlNhczXXunDgy7TNcVcsjGpk6dNsiJyyjWNg3ZnJfef69vMBBkFn34wXMu/995DocTBCDof1h1cvBJnM5RTsBVyYLzBgvfigjopbGDfyUwK+Nfu2RsTNcTDO5aAk4RC1/KQ2BqjetbU+AiOZip/xNyLndQSeCHmMBUIQFzTjDWFDiu0O0qzmJKU4OvPSmYuETAXhKM8WshsOYR0NZlRAUUtOXt+Dk99hYufSu+6x7D8fEAnLozmLEq0V3M8ww1F4QGFEhz+Aa3QQmHsQPeQZJGxdRuEwnp+SRjwCs0FpwIf3guwfayKBE+owxzI50M3oGn0JbuQW323vE7uac2rSpoFB6Pll/M0FjEofDZe2Go2ocu0VGG5dpjUWOEXpPlp72X5h/irhBIcrNYNunp5s+31gFTWmCsAfiQDWiOgXq2H1Q7H1TPSVCfmjBaHY4HFzJfNOQd5vgFZGHmo5n7bEBfQlPMBNGVCqgTQZGxWGjhwivbCKorHb/UybDf5UFekE76Bf3lu5ccz0uxpIgBOvgMlGoXPeZhvnkbHY7GbEMYnHVseKQb4OquQF+JYMEvMIsElFsroTfQL/TqCBYVOzHfsh0++RZ4mqIxJ98Kj2wzc7qtJhLTb6pguJ5A+QXDLZfLTGXxi45762G7TUs6BKtirWZjWByG/opkH52pWvEKEyphRK8oLan9aurkgCSGslRHYVTCwQjNkDgSpptcqrMwafZd2cGUyTZhRMDf+C/8Blefvm4GxFC9AAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="b3d34856-0f44-4e9b-a444-39a2fab3e3da" ClassName="BookProduct" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_bookproduct">
+      <Properties>
+        <Property Guid="0691f986-58a0-43ae-be65-1c49cc0e45d8" CodeName="NumberOfPages" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
+          <DataValues>
+            <Integer Guid="dbe639ce-c28e-4c71-9508-9d1f6bc71d89" Key="Value" Name="numberofpages" />
+          </DataValues>
+        </Property>
+        <Property Guid="204e6c4d-8c9b-42fb-8635-f1d41a557eb7" CodeName="WrittenBy" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="8f25c407-04ec-49d3-8bb6-93f55227705f" Key="Value" Name="author" />
+          </DataValues>
+        </Property>
+        <Property Guid="f6e031f1-3dd6-458e-bc88-41f299a8cb49" CodeName="Language" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="8f479e8e-f27b-4758-8130-a94f4fcca814" Key="Value" Name="language" />
+          </DataValues>
+        </Property>
+        <Property Guid="ce5d692e-ed2a-4260-b317-f92fd62d35cc" CodeName="Publisher" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="b0798cb8-0e2e-42b4-bc45-fa489ec23fc0" Key="Value" Name="publisher" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHjSURBVDjLdZO/alVBEMZ/5+TemxAbFUUskqAoSOJNp4KC4AsoPoGFIHY+gA+jiJXaKIiChbETtBYLUbSMRf6Aydndmfks9kRjvHdhGVh2fvN9uzONJK7fe7Ai6algA3FZCAmQqEF/dnihpK1v7x7dPw0woF64Izg3Xl5s1n9uIe0lQYUFCtjc+sVuEqHBKfpVAXB1vLzQXFtdYPHkGFUCoahVo1Y/fnie+bkBV27c5R8A0pHxyhKvPn5hY2MHRQAQeyokFGJze4cuZfav3gLNYDTg7Pklzpw4ijtIQYRwFx6BhdjtCk+erU0CCPfg+/o2o3ZI13WUlLGo58YMg+GIY4dmCWkCAAgPzAspJW5ePFPlV3VI4uHbz5S5IQfy/yooHngxzFser30iFcNcuAVGw3A0Ilt91IkAsyCXQg5QO0szHEIrogkiguwN2acCoJhjnZGKYx4Ujz5WOA2YD1BMU+BBSYVUvNpxkXuIuWgbsOxTHrG3UHIFWIhsgXtQQpTizNBS5jXZQkhkcywZqQQlAjdRwiml7wU5xWLaL1AvZa8WIjALzIRZ7YVWDW5CiIj48Z8F2pYLl1ZR0+AuzEX0UX035mxIkLq0dhDw5vXL97fr5O3rfwQHJhPx4uuH57f2AL8BfPrVlrs6xwsAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>2145bcbc-2886-42d4-9ec2-7134e82b8f84</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="2b34cc81-0b0e-4e8a-8e5a-fbea6e3c0389" ClassName="DemoShop" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_demoshop">
+      <Properties>
+        <Property Guid="8745fbbd-51fb-4983-a34f-0b8c78ff2369" CodeName="Ingress" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="92d09b0a-ade2-4b57-a9d3-e488aaeeb79e" Key="Value" Name="ingress" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIvSURBVDjLpZNPiBJRHMffG6aZHcd1RNaYSspxSbFkWTpIh+iwVEpsFC1EYO2hQ9BlDx067L1b0KVDRQUa3jzWEughiDDDZRXbDtauU5QV205R6jo6at+3lNShKdgHH77zm9/f994MHQwGZCuLI1tctgVKpZJQLBYluxj6ty3M3V+alfvNG1Efzy03XGT9e3vu+rkD9/5rAiTPiGI/2RvZNrrSkmWL52ReGNw9f+3hzD8LIHmC9M2M4pHI2upbEqD18tdPnwmzOWJlpi/fmrAtcMrfnld5k+gvdeKTrcXT07FJxVovMHuMtsiUv3/xjzOoVCo3Lcs6DEi32xVAIBKJ0MzCY3My6BN1XSeqqpKnperGiamDUi6Xa3U6nTemaRLoGodEy+v1hlEsjBdXBEGg+Xz+2fgORazVamclSSLVavXMnjGHlM1m78iy7Gi321dDoVAYRQK0UCiMU0pfN5vNXShggH2gDud21gloeNahO6EfoSr4Iopi3TCMBS4aja40Go1vmOA9Ao7DsYgORx0ORxkadzqdS9AYdBn+uKIoTI9omsa28GTzO3iEBeMCHGyCIPQDdDd0lU0AaswG7L0X52QAHbs/uXkL6HD7twnKrIPL5Sqyjm63m00U93g8JdjHoC9QJIYCdfB8+CWmUqkuHKMI8rPThQahr8BeUEWwBt4BFZ33g0vJZPIQ/+s+kcCDDQSTn1c0BElD2HXj0Emv13tg+y/YrUQiITBNp9OdH302kDq15BFkAAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>fe04dae1-4257-4954-a8ba-d18ac9710134</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="fa99ed15-2d17-47ce-8289-bb0372694fb1" ClassName="ControlPanel" Namespace="TripsToNorwayDemo" TableName="control_panel">
+      <Properties>
+        <Property Guid="ca389206-f116-4a78-84d1-a862d7e6faff" CodeName="LoginPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="ac86abe2-3262-41cd-8dbb-d103193b78d9" Key="Value" Name="login_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="741bd31c-42fd-4b95-8650-deb60daedac0" CodeName="SearchPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="eaf805e1-eafd-4c03-9bbb-ad35ae521313" Key="Value" Name="search_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="59fe8b64-54e8-43ee-a289-b4502e99d25a" CodeName="VacantPositionsFolder" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="57665247-3625-4eec-bf8a-f1150297c5d4" Key="Value" Name="vacant_positions_folder" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="8157318e-4f6e-4024-8360-971d1274b73c" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="7f4f6267-8d1c-4a05-a97a-5feed30db1c8" CodeName="GlobalMenuFolder" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="334529af-f339-4e25-859b-5cb39d9b8de3" Key="Value" Name="global_menu_folder" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="8157318e-4f6e-4024-8360-971d1274b73c" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="dc688c25-9640-4c73-a15d-8c05130c2136" CodeName="FooterMenuFolder" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="140184a6-3198-48a7-ba62-277f1c40fc51" Key="Value" Name="footer_menu_folder" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="8157318e-4f6e-4024-8360-971d1274b73c" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="689d8b21-f81b-469e-93df-cd2b6bb5ab04" CodeName="LodgingsPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="906a07ad-dd6d-46fa-ab2c-3e60d2746895" Key="Value" Name="lodgings_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="f1ed6912-4708-4a7f-9028-5f14587abf05" CodeName="RegionsPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="01fa6f05-d237-4106-bb06-c6fc6ba1f819" Key="Value" Name="regions_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="e04ca38a-1f8f-4a5e-9e5e-58b8c9972712" CodeName="AttractionsPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="87e5b6c0-1047-4b1c-9c1f-736edc2ac336" Key="Value" Name="attractions_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="26771be1-0f2d-404b-9e96-d7c95cce7140" CodeName="ActivitiesPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="a0f229b9-5b90-4e93-902e-bab0f73f0652" Key="Value" Name="activities_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="59b258b0-9758-4c25-9fef-d8c1c84c39b8" CodeName="RecipesPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="77078a7f-4dc0-4d7a-b698-e6697bb638e8" Key="Value" Name="recipes_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="f374d0ff-250f-4e28-95fd-c42e39fdca12" CodeName="NewsPage" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="fd13d3d8-8ecc-4c97-8d66-d74b50fcc811" Key="Value" Name="news_page" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="4d5db0ef-81d6-49c6-8ba5-0fb4ca462fd5" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+        <Property Guid="7ae17d4a-b70d-468d-b938-dc0eb3943f0a" CodeName="SiteColor" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="55314461-0b32-4230-98e2-3fb3d5ff0b92" Key="Value" Name="site_color" />
+          </DataValues>
+        </Property>
+        <Property Guid="cde977d1-7cdf-4283-82bb-56db2cd6e0c5" CodeName="Country" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
+          <DataValues>
+            <Integer Guid="07659598-4795-4304-92e8-6e55f1aa2658" Key="Value" Name="country" />
+          </DataValues>
+          <Settings>
+            <ContentClassReferences Key="ContentClasses">
+              <Classes>
+                <ClassReference ClassGuid="6469869a-b2e3-433c-ae29-bcbba3c77b85" />
+              </Classes>
+            </ContentClassReferences>
+          </Settings>
+        </Property>
+      </Properties>
+      <Settings>
+        <Int Key="MinimumInstances" Value="1" />
+        <Int Key="MaximumInstances" Value="2" />
+      </Settings>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJMSURBVChThVNdaFJhGH40g7FolFFsFgX9gLUuRjeBF4V3Bd6Moi66cUVRwYF1tYKSXcQQurCOpTN/IBpGYSTECmFQOrDoZ0GZoxwRahkYVuhmeY6+fZ/Hv6nRA8857/e+z/u853zfOSoiAoeaX364zbSCZ3Q6nQR6bGExoaFxOp1ysVh8BvIeIpoer1arxXrg8Xji/N5oiUajpNVqFXvM3aVwOLxdr9erQDNXiDxHmLDNo0632x3PZDJkt9vZssWTY8l/+s3breYhHsuyDGa7pAimLxJ61wGlIvA1Boz4VdUODrq2/xVFnESTw1XLdnYkfD7fKHsOqb7uECSTSQqFQixU1prapAYkSUI8Ho/k83lKJBJy8y0CZ0V7ZucZg8GgKZVK4IxEIucU6zsnRWK7RYFRslqtxbo9pxp+s4gdRgFf3gEDgxj7c+uhYlkDvZwiCo4RzU4SXdoWaO3mBE2NED29TnRhy4P2oiLokmyl1+vl+7KYTqcpl8uRw+Fg6WZ92Vl1g8vlkkwmkyabzWKWQRCEfTabjSqVChhbtqkL2LQDTPTIaDSqCoUCOHljT08P1Go1/xjmOw3unRLRt0lAWQI7DHwePIFUKoVYLManlmuTE4w3LRbL1aaB/7iItRsF9O8Gfn0DKhKwaj2wEIaUir9Yef75XkW4HCq6fUzEms0CBmqNi98BTS+wegPw4QmQen0f4x8P1/QdUNGNg4Q9R4GfKaAsA339wPwMkJwL4vKn4Zrun1BeYWLoPeTSLsi/2a9SCmIi/d9GBcBfaiHi8jro0KcAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="71f7c095-0830-46b5-ba12-cf3a0405182c" ClassName="ModulesPage" Namespace="TripsToNorwayDemo" TableName="modules_page">
+      <Properties>
+        <Property Guid="966d366d-0544-4450-ad12-a1501c5669a5" CodeName="Modules" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
+          <Settings>
+            <RelationReference Key="Relation" Value="fda6ef4c-9cdf-4337-8f90-65f6f2bee4d0" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD7SURBVChTYyAWpGzf/h9GM4FF8AHG8HVr/4u+52N4LfiJAURjAOwqvv7//999/e3/ss3nwLYh8xlBAiyrmcASTA8YGH6V/mNE5oOd9THkL4Mzy00G8R9nQFwUPkETCAP/KYf+P/v5///hY55gXeh8JjU+boZZp94xJJ3nAfEZ0PmMjG0M/5lVIUH4J/QfBh/MwAto7waII2Jm/7c2VGNQ5PnPsOEBM8O3/xwMXK8uMnyZl0JQngWs30aVwczejuHVVwaGKHUGBln2pwynzvxj2AySJCAPNuDCzyqGJReOMXAwcDL84PsOTA4MDAK/BEFSYEBIniIwGgYMDADCwfKxqzloXgAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="9ee92472-8057-4e1a-aefc-f3fa8af9816c" ClassName="ModuleBase" Namespace="TripsToNorwayDemo" TableName="module_base">
+      <Globalization>
+        <Lang LCID="1044" Name="Module base">
+          <Description>No function on its own</Description>
+        </Lang>
+      </Globalization>
+      <Properties>
+        <Property Guid="42ffeba4-f3aa-468e-a3c0-cccdad0b10cf" CodeName="ModulePages" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Settings>
+            <RelationReference Key="Relation" Value="fda6ef4c-9cdf-4337-8f90-65f6f2bee4d0" />
+          </Settings>
+        </Property>
+      </Properties>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGiSURBVChThZPbbsIwEESdcL+8IaioWqn9BlT4zkrwwCfRfkQr9Y0XIhHuJO6cJYlSaNWRhtjr2bG9a5z33gljfoLz+VzMQpsdj0cXsHQ4HFLRtdvtS0CraZZsgZFYYaLgmyN3t9v5zHEcslKr1VySJAydBUAYZkPMTqdTstlsPFytVpY+m81e0RW7mlrQ2HE+JblerzcpLAFulUrFNZtN1+l0LBYq6HWALZMgCIzsX61WcU3Y4kG8R1DCUnmfDBCM4zhekMn++/3epWnqhsPhM6LinrK0L/b9fh/xh5ICE3AwiICCrtdrwoYft2AbRI1GI4tcCbgmKKoo/BAAXNguBwLua5VkMadqE1Oj3Hak60X0hD78Rq376XRKf55EClwcyWqFiHegp2NfqNv6KIr8crk0k+1261VTP5/PzQgDa7b4IsHCAjoeYMwbglqz5tMAxoPBgLpPJHu/KWMOxjSnXq9bWal/q9Vy3W43U1xwU8VrYJQ3EjNYxp8GeZE4dn41WO4hKM8uJc1QTrimYG2VsQ8y90fN78R/r5SBf6ievP/6BqdnJS99fWblAAAAAElFTkSuQmCC</Icon>
+      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="58abc525-8b69-4971-8951-075a1d5ea112" ClassName="ModuleParagraph" Namespace="TripsToNorwayDemo" TableName="module_paragraph">
+      <Properties>
+        <Property Guid="0cdfd04f-7f8c-4b06-b8fd-5eb0746dbed9" CodeName="ParagraphTitle" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="51ba0ee0-201f-4c90-8fb4-8083aa2ab824" Key="Value" Name="paragraph_title" />
+          </DataValues>
+        </Property>
+        <Property Guid="029334a4-39b0-49e3-9e22-4ed43ff24f73" CodeName="Picture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="34199a19-2437-4ab9-90c2-4d9f4751c71e" Key="Filename" Name="picture_filename" />
+            <ShortString Guid="2f300e76-8088-43bd-86e9-f859787841c4" Key="Type" Name="picture_type_name" />
+            <ShortString Guid="68fcc9b9-e151-48ec-be16-5f1931d29812" Key="Extension" Name="picture_extension" />
+            <Float Guid="e4d074fe-f57d-417f-87fa-738f2148fbd3" Key="Bytes" Name="picture_bytes" />
+            <LongString Guid="4eae5077-81c4-4144-bb90-97bac1838109" Key="Info" Name="picture_info" />
+            <Integer Guid="5711e28f-7587-4db7-966b-e1f9e594d491" Key="Reference" Name="picture_int" />
+          </DataValues>
+        </Property>
+        <Property Guid="a764fde8-b87c-4240-b842-e9013b6e73ab" CodeName="PicturePosition" PropertyClassGuid="7d08c6fb-28f7-4d30-b407-439e018d2402">
+          <DataValues>
+            <Integer Guid="2972dcdd-46e3-4ed8-b1f0-4810a3cb85b6" Key="Value" Name="picture_position" />
+          </DataValues>
+          <Settings>
+            <EnumerationReference Key="Enumeration" Value="a0d90a5b-a054-48ed-8cff-3875f47f724f" />
+          </Settings>
+        </Property>
+        <Property Guid="da8bc25c-0509-4c93-8cf8-fec56dc9404f" CodeName="Content" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
+          <DataValues>
+            <LongString Guid="d9e0ce1b-8ff7-4f59-9f27-ed822c5ecdd9" Key="Value" Name="content" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD2SURBVChTpVHLDYJAEB3swBZswTM3TEw4G4UCsAYb0Bq0AjvQBOnAPjgDJz7JOrMwm/0YMPKSx8zOznuzEzwhBBAW8otwK0CV/flxpUhULQynILWHyzOQJ8T3DgPsjpMSznWy5w7DEqPph3Bm2HBnWvjdQd9NBz8ywZBSboMd1sjbN5f5W8xvmHzDFByD4X+97qftpq8AxHEsmqaBtm2BIjHLMo/ujCeiOEUhXawo76sAZVlKFkWhyJAG2EyCN6ZHOiNoejDUlIFOhlohiiL5zDHyChTzPJcrKIMwDEcNSKSzqirTwPd9Ude1IbCFXdfpNA3+A8AHEbkHtAWWBrUAAAAASUVORK5CYII=</Icon>
+      <InheritGuid>9ee92472-8057-4e1a-aefc-f3fa8af9816c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="5e3c6db8-c1cc-4a62-ab63-e454543443d9" ClassName="ModulePictureSeries" Namespace="TripsToNorwayDemo" TableName="module_picture_series">
+      <Properties>
+        <Property Guid="b5382f80-1be3-4aae-9270-96d19e204e7e" CodeName="ParagraphTitle" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="b2a02baa-40b9-4c6c-9bc9-d1c5c2d160a5" Key="Value" Name="paragraph_title" />
+          </DataValues>
+        </Property>
+        <Property Guid="c6eb90bb-8381-49d5-8217-46cab03b5328" CodeName="Pictures" PropertyClassGuid="db1239e2-c255-499f-9038-1ca8e460901e" />
+      </Properties>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMgSURBVChTbVNbSFRRFF3nOuYMkXckzYxyKoqyEiQKcsqS3kRlQWERImXYUyqiIoqohCB691HRg4IiTCt6oNJPEP1URPWTo0yvycxpZpz7mNEZZ+be0z53TCLasD/2PvusvfY6+7ANhxrP+FWzBu7Nd9UnvgSHu7ZB5ZwDkWiMr9p1j7M5lNlSF5LHXfNhdOFYMHHco8X5zovNCP4yORbXNajuzel7wqUZ01/JOTKXfScv8KAe58zjN3hbtBfe929RNX9WGmN9/QMe+PYR9uwijQkMOee27CosRDQ8Ef6gCwEtqcEEHFmARWz5+SX805cvXHDrIdygHuNr993n3UoftxVkS1f1zzW1ObkF8tGWbnDDRGfbK/TzoTANBoua8EAozNVInIfpdphQlu1uUkSerTvQ5P+uGHbRU1i+Ezcfnqrck44ApukRXt+43wp+eN3oVDI5N6GLWBQzjYg9/naD5gNWuqqhXLphFXdEVJzWp2pS0gBam5yoGFsNJtkwdPtW2Gs3oihvJJWRdMQQIcWBc49f4nnAxGvNRo2HINX+xkLK6EiULNT7UmPiiRhTUzn46lNQOn4YeueuRvMLT7/06MyaMsM09VCnF13t7/DT+0GAYmf9A83pwC1Lg6V1DT6V5lcGdAiENUqn9cG6g02/SGZTj0QsqfVBudOS+6l42e5GS7T/ubUyrWcr5GN39qJo+gSwDAmSTcLzR/k4UjUTI/LywJiN5gWSJhvQm8NIJbDp+DOVRgYSlPVEvAi+K0SiazSUKKD3cmw7/x5mPIEMAiVpYKftqJg0DIv6fRhSXY2kwZhEAoBeBopPQ7dnFK7sq0CuU8fi8uGYPSsbZeW5KJs3HK78Llw/tgJPPRqiba9h0joLJjbZIWlmKia3nHiBysMtIP6YNmUyit3lYpMEQcsyiYVBl0zq9rU3hhI6ot6wtV6sdA3UIBJPqvTy8gdPGD1S90A2bZ2Uq5pPg9gdKL18C6lUP7IyaYH+VlR8z5Dax8U/8vjNf9zgXaEYX7CjcfAHCrdE/GMFTtvVmuPNpX1JXizo/WtZmYC1HIMG/AYPAPtpRCa9GAAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>9ee92472-8057-4e1a-aefc-f3fa8af9816c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="efa52560-d242-4468-9668-aab2ddc3de64" ClassName="ModuleCallToAction" Namespace="TripsToNorwayDemo" TableName="module_call_to_action">
+      <Properties>
+        <Property Guid="8826dd45-8560-46d3-9ee1-ca81c25e3bc3" CodeName="ButtonText" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="6300be24-ba30-4f52-9287-70c9629a4851" Key="Value" Name="button_text" />
+          </DataValues>
+        </Property>
+        <Property Guid="7470cf11-0d67-42bd-83c5-6b414aec5d18" CodeName="CallToActionLink" PropertyClassGuid="c0eec912-aa39-4df2-bb43-a8d15c493d03">
+          <DataValues>
+            <ShortString Guid="9b59df0d-aae6-4d92-b68b-af20555b9d69" Key="Value" Name="call_to_action_link" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHTSURBVChTY/z//z8DGIAYgYGB/+EizJcvX9757t07CWaQCBsb2zstLa2FJiYmmQhNUIAhwLx//37ue/fu3Xn48GG/oaFhI2N6evr7+/fvC/wGgjdv3uQTNgMdgBWUlJR8ePr06TFeXl5PERERhkuXLv2NjY192tnZmQtW4ODgYKCqqnqEnZ2dFWiPF1DRFqC9L+7cuaNCnBX4ABOUxgnAJmRnZ5cCw6nr3LlzFgICAss4OTkFd+7cKXvw4MGvTEZGRn5ABZVr1679q6amduLly5dKwJA+YWpq+hRkAtOfP3+kgSrbvn379g8YjAzAIGT49esX85cvX8COY/r58+esLVu2ZAOj4y8wWuKB3v0sJCRkfePGDUeQAir5ghJA0AZCAOwCY2NjNikpqRZXV9fS8PBwhq9fvzI8efKE4cCBA/eBIfIkLi7OjIWFhf358+cMZ8+eZdi9e3f3s2fPaoDsXzAXtJiZmeUyMTFlABMgd1JS0hdg8DL4+voquru72165coUdJNbd3c0NUgNSC9ID0gh2ATCINVVUVNYBU5WErKzsP6BtQsAIY7h16xYDMIUxyMvLM4iLizMADX33+PFjJqDLQCkt6Nq1a9cHPhApNICBAQCqP/qaNv5QbwAAAABJRU5ErkJggg==</Icon>
+      <InheritGuid>9ee92472-8057-4e1a-aefc-f3fa8af9816c</InheritGuid>
+    </ContentClass>
+    <ContentClass Guid="2dd89f48-8c63-45d1-8f1a-393e99101af2" ClassName="ModuleVideo" Namespace="TripsToNorwayDemo" TableName="module_video">
+      <Properties>
+        <Property Guid="413ae8c0-3e20-4dbe-8b51-0d447e53e7a2" CodeName="VideoFile" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
+          <DataValues>
+            <ShortString Guid="9396cea7-f375-4659-bc40-ac2475afa99c" Key="Filename" Name="video_file_filename" />
+            <ShortString Guid="55404527-b765-4514-a4d7-ae7ce5ef6ac9" Key="Type" Name="video_file_type_name" />
+            <ShortString Guid="1c96aaaa-f744-4c9f-8a9b-334a899b6946" Key="Extension" Name="video_file_extension" />
+            <Float Guid="2e71ae4b-bee8-45f9-8571-9ce9cd956bb2" Key="Bytes" Name="video_file_bytes" />
+            <LongString Guid="e9fb4e7d-3e0e-482a-ba96-80415bc7bad1" Key="Info" Name="video_file_info" />
+            <Integer Guid="4d8810e4-f1f0-469b-bb35-85e499eb1298" Key="Reference" Name="video_file_int" />
+          </DataValues>
+        </Property>
+        <Property Guid="e9303944-3141-4c9c-8514-88927ba8426f" CodeName="VideoEmbedCode" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
+          <DataValues>
+            <LongString Guid="5277bcb3-3133-472e-92b8-63488ee6a43a" Key="Value" Name="video_embed_code" />
+          </DataValues>
+        </Property>
+      </Properties>
+      <IconSVG>mono.filmPlay</IconSVG>
+      <InheritGuid>9ee92472-8057-4e1a-aefc-f3fa8af9816c</InheritGuid>
+    </ContentClass>
+  </ContentClasses>
+  <Enumerations>
+    <Enumeration Guid="a0d90a5b-a054-48ed-8cff-3875f47f724f" CodeName="ParagraphPicturePosition" Namespace="TripsToNorwayDemo">
+      <Values>
+        <Value Guid="e41ebcad-e4b8-43c8-9269-31880d7268ee" CodeName="Left" />
+        <Value Guid="3afa13b1-563d-4613-a9e8-62860b178ff5" CodeName="Below" Value="1" />
+        <Value Guid="888acd0a-b4fd-44a0-8409-b1c3e08f9e8f" CodeName="Above" Value="2" />
+        <Value Guid="f54dbb55-6d80-4045-bdfc-c2f223bd58ff" CodeName="Right" Value="3" />
+        <Value Guid="097c8611-653f-409c-938b-c1b976532f64" CodeName="Hidden" Value="4" />
+      </Values>
+    </Enumeration>
+    <Enumeration Guid="dbcd9c75-8689-4c98-94dc-52abb0d1cd6d" CodeName="PictureWidth" Namespace="TripsToNorwayDemo">
+      <Values>
+        <Value Guid="ea81f4db-283f-472d-a91f-90731ef05234" CodeName="Width48" />
+        <Value Guid="a79401fa-fc91-4058-9641-de791ccdea28" CodeName="Width128" Value="1" />
+        <Value Guid="115fc178-b6d1-46b8-952c-fb1a33e0f5a5" CodeName="Width256" Value="2" />
+        <Value Guid="cd155cef-5399-4318-b9f1-8792f2f20682" CodeName="Width320" Value="3" />
+        <Value Guid="3beac9d6-9ab5-407e-a619-3508fabbb96e" CodeName="Width480" Value="4" />
+        <Value Guid="d4e0488b-fe2b-4c14-97a5-e850143aae68" CodeName="Width512" Value="5" />
+      </Values>
+    </Enumeration>
+  </Enumerations>
+  <Relations>
+    <Relation Guid="e1b5664a-1e7e-4355-941f-c3e5e481e571" ClassName="RelCountryRegion" Namespace="TripsToNorwayDemo" TableName="rel_country_region">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="c081d11c-f337-44af-91ec-6a32b34a022f" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="6469869a-b2e3-433c-ae29-bcbba3c77b85" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelCountryRegion" />
+      </Globalization>
+      <NameChildren>region_id</NameChildren>
+      <NameParents>country_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="f0c5bdb4-11af-45f1-8427-cab7399c8a21" ClassName="RelRegionLocations" Namespace="TripsToNorwayDemo" TableName="rel_region_locations">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="787b66bd-7e69-44a8-8c08-d1adf1026eab" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="c081d11c-f337-44af-91ec-6a32b34a022f" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelRegionLocations" />
+      </Globalization>
+      <NameChildren>location_id</NameChildren>
+      <NameParents>region_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="fb1631cb-24a6-41c0-9181-fad043d861b4" ClassName="RelRegionSelectedDestinations" Namespace="TripsToNorwayDemo" TableName="rel_region_selecteddestinations">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="5bbadc74-378c-4a7a-a994-3719a949c1cd" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="c081d11c-f337-44af-91ec-6a32b34a022f" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelRegionSelectedDestinations" />
+      </Globalization>
+      <NameChildren>destination_id</NameChildren>
+      <NameParents>region_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="8b19b911-b92c-449a-974b-046cb999fea4" ClassName="RelLocationTouristAttractions" Namespace="TripsToNorwayDemo" TableName="rel_location_touristitem">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="5bbadc74-378c-4a7a-a994-3719a949c1cd" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="787b66bd-7e69-44a8-8c08-d1adf1026eab" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelLocationAttractions" />
+      </Globalization>
+      <NameChildren>attraction_id</NameChildren>
+      <NameParents>location_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="12c82ea0-262b-4e0f-84ce-16c6c3f8af90" ClassName="RelLocationActivities" Namespace="TripsToNorwayDemo" TableName="rel_location_activities">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="2be1a934-671e-4c62-94de-585f353bc00f" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="787b66bd-7e69-44a8-8c08-d1adf1026eab" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelLocationActivities" />
+      </Globalization>
+      <NameChildren>activity_id</NameChildren>
+      <NameParents>location_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="c8b0002f-2878-4432-bd62-3403a3f4a000" ClassName="RelLocationAccommodations" Namespace="TripsToNorwayDemo" TableName="rel_location_accommodations">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="b36aa7d6-dea4-4eb4-bfd1-2cb084869252" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="787b66bd-7e69-44a8-8c08-d1adf1026eab" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelLocationAccommodations" />
+      </Globalization>
+      <NameChildren>accommodation_id</NameChildren>
+      <NameParents>location_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="734ea4e1-2735-4de1-9d59-8cae984fc3c7" ClassName="RelLocationEatDrink" Namespace="TripsToNorwayDemo" TableName="rel_location_eatdrink">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="08fa5b0b-8fdc-4dce-910f-48904c9859d0" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="787b66bd-7e69-44a8-8c08-d1adf1026eab" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelLocationEatDrink" />
+      </Globalization>
+      <NameChildren>eatdrink_id</NameChildren>
+      <NameParents>location_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="7cfe6a05-0b19-4578-98fd-b6a7d70a0417" ClassName="RelLocationShopping" Namespace="TripsToNorwayDemo" TableName="rel_location_shopping">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="e058b05f-3ec5-457d-8087-d728c0848b0d" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="787b66bd-7e69-44a8-8c08-d1adf1026eab" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelRegionSelectedDestinations" />
+      </Globalization>
+      <NameChildren>shop_id</NameChildren>
+      <NameParents>location_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="10f1e3dd-652a-4c5f-b16d-0708ee2992dc" ClassName="RelFrontPageArticles" Namespace="TripsToNorwayDemo" TableName="rel_frontpage_articles">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="6af697af-b9bc-4e6e-9ab9-9d13c167e73e" />
+        <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="c4cc7f94-5263-4cf1-888b-a2c10cabcd29" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelFrontPageArticles" />
+      </Globalization>
+      <NameChildren>article_id</NameChildren>
+      <NameParents>frontpage_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="1dd43406-1714-47e5-8a6f-f8bd40ce0a15" ClassName="RelLodgingCategories" Namespace="TripsToNorwayDemo" TableName="rel_lodging_categories">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="954809b1-6511-46a2-94e1-0ef843ac33e6" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="b36aa7d6-dea4-4eb4-bfd1-2cb084869252" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelLodgingCategories" />
+      </Globalization>
+      <NameChildren>cat_id</NameChildren>
+      <NameParents>lodging_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="03a5b8c5-a84a-4be0-a329-2eb1c8fcb742" ClassName="RelActivityCategories" Namespace="TripsToNorwayDemo" TableName="rel_activity_categories">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="302b41a1-047a-4d11-a01b-266564ce2a98" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="2be1a934-671e-4c62-94de-585f353bc00f" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelActivityCategories" />
+      </Globalization>
+      <NameChildren>cat_id</NameChildren>
+      <NameParents>activity_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="8ba2e8a6-dde9-42ab-8c06-eb57e18a522a" ClassName="RelAttractionCategories" Namespace="TripsToNorwayDemo" TableName="rel_attraction_categories">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="9a60f0c1-f8eb-461c-80b4-bd34784d2936" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="483109fa-c68c-45e1-9300-4526ac8fa4c9" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelAttractionCategories" />
+      </Globalization>
+      <NameChildren>cat_id</NameChildren>
+      <NameParents>attraction_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="c8acb67e-71eb-4890-8aaf-6d3d93042c34" ClassName="RelShoppingCategories" Namespace="TripsToNorwayDemo" TableName="rel_shopping_categories">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="b2f0d39f-df0f-4830-bff8-26b72745c61b" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="e058b05f-3ec5-457d-8087-d728c0848b0d" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelShoppingCategories" />
+      </Globalization>
+      <NameChildren>cat_id</NameChildren>
+      <NameParents>shopping_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="7cbd8db3-8818-439b-a730-304cd4adf656" ClassName="RelFoodAndDrinkCategories" Namespace="TripsToNorwayDemo" TableName="rel_foodanddrink_categories">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="e2009466-cf26-4ac8-8fa1-b11ccb1a2fab" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="08fa5b0b-8fdc-4dce-910f-48904c9859d0" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelFoodAndDrinkCategories" />
+      </Globalization>
+      <NameChildren>cat_id</NameChildren>
+      <NameParents>foodanddrink_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="713b731c-e6e5-4e39-aa65-3f958b0911bb" ClassName="RelRelatedArticles" Namespace="TripsToNorwayDemo" TableName="rel_related_articles">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="6af697af-b9bc-4e6e-9ab9-9d13c167e73e" />
+        <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="6af697af-b9bc-4e6e-9ab9-9d13c167e73e" />
+        <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelRelatedArticles" />
+      </Globalization>
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="7d56046a-07ac-4cb9-a0f7-c24268b171bc" ClassName="RelTouristItemRelatedArticles" Namespace="TripsToNorwayDemo" TableName="rel_touristitem_related_articles">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="6af697af-b9bc-4e6e-9ab9-9d13c167e73e" />
+        <ClassReference ClassGuid="98cdc721-1b86-4a02-846d-4d95b8133ba8" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="5bbadc74-378c-4a7a-a994-3719a949c1cd" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelTouristItemRelatedArticles" />
+      </Globalization>
+      <NameChildren>art_id</NameChildren>
+      <NameParents>item_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="f3f18c00-f07b-461b-b55e-fc5929a11f67" ClassName="RelFrontPageAttractions" Namespace="TripsToNorwayDemo" TableName="rel_frontpage_attractions">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="483109fa-c68c-45e1-9300-4526ac8fa4c9" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="c4cc7f94-5263-4cf1-888b-a2c10cabcd29" />
+      </ClassGuidParents>
+      <Globalization>
+        <Lang LCID="1033" Name="RelFrontPageAttractions" />
+      </Globalization>
+      <NameChildren>art_id</NameChildren>
+      <NameParents>item_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="49aaf615-d210-46cc-b576-89bad6f2a566" ClassName="RelNewsArticle_ImageGallery" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_relnewsarticle_imagegallery">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="7e0536e3-77bd-4c88-8055-2c63a834ee20" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="d82633c9-b617-4a40-a7f6-41c461aa3656" />
+      </ClassGuidParents>
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+    </Relation>
+    <Relation Guid="18c9e1c9-4906-47e8-a7cb-de5a02acc60f" ClassName="NewRelation" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_newrelation">
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+    </Relation>
+    <Relation Guid="96e9894e-6d8f-4d6e-aa1e-038c79b7ae58" ClassName="RelTouristItem_ItemReview" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_RelTouristItem_ItemReview">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="35cab70a-9b1c-4b55-b2e1-6395fe17621f" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="5bbadc74-378c-4a7a-a994-3719a949c1cd" />
+      </ClassGuidParents>
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+    </Relation>
+    <Relation Guid="cb8e946b-22ea-4fea-888d-e219f28dbe9e" ClassName="RelRecipe_ItemReview" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_relrecipe_itemreview">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="35cab70a-9b1c-4b55-b2e1-6395fe17621f" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="b7801407-f6ac-4421-9028-2981b8139d02" />
+      </ClassGuidParents>
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+    </Relation>
+    <Relation Guid="6c63e5cb-70eb-4c92-8f24-0bfe46e29158" ClassName="RelRecipe_Region" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_relrecipe_region">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="c081d11c-f337-44af-91ec-6a32b34a022f" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="b7801407-f6ac-4421-9028-2981b8139d02" />
+      </ClassGuidParents>
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="fda6ef4c-9cdf-4337-8f90-65f6f2bee4d0" ClassName="RelModularPageModules" Namespace="TripsToNorwayDemo" TableName="rel_rel_modular_page_modules">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="9ee92472-8057-4e1a-aefc-f3fa8af9816c" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="71f7c095-0830-46b5-ba12-cf3a0405182c" />
+      </ClassGuidParents>
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+  </Relations>
+  <Scripts>
+    <InternalScript Guid="7f9f3059-b629-4211-99d3-dab6d30f9a4b" RunDuringSave="True" Active="True" Id="webnodes.CodeGeneration" />
+  </Scripts>
+  <Options>
+    <OData>
+      <Settings>
+        <Boolean Key="ODataExposeAllProperties" Value="True" />
+        <Boolean Key="ODataExposeAllTypes" Value="True" />
+        <Boolean Key="ODataEnabled" />
+      </Settings>
+    </OData>
+  </Options>
+</Definition>

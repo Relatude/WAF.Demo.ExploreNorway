@@ -1,0 +1,158 @@
+﻿@using WAF.Engine.Property
+@model Article
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+}
+
+
+@section header{
+
+    <h1>@Model.Name</h1>
+    <p>@Model.Ingress</p>
+}
+
+    <div>
+        @foreach (var paragraph in Model.Paragraphs.GetAll())
+    {
+        if (paragraph is ParagraphPictureSeries picPar)
+        {
+            if (picPar.Pictures.Count > 0)
+            {
+                ImageAdjustments adjust = new ImageAdjustments();
+                adjust.CanvasX = 720;
+                adjust.CanvasY = 576;
+                adjust.ZoomMode = AutoZoomMode.Fit;
+                adjust.BackgroundColor = System.Drawing.Color.White;
+
+                <div>
+                    @if (!string.IsNullOrEmpty(picPar.Title))
+                    {
+                        <h4>@picPar.Title</h4>
+                    }
+                    <p>
+                        @foreach (var pic in picPar.Pictures.GetAll())
+                        {
+                            if (pic.File.IsImage())
+                            {
+                                <a href="@pic.File.GetUrl(adjust)" rel="prettyPhoto[pic-series]">
+                                    <img src="@pic.File.GetUrl(160, 110)" class="picture-series-picture" />
+                                </a>
+                            }
+                        }
+                    </p>
+                </div>
+                <div style="clear:both;"></div>
+
+            }
+
+        }
+        else if (paragraph is ParagraphText txtPar)
+        {
+            <div>
+
+                <p>
+                    @if (!string.IsNullOrEmpty(txtPar.Title))
+                    {
+                        <h4>@txtPar.Title</h4>
+                    }
+
+
+                    @{
+
+                        int w = 0;
+                        switch (txtPar.PictureWidth)
+                        {
+                            case PictureWidth.Width48:
+                                w = 48;
+                                break;
+                            case PictureWidth.Width128:
+                                w = 128;
+                                break;
+                            case PictureWidth.Width256:
+                                w = 256;
+                                break;
+                            case PictureWidth.Width320:
+                                w = 320;
+                                break;
+                            case PictureWidth.Width480:
+                                w = 480;
+                                break;
+                            case PictureWidth.Width512:
+                                w = 512;
+                                break;
+                            default:
+                                w = 256;
+                                break;
+                        }
+
+                        string imgClass = "";
+                        switch (txtPar.PicturePosition)
+                        {
+                            case ParagraphPicturePosition.Left:
+                                imgClass = "paragraph-picture-left";
+                                break;
+                            case ParagraphPicturePosition.Below:
+                                imgClass = "paragraph-picture";
+                                break;
+                            case ParagraphPicturePosition.Above:
+                                imgClass = "paragraph-picture";
+                                break;
+                            case ParagraphPicturePosition.Right:
+                                imgClass = "paragraph-picture-right";
+                                break;
+                        }
+
+                    }
+
+
+
+                    @if (txtPar.Picture.IsImage() && txtPar.PicturePosition != ParagraphPicturePosition.Hidden && txtPar.PicturePosition != ParagraphPicturePosition.Below)
+                    {
+                        <img src="@txtPar.Picture.GetUrl(w)" class="@imgClass" />
+
+                    }
+                    @Html.Raw(txtPar.Text)
+                    @if (txtPar.PicturePosition == ParagraphPicturePosition.Below)
+                    {
+                        <img src="@txtPar.Picture.GetUrl(w)" class="@imgClass" />
+
+
+                    }
+                </p>
+            </div>
+            <div style="clear:both;"></div>
+
+
+        }
+        else if (paragraph is ParagraphVideo vidPar)
+        {
+            if (vidPar.Video.IsVideo())
+            {
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
+             @*   <div>
+                    @if (!string.IsNullOrEmpty(vidPar.Title))
+                    {
+                        <h4>
+                            @vidPar.Title
+                        </h4>
+                    }
+                    <p>@vidPar.Video.GetVideoPlayer(512, 384, 500, false)</p>
+                </div>*@
+                <div style="clear:both;"></div>
+
+            }
+
+        }
+    }
+
+</div>
+
+
+@section sideRow{
+    @Html.Partial("Partials/_RelatedArticles")
+}
+
+

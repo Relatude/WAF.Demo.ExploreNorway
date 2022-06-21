@@ -1,0 +1,88 @@
+﻿@using ExploreNorway.Code.Enums
+@using WAF.Engine.Query.TripsToNorwayDemo
+
+@model TouristItem
+
+@{
+
+    Location location = null;
+    bool isAccommodation = false;
+    bool isShopping = false;
+    bool isActivity = false;
+    bool isAttraction = false;
+    bool isPlaceToEatOrDrink = false;
+    if (Model is Accommodation)
+    {
+        Accommodation acc = (Accommodation)Model;
+        if (acc.Location.IsSet())
+        {
+            location = acc.Location.Get();
+        }
+        isAccommodation = true;
+    }
+    else if (Model is TouristActivity)
+    {
+        TouristActivity act = (TouristActivity)Model;
+        if (act.Location.IsSet())
+        {
+            location = act.Location.Get();
+        }
+        isActivity = true;
+    }
+    else if (Model is TouristAttraction)
+    {
+        TouristAttraction att = (TouristAttraction)Model;
+        if (att.Location.IsSet())
+        {
+            location = att.Location.Get();
+        }
+        isAttraction = true;
+    }
+    else if (Model is Shopping)
+    {
+        Shopping shop = (Shopping)Model;
+        if (shop.Location.IsSet())
+        {
+            location = shop.Location.Get();
+        }
+        isShopping = true;
+    }
+    else if (Model is PlaceToEatOrDrink)
+    {
+        PlaceToEatOrDrink eatdrink = (PlaceToEatOrDrink)Model;
+        if (eatdrink.Location.IsSet())
+        {
+            location = eatdrink.Location.Get();
+        }
+        isPlaceToEatOrDrink = true;
+    }
+}
+
+@if (location != null)
+{
+    if (location.Accommodations.Count > 0 && !isAccommodation)
+    {
+        @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = location.Accommodations.Get().Cast<HierarchicalContent>().ToList(), Title = "Nearby lodgings" })
+    }
+
+    if (location.Activities.Count > 0 && !isActivity)
+    {
+        @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = location.Activities.Get().Cast<HierarchicalContent>().ToList(), Title = "Nearby activities" })
+    }
+
+    if (location.Shopping.Count > 0 && !isShopping)
+    {
+        @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = location.Shopping.Get().Cast<HierarchicalContent>().ToList(), Title = "Nearby shopping" })
+    }
+
+    if (location.Attractions.Count > 0 && !isAttraction)
+    {
+        @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = location.Attractions.Get().Cast<HierarchicalContent>().ToList(), Title = "Nearby attractions" })
+    }
+
+    if (location.FoodAndDrink.Count > 0 && !isPlaceToEatOrDrink)
+    {
+        @Html.Partial("Partials/_SideLinksContainer", new SideLinksViewModel() { ContainerClass = SideLinksContainerSize.Small, LinkItems = location.FoodAndDrink.Get().Cast<HierarchicalContent>().ToList(), Title = "Eat or drink nearby" })
+    }
+
+}

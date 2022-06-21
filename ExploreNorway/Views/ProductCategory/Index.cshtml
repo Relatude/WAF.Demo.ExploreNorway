@@ -1,0 +1,72 @@
+﻿@using WAF.Engine.Query.Native
+@model ProductCategory
+@inject WAFNativeContext wafContext
+
+@{
+    Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
+
+}
+
+
+@section header{
+    <h1>@Model.Name</h1>
+    @Html.Raw(Model.CategoryDescription)
+}
+
+<div id="item-list">
+    <div>
+        @Html.Partial("Partials/_Breadcrumbs")
+    </div>
+    <div>
+        <ul class="product-list">
+            @foreach (var prod in Model.Products.Query().Where(AqlProductBase.Subvariant == false).Execute())
+            {
+
+                var prodUrl = wafContext.GetUrl(prod);
+
+                <li class="item-list-container">
+                    <a href="@prodUrl" class="product-list-image">
+                        <img src="@prod.MainProductImage.GetUrl(150)" />
+                    </a>
+                    <div class="item-list-container-text">
+                        <h3>
+                            <a href="@prodUrl" class="product-list-name">@prod.Name</a>
+                        </h3>
+                        <p>
+
+                            @prod.ShortDescription
+                            <div class="price">
+                                $@prod.GetPriceIncVat(true).ToString("0.00"),-
+                            </div>
+
+                            @if (prod.NumberInStock > 0)
+                            {
+                                <input type="text" value="1" class="quantity-input" style="width:40px;" data-nodeid="@prod.NodeId.ToString()" />
+                                <button class="btn-add-to-cart" data-nodeid="@prod.NodeId.ToString()">Add to cart</button>
+                            }
+                            else
+                            {
+                                <div style="line-height: 32px;">
+                                    Out of stock.
+                                </div>
+
+                            }
+                        </p>
+                    </div>
+                    <div style="clear: both;">
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+
+</div>
+
+
+@section sideRow{
+    <div class="cart-wrapper">
+        @Html.Partial("Partials/Shop/_ShoppingCartStatus")
+
+    </div>
+
+}
