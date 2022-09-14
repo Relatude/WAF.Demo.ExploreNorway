@@ -66,11 +66,10 @@
 <div class="video-box">
     @if (Model.Video.IsVideo())
     {
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-        @*@Html.Raw(Model.Video.GetVideoPlayer(521, 293, 1024, false))*@
+               
+        <video width="521" height="293" autoplay muted playsinline loop>
+            <source src="@Model.Video.GetUrl()" type="audio/mp4" />
+        </video>
     }
    
 </div>

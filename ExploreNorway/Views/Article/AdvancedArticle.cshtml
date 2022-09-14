@@ -128,19 +128,20 @@
         {
             if (vidPar.Video.IsVideo())
             {
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-                <h3>VIDEO PARAGRAPH NOT IMPLEMENTED IN DOTNET6.0</h3>
-             @*   <div>
+               
+                <div>
                     @if (!string.IsNullOrEmpty(vidPar.Title))
                     {
                         <h4>
                             @vidPar.Title
                         </h4>
                     }
-                    <p>@vidPar.Video.GetVideoPlayer(512, 384, 500, false)</p>
-                </div>*@
+                    <p>
+                        <video width="512" height="384" autoplay muted playsinline loop>
+                            <source src="@vidPar.Video.GetUrl()" type="audio/mp4" />
+                        </video>
+                    </p>
+                </div>
                 <div style="clear:both;"></div>
 
             }
