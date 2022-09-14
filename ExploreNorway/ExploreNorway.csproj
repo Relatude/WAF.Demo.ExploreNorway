@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Relatude.Core" Version="6.0.3050" />
+    <PackageReference Include="Relatude.Core" Version="6.0.3130" />
   </ItemGroup>
 
   <ItemGroup>

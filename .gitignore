@@ -1,6 +1,6 @@
 # MY RULES
 **/WAF.Data/Temp
-**/WAF.Data/Content/Files/Settings/**
+**/WAF.Data/Content/Files/**
 **/_cached_*
 **/WAF.Server/
 # END MY RULES
