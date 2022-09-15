@@ -92,7 +92,7 @@ public class Helper
 
 
 
-    public TopImageModel GetTopImageModel()
+    public TopImageModel GetTopImageModel(bool forceRandom = false)
     {
         var currentContent = wafContext.Request.GetContent<HierarchicalContent>();
 
@@ -102,7 +102,12 @@ public class Helper
         
         string imageUrl = "";
 
-        if (currentContent != null)
+        if(forceRandom)
+        {
+            imageUrl = GetRandomPictureUrl(imgWidth, imgHeight);
+        }
+
+        else if (currentContent != null)
         {
 
             if (currentContent is TouristItem)

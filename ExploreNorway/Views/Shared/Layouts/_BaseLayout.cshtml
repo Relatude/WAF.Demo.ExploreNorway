@@ -18,13 +18,24 @@
     @RenderSection("head", false)
 
     @{
-        var topImageModel = Helper.GetInstance(wafContext).GetTopImageModel();
+
+        var forceRandom = false;
+        try
+        {
+            var hc = wafContext.Request.GetContent<HierarchicalContent>();
+            if (hc.NodeId == 62)
+            {
+                forceRandom = true;
+            }
+        }
+        catch { }
+        var topImageModel = Helper.GetInstance(wafContext).GetTopImageModel(forceRandom);
     }
     <style type="text/css">
         #topimagecontainer {
             height: @(topImageModel.Height)px;
-            width:100%;
-            background-repeat:no-repeat;
+            width: 100%;
+            background-repeat: no-repeat;
             background-image: url(@Html.Raw(topImageModel.Url));
             background-size: cover;
         }
@@ -67,7 +78,7 @@
 
         $('input.star').rating();
 
-   
+
     </script>
     @RenderSection("scripts", false)
 </body>
