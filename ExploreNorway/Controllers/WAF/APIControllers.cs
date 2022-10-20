@@ -326,6 +326,9 @@ public Native_UIPlugInController(AdminUIAPIControllerContext ctx) : base(ctx) { 
 public class Native_OptimizingModuleController : WAF.Server.Controllers.ContentController<WAF.API.Native.OptimizingModule> { 
 public Native_OptimizingModuleController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
 }
+public class Native_ContentModuleBaseController : WAF.Server.Controllers.ContentController<WAF.API.Native.ContentModuleBase> { 
+public Native_ContentModuleBaseController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
+}
 public class TripsToNorwayDemo_CountryController : WAF.Server.Controllers.ContentController<WAF.API.TripsToNorwayDemo.Country> { 
 public TripsToNorwayDemo_CountryController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
 }
