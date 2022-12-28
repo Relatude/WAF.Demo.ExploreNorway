@@ -1,0 +1,36 @@
+name: Publish to app service
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level' 
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Manual test/deploy' 
+
+jobs:
+    
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    
+    - name: Checkout repo
+      uses: actions/checkout@v2
+
+
+    
+    - name: Azure logout
+      run: |
+        az logout
