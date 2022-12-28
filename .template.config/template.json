@@ -16,6 +16,7 @@
             "exclude": [
                 "**/.vs/**",
                 "**/.git/**",
+                "**/.github/**",
                 "**/WAF.Data/Temp/**",
                 "**/WAF.Data/Files/**",
                 "**/_cached_*",
