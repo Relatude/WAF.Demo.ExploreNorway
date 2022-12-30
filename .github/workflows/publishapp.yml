@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: website
-        path: WAF.Demo.ExploreNorway/website/**
+        path: website/**
         if-no-files-found: error
     
     
