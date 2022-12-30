@@ -27,7 +27,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Delete Relatude.setup
-      run: rm ExploreNorway/Relatude.setup
+      run: rm WAF.Demo.ExploreNorway/ExploreNorway/Relatude.setup
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: website
-        path: ExploreNorway/website/**
+        path: WAF.Demo.ExploreNorway/website/**
         if-no-files-found: error
     
     
