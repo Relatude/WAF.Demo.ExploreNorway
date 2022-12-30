@@ -8,7 +8,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
-	<NoWarn>CS8625;CS8618;CS8602;CS8604;CS8603;CS8600</NoWarn>
+	<NoWarn>CS8625;CS8618;CS8602;CS8604;CS8603;CS8600;MVC1000</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
