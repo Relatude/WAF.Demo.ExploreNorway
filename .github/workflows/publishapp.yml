@@ -27,7 +27,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Delete Relatude.setup
-      run: rm WAF.Demo.ExploreNorway/ExploreNorway/Relatude.setup
+      run: rm ExploreNorway/Relatude.setup
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
