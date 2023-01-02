@@ -39,7 +39,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.9" />
-    <PackageReference Include="Relatude.Core" Version="6.0.3139" />
+    <PackageReference Include="Relatude.Core" Version="6.0.3142" />
   </ItemGroup>
 
   <ItemGroup>
