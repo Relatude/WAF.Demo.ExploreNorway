@@ -4,7 +4,7 @@
     <Culture LCID="1033" Name="English" />
   </Cultures>
   <ContentClasses>
-    <ContentClass Guid="6469869a-b2e3-433c-ae29-bcbba3c77b85" ClassName="Country" Namespace="TripsToNorwayDemo" TableName="country">
+    <ContentClass Guid="6469869a-b2e3-433c-ae29-bcbba3c77b85" ClassName="ExplorerCountry" Namespace="TripsToNorwayDemo" TableName="explorer_country">
       <Globalization>
         <Lang LCID="1033" Name="Country" />
       </Globalization>
@@ -32,7 +32,6 @@
               </Classes>
             </InnerContentClassReferences>
             <Enumeration Key="Layout" Value="TwoRows" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/photos" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -47,7 +46,6 @@
             <Dimension Key="EditorWidth" Value="595px" />
             <Dimension Key="EditorHeight" Value="200px" />
             <Dimension Key="Height" Value="350px" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -81,8 +79,6 @@
       <Settings>
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
-        <String Key="ODataName" Value="CountryLocal" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIxSURBVDjLpdNdSFNhGAdwKSNyg6ALC8GLoE8so49VRHVRFFQISlJeREXQBxWSSZDUpNrOTDoxSGvhmokV1TazLeekTBda9rVKmW5lYq6slgutOI7j1vn3vKc4rCAv3MXDgfPy/73Pc3hOEoCkROq/B6v2GdIWHLnhmK1v7ZtZ3PIuo9DmOr17iaUkLx1Ud6g2jgqo+JCU4x7Bs5AEe4+EhbYYMsv9iEYGcU+/VEZkYNkew7iJnHBrgl4YSeYEJJcIGF8qoKw9Bv8g8GkY8IaBthDgqatCsNGAq4czGbBLBhbv5VWT+EiL2Q9cfg2YA0DDe+AxBeqDQPvX3+/PdwKmfA0+PDDCuGM6A9JkYP5Byyy1SexgQM5dIJvqpJdCb4DWz8BDKguhhzxDor1Ig+7afBaG8hFnFDiyp1ZFgxa6JbcR2NoEnCLg2ltqfQBwUzcVhJc1+4c8/Br0urV/A9OKvJyxQ/qmfQ5so/D2ZoB7CVh7gN4fwP1+wEWjGK/XoKt6C9rOrWeATwHUugEn3RBjrW9oAI4TdJPCno80RlfsZ27d9+Eslxitcdpk4HbxCgboFEB1JvKk3CfhSjdQTXM7+yRorCLUZ8PSposvvMZX0bydtf2Vi9JT4avcjIr9GQxYrQBzC2zmVG2nkGIISyncF2mKLiDOKbQ+it8JCqy9dGCe3EH8/KMu0j9AqePEyoSAwFNTVkKAHG7i1ykrPCbAfmw5A46OBbjw5y9kz8nxZ78A90vOcDVd+i0AAAAASUVORK5CYII=</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
@@ -105,7 +101,6 @@
             <Lang LCID="1033" Name="Top picture" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -116,9 +111,6 @@
           <Settings>
             <RelationReference Key="Relation" Value="e1b5664a-1e7e-4355-941f-c3e5e481e571" />
             <Enumeration Key="Layout" Value="TwoRows" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/containedIn" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="containedIn" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Place" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -146,7 +138,6 @@
               </Classes>
             </InnerContentClassReferences>
             <Enumeration Key="Layout" Value="TwoRows" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/photos" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -159,7 +150,6 @@
           </Globalization>
           <Settings>
             <Int Key="MaxLength" Value="255" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -199,7 +189,6 @@
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
         <Int Key="DefaultTemplateId" Value="42" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASxQTFRFJykTAGnAZYM7Zo89cnJyAWi+dnZ2Amq/Amq+KSsUc3NzKi4fAWTAPEZAjIJ9b29vKywdKCkSDGKuNl9oAmS1F2KqAmDAWoTJDVajAlXqMDQqElelKCoXAmvAqq2qcFFHgGPYDV/Ef2a0a2trKYG2dHR0LEE4amtmPEy2BWC2BGq5KCwbAGa7cXRvf4J7IiwZIiwYJykVf3p1AGW9AGW+c2lnaXnZClKlKCoZAmS3FGGuAGa2AFC3v7THIyoWUH27A16tClXdOE40Amm/WFxLAWCwEk3Bfnt1CmCtCVKlLTInAGjAFXWzKCoUKi8iAWK4AE67I2Wte4SAj01KemPQKywcKCoacGexMoC1AWnAJCoWSlJNd3d3KCoTJykSZY48YII3dK9GdqBJ////SyhyQwAAAGR0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ACaMbT0AAADCSURBVHjaYkhGAnws7skMSHxdVTYWPaBAUiIEJhspc8VwAQUS4oEQIqbOxs8AVQAWjTd1cWIAK4AIxssrSjoiqwh2C7DRAKtIggiK+6hEaDEkc3PzJjAxg6AHI6M3I0NYXGxcqIBvLKdgiAkHq7MQg0xcLIO+nUFULKcCI3ukDtClXnFxcQxxDLFq0p7mEg4gp/tFW8TGxhra81j6u1pD/BKkzRBnJsYhGwhkQz0nJazJzmocjhCQs7USEVUCsQACDAB6Dkgu5Bd9QQAAAABJRU5ErkJggg==</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
@@ -222,7 +211,6 @@
             <Lang LCID="1033" Name="Top picture" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -233,9 +221,6 @@
           <Settings>
             <RelationReference Key="Relation" Value="f0c5bdb4-11af-45f1-8427-cab7399c8a21" />
             <Enumeration Key="Layout" Value="TwoRows" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/containedIn" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="containedIn" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Place" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -248,7 +233,6 @@
           </Globalization>
           <Settings>
             <Int Key="MaxLength" Value="255" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -345,9 +329,6 @@
             <Lang LCID="1033" Name="Longitude" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/longitude" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="geo" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/GeoCoordinates" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -359,9 +340,6 @@
             <Lang LCID="1033" Name="Lattitude" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/latitude" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="geo" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/GeoCoordinates" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -370,7 +348,6 @@
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
         <Int Key="DefaultTemplateId" Value="28" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAgNJREFUOE9jYMACKivKNXKyM58FuTr/D3Oy/x8RFPC/qbFh2fNnj3WwqUcRmz9/7uQoW8ufe6KD/n8tyfj/szz7/7PcpP+drvb/0+PjXp46eUwXpyFVVRWa4Ramb54ANfyvyP7/H6gZhv8A+cuCvP6XFxfew2lARVnJrU0R/kDNOf//lGX9P5cQ9n9LiM//13nJYIO+lGb+T7a1/Ltzx7ZErIaEe3k8e5wDtB2o+Gpy5H9lAf7/HCzM//NN9CEuARrc5+X8PysrMxurAWFuzs+e56eAFZ+MC/kvwM7+H6jwf6iGCtyAaX7u/xMS4rEbkJma/OxUYjjY/1+K0v5PcrH9n2Wo8/9UXCjYgF/lWf8L7a3+z5kzC7sBjQ316UV2lt+/Af2KHIAQ52f/Pwv0VlpUxM+rVy/54wzIkvzcAxO9XP7/BAYisiF3MuP/xzvZ/1i4YF4e3rRw5PBBqZjgwBObwiGxAQ59YHoocLb7v2jhfNxRiGzq0iWLXRNdHL6/BAUo0JCNob7/S4tz/z96eK+VYEqEKSgtKti7AphwvgG9kmhp+n/atCkT3r59qUC0AcuWLvaq9PX8fykt+n+Mv++vG9eveBGtGaTwxo1rXjnhYf+nezr9T0yIP0eSZpDiu0/eKJbl5t+PNjX6P3PmzJMkGwDS0Fxfe1RfTfV/e1srTucDAERfK5Kkv/X/AAAAAElFTkSuQmCC</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
@@ -393,7 +370,6 @@
             <Lang LCID="1033" Name="Top picture" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -406,7 +382,6 @@
           </Globalization>
           <Settings>
             <Int Key="MaxLength" Value="255" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -459,7 +434,6 @@
             <Lang LCID="1033" Name="Phone" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/telephone" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -471,9 +445,6 @@
             <Lang LCID="1033" Name="Email" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/email" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -485,7 +456,6 @@
             <Lang LCID="1033" Name="Website" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/url" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -498,9 +468,6 @@
           </Globalization>
           <Settings>
             <Int Key="Columns" Value="50" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/postalCode" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -508,51 +475,26 @@
           <DataValues>
             <ShortString Guid="8e7534f5-87c9-4bab-b76b-f154fa09b9a3" Key="Value" Name="addressregion" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/addressRegion" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
-          </Settings>
         </Property>
         <Property Guid="2d0b050f-bb12-4625-8b82-e4571b057d19" CodeName="AddressLocality" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="9309d2b4-c1cb-463d-9c3c-e8ccac31d361" Key="Value" Name="addresslocality" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/addressLocality" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
-          </Settings>
         </Property>
         <Property Guid="eb9e7712-10de-406b-a6c2-2c7ecb1a7535" CodeName="AddressPostBox" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="77737ae9-01d6-4e26-8fb7-ff78f5571b02" Key="Value" Name="addresspostbox" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/postOfficeBoxNumber" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
-          </Settings>
         </Property>
         <Property Guid="2c4dae90-e7f8-4e50-b642-9ba38ac9662b" CodeName="AddressStreet" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="5228593a-81bd-4778-8eb8-2bb7e7bc416f" Key="Value" Name="addressstreet" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/streetAddress" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
-          </Settings>
         </Property>
         <Property Guid="49a44898-d36a-45ef-9d86-df5ed3d7d489" CodeName="AddressPostalCode" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="09910c9d-1ee1-41e4-8642-d7218fb7e672" Key="Value" Name="addresspostalcode" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/postalCode" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
-          </Settings>
         </Property>
         <Property Guid="4dea6711-b053-4e61-8b3e-e36c9fbb321e" CodeName="AddressFindingDirections" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
@@ -563,18 +505,10 @@
           <DataValues>
             <ShortString Guid="d86975ed-c007-4b96-b7e3-4e856eea5171" Key="Value" Name="addresscompanyname" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/name" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="address" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/PostalAddress" />
-          </Settings>
         </Property>
         <Property Guid="fc5ac14c-aaa0-43ee-8c8d-19d2d3c0782e" CodeName="RelatedReviews" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
           <Settings>
             <RelationReference Key="Relation" Value="96e9894e-6d8f-4d6e-aa1e-038c79b7ae58" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/reviews" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="reviews" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Review" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -582,7 +516,6 @@
       <Settings>
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Place" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAANCSURBVBgZBcHbT1t1AMDx72lPKS29UCiz0BUMQxwwJptMSIAZzRgu6oOJ+jKjkQdjTAx/gI9mezAmJkb3ppKYqHsxe9oMOh0ZODd3xYVtFOLK1dG0pYWensvv4udjaK0BAACYmp8cAz4GjgEtgAmUgeta6XNfjn33CwAAgKG1BmBqftIEpoE3X8+cCCZCLVSsBiwXhLQRPOHy1iUhhfxVCPn2N6d+2gMwtNZMzU8GgD8Gk30jJzMvUbGDOLgsVwzqdJCCpdDCJYTFlnOVm5s3F4Qnjv/w1oWyDwCYPtrcPTLaNkhRung+AyF81EQdFnUUnSDbdoj1coD2yAsMpp497DrejwD+0vjqKPDZ6e7X/PdllS1q1JRgz45QdAJUbMhu7FKuVgkmChjxLMPJg1xevNH5/fXpe/6hySNfTLQNHTL8IbZ8AvQ+WmWEW0/81Gwfixt7qPoSwY5HOLEseVXCLEkONWd8tx4/bDKBY5lYmrvWJvl6H73+AygEuW0X264RT2kqTTMsqx1wNI0iSDbvcOLpo3iO6DeB5rDZQM7aZNuxiIY72XGjlEqKeIvNvoRFXg6QvnMOaVfJZw5S3AkTCUXxXNHo01obhgbXqaCtVkxPcukvD6M+xNayydpqjDYnhPA0+5M9BJfv4Nk10BohhGFKoYoVt5Ju9jcSrX+O9byJ7QVoVR8RD0ucDY/dnCDd1EVPaohdu8rC+u8UqxNIocqm8MTtx8XVdFc4w2//zdMY7qLOn0Eol/G+95BaIZVEodksr9G/f4Q9t8YnFz4Euh/4PFd89fPDWdERacG0NigX/iSRcLCFi9SKXCHLv4UlVvKL7NQK5IorDGTGeCb1PLuBe6O+b189P+M63sWZxVleTA8Q9zeQiChsYSOk4KlYO6lYB63xTgL+EC3RNLfX5rm2csOyXGImgOd471zJ3p1zau7hiSPHebRt8o9wmL72Oa5ysYXLgWQvw50n+Ts3x5WlWScs23uWz2ZrhtYagFe+fjkqPHFeeHL83ZH3TWQKrcMYPoNkvMKnF0/T1zrM1aW53Qbd3rtwZmkdwNBaAwAAMHJm6A0p5AdSqn4lVQIAKO/47yeFIlBTMrB9VgsAgP8BON24AjtZfcoAAAAASUVORK5CYII=</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
@@ -618,7 +551,6 @@
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
         <Int Key="DefaultTemplateId" Value="29" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/TouristAttraction" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAANjSURBVDjLbZNdTFtlAEDPd+9tKS20HS1/tbAuDNyEEMffIv5hMkW3RU2my96ci/HF6IPZgz65LEZnYnzQxFezJYtREzaJ06hkA8zGgs4hIOOnAyZdadpy296WS2+5vdfXYTzv57wdYds2D1JQE62amjyiZycfMwvzdaWsXsL76Iw/2HGxubP/Nv9BPBhQ48uvpefOfewPtTRKspui6WJ7s8i2niMRX425Gl7+rC4U+jKyr8vYEdALmje9On9RMc8fLd+W2TU4SNlQEdsq+XQcWYQo5jdI3/2DRF5bjHS98VzHoZP3AER+c1NJR7+9oYi13kBdLxtjo1S1ezDUGbJTcTwtu6j2N6L49iM5aogv/cnC32tzT5w61+8NtuXkd996/Z3UF2dPNT1/jPLmIoYxQeqnW+j3szQ+eRCH0we2DcUUhhqjOtSNc2u9Njo96/d4nCPym6+Gf/D19bgzP49R3eykkIyRm82w+/ABHLKAchnJtLDMEnapRDGrU9nQydK1S10YxSnFKs4FvOHjbKjnSc2ukJ9XaTvezf2bsxRzZYRTwRV0ozideNwKFY4c5epmlGCHdHloZFBJz8YI790m/MIzLF4YpmyBwxUk8tTjYJYQNmjJJJZhkk1qbOdKONYnqfVUoydXDyj6+CT603EU28LhdxJoDXLr61/pOjaAjMAWMr7aemzTwOtzIUwDXAGyWeiPVOWl0CsDaMsZ5i9fhapKwi3tNPXsYeL7CdRUHiHZ2AhsIYEMWCaSqwajkCGRtdYU05T0itYGd1W6HT21RCGToi7cgMsXYPq3eYSQ2d8XwV8FkmUiXB6E4mHj3iqFItfEX9988lFmc+X9UGA3lcY0mfUkbY+EQAgsRSGnFrnz+xqYFhVuiYbuw8yMjPPdldFL0aJ0UqTuXK+6MfT5dUPb6jx64ggz4zd5OLKFSyqBDbYsYQsbWfFTkFr5Z2KSqxeGNK2jvv3MUCImBff1F7yhrpcWlu9Gp0Z+IfhQE/nKXjYdESylHlHRjBzsB9ce5OURtOiVFa25+tkzQ4nYjpmGPz3tSSSi79VkZ9/2+lt8NXvbUO1KPLaGV1/HiI0Z0ThfzSWsD86Oa8n/vRHgwxM9A35LPeRUswf9TjxJtzM9GbUWVhPZ0Rf7/D+eHk7uEP4FZ6iVh4fSzgIAAAAASUVORK5CYII=</Icon>
       <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
@@ -654,7 +586,6 @@
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
         <Int Key="DefaultTemplateId" Value="24" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/TouristAttraction" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURSomJywpKkNBQkdFRkhFRklGR0pHSExHSUpISEpISUtJSktKSkxISUxISkxKS1ZUVVlWV11aW2hnaGpoaXRyc3VzdAF3wwB5wAB5wQB4wgB4wwB4xF2o1mCq12Wt1mev2Hu53H652n2523y53IOAgYKBgoSCg4WDhIiGhpeWl6OhoqOio6Sjo6akpKalpaupqquqq7OysrOys7Sys7WztLW0tLW1tbi4uLq5uYvB4YvC4IvC4YvC4ozC4IzC4ZrI4ZrI4pvJ5ZvJ5qbP6KbQ6K3T6a3T6rHV6djY2NnY2d/f3t/e38zj7NPm7uDf3+Dg3+jn6Ojo6PDw8PLy8vPz8/f39/n5+fr6+vv7+/z8+/38/P39/f7+/f3+/gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANpi1gkAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAAMtJREFUKFNj8FVURgJKPgwO0lJSklAAZNkyOEjJuLrBgJykDYO9hFOsgapnbKyfuk6Us4Q1g724o5mQOVNELKeRiJ6zuBVIQFM7lj8oiifWWAMi4BTAzcXIxsfAxewFEnCQcoqNDRcMDuUMi45xkQAJOMbGhgmEhHKGgwSsGRzEHAP52BlZeRl4WPydJS0Z7MWghrLFGmqArRVzNBW2AFrLYSKqCxIAaonVV/GIjfVW04oEaXGQknWHA3mQGVLSSEDKjsFXWQEJKPsAALRcMEzpw/B9AAAAAElFTkSuQmCC</Icon>
       <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
@@ -690,7 +621,6 @@
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
         <Int Key="DefaultTemplateId" Value="26" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/LodgingBusiness" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAG+SURBVDjLnZNNSwJRFIbfGccPCKJMoqSwdBcEobUQWrmIChJs07pVuA36By0KWrTtB7hqGSQSFBGCbdq0ECkhSmgxldmHOuP9aO4VpSEV6cDhHu7c85z3nLkXnHP048/RKO+0r6JPO9nc7LivCErL8vk8p5SCEILWKlzXdWSzWfj9foRCIcTjcaWVo/2mNRoNBINBGf8GizgWi8k1k8nYFNgAopqwi0KzM2oxKAMYZ5YiYHmGwDCM7gDTNGWV8Fi54yCBof4AudKwrEpYUwGxqjPGkZgjqNfrvQHCFsZfuvzO4d4KxEdx8PLBa/XPpQJGm7PgloKN+UZvBRX6LgGLk3oXBV588c/OgJ1ccso15MEKX7X6ZUilUlBVFYqiyDWRSKBivONxvGgDtG+ilTStOh3IV25lNU3TEA6HEYlEZCyg5VoZrgEX1o6W122A7ezWIKhyPuL04ayUlodFkvCWihqpYv9qFwFfAMSkB0uHsdk2gBKaNEyT3+kFfL9Wkbk5BXMyOByONiR9nYZWd+Ht40VcOD8lbLc9A3rs2ZMPw/IqKAq4l/JKxZKtX68yitenMibMgNtteuJ/HtN/7AcakErwOe40HwAAAABJRU5ErkJggg==</Icon>
       <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
@@ -726,7 +656,6 @@
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
         <Int Key="DefaultTemplateId" Value="194" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Store" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE3SURBVCjPhZFfK4NxGIZ/R458Dz7B7wv4Go5WpJW8819mSw3bos202DsTNpT3FTbCRs0YkYPFasvKJhw5kpVEu5y8W0uZ7sPnup+e+34EorH+HIRZQsXfLtKkOSPJCXEOiLGNxgarpPniGW9WnPPN5y+9E3p5I4+n6DaLFHmeuOSRFEUSFNgjj04WDVcbQiCOuWBfnrIlE0RkjKDU8ck1VBytCIE45JYkD8QpECOHTpYIGVzYmo0UO5Q5IiyjqFLDKyNMyUVs1GJq1mvuiZJjkzvCZAhyw3ClrocVQiwwhwc3E4xjZ5f+SoOihpr66Hk1gOWWYGAeHzM4cWBnlEF6QZjLBqBaEbPKdMmpVP0WpbtkVjo/DMBv9aJzxTo2RhjAQoA0fkyFuhsmGWestqFL6cDEP9+s6gcdbFPqiEGjeAAAAABJRU5ErkJggg==</Icon>
       <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
@@ -762,7 +691,6 @@
         <Int Key="CreateDialogueGroupId" Value="-1" />
         <Int Key="CreateAccessGroupId" Value="369" />
         <Int Key="DefaultTemplateId" Value="193" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/FoodEstablishment" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJGSURBVDjLpZNLTxpRFMdd+EX8BixZ6VfxQ9imq3YzSdNVE2MNyEMYAeUNofIKEBjA8CoiM4BCgiQgaJqWtjySAc2/585iogG76eI/czN3/r9z7jnnbgDY+B8pj3w+v5nNZncEQdhLp9N8KpUqJhKJYTwel2OxmByJRIbn5+fFUCjEB4PBPZ/Pt+PxeDZVAJm5SqUCURTRarVUNZtNdd1oNFCtVkHBEA6H4XK5OBWQyWQwnU4xHA7RbrdRr9eVn8vlsiK2ZnC2NxqNMB6PcXZ2BhVAacu3t7eYTCYQbr4jIP2ErzWHt/0I780jnOIUjsoDYlcDjH//UYAOh0NWAXTmbTrzUmpew3bRA196gONqAndrARfJevkLXzJ9fI5dwxkvwG63L09OTrZVABMVTBuNRpfVegPWlIRPvhI+nF7gHZ/FG4sAzl2AP1V8YX4BYKJKa6nSy8srEZakiPeneby1CvjoKeJrurRiXgEwUZu0fr9/+a16iVStC9/FNSLCevNaAJPX69W63e6nxWKhdIfMT+vMrwKYnE6nl7WtVCqB53nbPyfxuSjyFvV4l9pU6Xa7yOVysFgsebPZvGs0GrdeBdBoami6ioFAADQXoPHFYDBQ3lQXUHFxfHwMnU5XPDw81KwAyPxDkiTIsozZbIa7uztFDHJ/f698Y3vJZBIHBwejFQClzbFIhUIBnU4H/X4f8/lcUa/XQ61WU+7A0dER9vf3ubU1sNlsGqvVylGqWZPJ1DEYDNDr9SztLqWdpcgcmTXPPX8BpLUNr3FYePgAAAAASUVORK5CYII=</Icon>
       <InheritGuid>5bbadc74-378c-4a7a-a994-3719a949c1cd</InheritGuid>
@@ -783,7 +711,6 @@
           </Globalization>
           <Settings>
             <Int Key="MaxLength" Value="255" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -861,7 +788,6 @@
       <Settings>
         <Int Key="DefaultTemplateId" Value="23" />
         <Boolean Key="CreateAsPreliminaryFromWizard" Value="True" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/CreativeWork" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAH/SURBVBgZBcE/jN9zHAfg5/35fn6/6/XqVEmkISHif2KQRsQgLEg4g4TJYrExYTXabJIbDZJOFoNRQssgERNiYJFeOE21QfTuft/v5+V5Konn3r/0xvbu1uutXMApFCikyDCP8euNa/mi/r7+3uX9vROASuLFD765/MnbFx5prc6GSQBIIK7+u3Hxuxv++O34v59++Pnc1/t7x9ChTfXQuk9nf/zT1KooMlgyzHPc3CyefeAWTz7YfTuuns54+Pozb31+21cfvXTcoKrOJJnWU7Nq9GJqTEUVTWE4v7u298R5996/td13dz6GBqGgoRWtSqvSqrQqbSq//3XTPWc2Hj1X3nzqdtNqeg06QEKfKCVVxhJa6RPrNL9ci5MxG+PE0/dtqd5m6JAQ9GoigmqlkEGmxpo2yhiTaFQDHYKBKkoJggxWE6CaWkpaDCRAhzGTMFBIAlrDKH0KKUKUZbAMoMMYkYQQASBAKRV6Y+DUimUO6LAMlpDBABAwwjIIRkixmpr5ZAYdxhwjsf/lywAAAADgsVc/szkeoMM8L5YFuPuuOwEAAMCVg0MZsTmaQYf5eIx5jKCuHBwCAAAA6L2NeRkzdNgcLYc76+mOd174dCdJEwbg1u0OErZXTZWxmuqfZR4H0KEqHz7/7qVXqurxyGkAIYgAAUdjjO97cxH+Bxjp+96ObDbVAAAAAElFTkSuQmCC</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
@@ -1050,7 +976,6 @@
           </Globalization>
           <Settings>
             <Int Key="MaxLength" Value="255" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -1067,7 +992,6 @@
             <Lang LCID="1033" Name="Picture" />
           </Globalization>
           <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -1083,7 +1007,6 @@
             <Dimension Key="EditorHeight" Value="300px" />
             <Dimension Key="Height" Value="300px" />
             <Enumeration Key="Layout" Value="NoTitle" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/articleBody" />
             <Boolean Key="CultureIndependent" Value="True" />
           </Settings>
         </Property>
@@ -1128,7 +1051,6 @@
       </Properties>
       <Settings>
         <Int Key="DefaultTemplateId" Value="21" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Article" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAINSURBVBgZBcG/r55zGAfg6/4+z3va01NHlYgzEfE7MdCIGISFgS4Gk8ViYyM2Mdlsko4GSf8Do0FLRCIkghhYJA3aVBtEz3nP89wf11VJvPDepdd390+8Nso5nESBQoq0pfvXm9fzWf19453LF85vASqJlz748vInb517dIw6EyYBIIG49u+xi9/c9MdvR//99MPPZ7+4cP4IZhhTPbwzT2d+vGoaVRRp1rRliVvHq+cfvM3TD82+7mun0o/ceO7NT+/4/KOXjwZU1ekk0840bAZzMQ2mooqh0A72d5x/6sB9D5zYnff3PoYBoWBgFKPKqDKqjCpjKr//dcu9p489dra88cydps30KswACfNEKanSaxhlntjJ8Mv12Paie+vZ+0+oeSwwQ0Iw1xAR1CiFNJkGO4wu3ZMY1AAzBI0qSgmCNJsJUEOtJSMaCTBDLyQ0CknAGOgyTyFFiLI2awMzdEcSQgSAAKVUmAeNkxvWJWCGtVlDmgYQ0GFtgg4pNtOwbBcwQy/Rife/2yrRRVI0qYCEBly8Z+P4qMEMy7JaVw72N568e+iwhrXoECQkfH91kY7jwwXMsBx1L93ZruqrK6uuiAIdSnTIKKPLPFcvay8ww/Hh+ufeznTXu49v95IMoQG3784gYXdTqvRmqn/Wpa/ADFX58MW3L71SVU9ETgEIQQQIOOzub+fhIvwPRDgeVjWDahIAAAAASUVORK5CYII=</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
@@ -1597,7 +1519,6 @@
       <Settings>
         <Boolean Key="UseRevisions" Value="True" />
         <Boolean Key="CreateAsPreliminaryFromWizard" Value="True" />
-        <String Key="SchemaOrgMapping" Value="http://schema.org/NewsArticle" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIRSURBVDjLjZPJa1NRFIera/8ECy7dV7txkb2UOoDgzo0R3YuLrFwWIVglWQRtN0GCLkIixJDJQJKGQOYBA4akmec5eSFT/XnPsXlNsWIffOTdd3O+e+6PezcAbBDiuS7YEmz/hxuCq3LdmmBrOp32F4vFyXK5xEWIeWg0mnfrknXBNhWPx2NIkiQzGAzQ6/XQaDRYUqvVoNVqZQkXGwyGm2q1+k00GkUkEkE4HEYwGGQCgQDS6TSKxSILJpMJaBGdTvdHYjKZHvp8vuNsNot6vc7QavRLq1UqFcTjcbhcLrmLFZyJ2+0u9Pt9hC1f8OHpDt4/uoO3928zmscKHD5/gKPPB8jn8yxpNpuoVqtnAqPRiOFwiPGgB/fhPr7uvcJH5S4Ont3Dp5dP8G3/NX4cfedCi8XCeXQ6nTOBzWaT5vM5J0yTFFy325WhtmkbhN1ux2g04gVlgcfj+UmDUqkEh8OBcrnM7xRaLpdDIpHgcSqVYihEYr0DL61O6fv9fhQKBd4vhUrpk6DdbsNsNrN8Nptxt7JApVK9EMW9TCbDEgqI2qUOSELvJPF6vbw9Kj4nEM81pVJ5V6/XH8diMQ6IaLVaLAmFQnA6nfyNslohC05P4RWFQrFLHVitVoYSF2cEyWSSgxOn9Bx/CWggPv761z24gBNZcCq5JQKSaOIyxeK/I769a4JNklziOq+gq7/5Gx172kZga+XWAAAAAElFTkSuQmCC</Icon>
       <InheritGuid>98cdc721-1b86-4a02-846d-4d95b8133ba8</InheritGuid>
@@ -1608,9 +1529,6 @@
           <DataValues>
             <LongString Guid="c863e375-dca4-4d61-bc2d-2585619ade89" Key="Value" Name="reviewbody" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/reviewBody" />
-          </Settings>
         </Property>
         <Property Guid="ee12031c-5a89-4207-a007-05f693cdb291" CodeName="RatingValue" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
           <DataValues>
@@ -1619,9 +1537,6 @@
           <Settings>
             <Int Key="MinValue" Value="1" />
             <Int Key="MaxValue" Value="5" />
-            <String Key="SchemaOrgMapping" Value="http://schema.org/ratingValue" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="reviewRating" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Rating" />
           </Settings>
         </Property>
         <Property Guid="ab2e5766-879f-46d1-a778-11627395fe9b" CodeName="ReviewedByUser" PropertyClassGuid="1d307d77-8e67-4cae-bea6-41e4e1f9c1d0">
@@ -1634,30 +1549,18 @@
                 <ClassReference ClassGuid="682b23ea-2712-4c4f-82df-04b4e3f54027" />
               </Classes>
             </ContentClassReferences>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/author" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="author" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/Person" />
           </Settings>
         </Property>
         <Property Guid="92e51bb0-5415-498d-bc26-23c2d4ce3593" CodeName="DateAdded" PropertyClassGuid="af7f07f2-d2c0-41a4-902c-ee3e2f110ef7">
           <DataValues>
             <DateTime Guid="33319a4e-9791-47e3-a1c3-f3b61e4a183b" Key="Value" Name="dateadded" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/datePublished" />
-          </Settings>
         </Property>
       </Properties>
-      <Settings>
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Review" />
-      </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJnSURBVDjLpZPNS9RhEMc/z29t1d1tfSmhCAwjioqoKNYuYkRRFB300MWT3eooeMn6C4TunYoiOgSKkGAUhh0SjJCwsBdtfQMN17Ta2v39nueZ6WBtktGh5jLDMPPhC/Mdo6r8T5T93nCPTUqVDhVOi5BRBRVGRBhQ4drGc5pfO2/WKnCPTbMKN0x9Z4OpzqDxWlCPFnL45VHCd91ZEdprWnRoHcANmhatbu4JtrShiSr8t9dIuIS6IpgKgoqdGBsQztwj/DDUWndee0sAO2hqVZmO7b+bkuAzvpgF+wVxIeqLqxBRTHk9sfL9fBq+kBdh+9Y2/RgAqNARbO9KaRwkzIL7ymBfDiQCH/HkIYjN4z6P4cNJEnu6UuLpAAgARDhrahqRYhZ1BVQsx85UomJRb2lqzqMSojaPW3lOWfUuxHN2LWAv5WnErZSWVCzqItRHP2qL+ggJc0CI9zSUACoU1BXBOx71PmXq7dzqorc/csj05BKDD+ZQsaCKCLFfCjxZbAGIc7R5N+9ezTI7uYD6EBXLTHaZiTfLZBrTmCCB+DJsyETJSCL029zowaC6nkRynqNNDYw9m2L8xSx4S7LSkMlUkUzEKEsfoJCbxkb0l8643GPqRHifarydEvsGnx9HohXUhYj7eUaIJXdi0qeYvn8x7yw7Dl3WxQCgplUXRWj/NnELdBuxdCMmVouKgihBfDMb6k6gieMsvezDRrQfuqyL66w8f8ecFM/15N7OhvimfQQbAhCHCz1f59+yMNyddZZLh6/owB9/AWD2pkmJp1OE096TcRE4y4izDDhL95Grf3mmf4nvrQOLvcb/mlMAAAAASUVORK5CYII=</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
     </ContentClass>
     <ContentClass Guid="a9d3c43e-f56d-422e-b005-2f1a4303a7a4" ClassName="RegisteredUser" Namespace="TripsToNorwayDemo" ReplaceClassGuid="682b23ea-2712-4c4f-82df-04b4e3f54027" TableName="tripstonorwaydemo_registereduser">
-      <Settings>
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Person" />
-      </Settings>
       <InheritGuid>682b23ea-2712-4c4f-82df-04b4e3f54027</InheritGuid>
     </ContentClass>
     <ContentClass Guid="b7801407-f6ac-4421-9028-2981b8139d02" ClassName="Recipe" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_recipe">
@@ -1666,33 +1569,21 @@
           <DataValues>
             <Integer Guid="378105fa-753c-4d46-b18d-1c6028a42a4d" Key="Value" Name="cookingtime" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/totalTime" />
-          </Settings>
         </Property>
         <Property Guid="a98fab78-34a2-4af2-a186-0c33864e4662" CodeName="CookingMethod" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="c0e467eb-ff51-4c31-8447-ca1f53efdd7f" Key="Value" Name="cookingmethod" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/cookingMethod" />
-          </Settings>
         </Property>
         <Property Guid="5e68a1c2-868e-479b-af05-1013aeb32762" CodeName="ShortDescription" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="a501252b-70cd-479b-b1f9-fe3434fd6c7c" Key="Value" Name="shortdescription" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
-          </Settings>
         </Property>
         <Property Guid="20091c3a-34a1-4a6a-a9b5-b1c549d841d9" CodeName="PrepTime" PropertyClassGuid="3de57d0c-f738-423c-8acc-ba5510349cad">
           <DataValues>
             <Integer Guid="d175b561-dff3-4bcd-84e5-4527d90ec561" Key="Value" Name="preptime" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/prepTime" />
-          </Settings>
         </Property>
         <Property Guid="eba120df-6d7d-4d5d-ac3d-69a7253f6ea9" CodeName="Picture" PropertyClassGuid="0830d617-f5ee-4266-8f54-71e7867c5225">
           <DataValues>
@@ -1703,9 +1594,6 @@
             <LongString Guid="bdc50c97-3cbb-4835-8108-4538a058df6b" Key="Info" Name="toppicture_info" />
             <Integer Guid="13cf94a6-2442-438a-a0cc-891839d1f4c5" Key="Reference" Name="toppicture_reference" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/image" />
-          </Settings>
         </Property>
         <Property Guid="17bd7cfc-c133-4496-ae5c-40432d6ab39b" CodeName="Reviews" PropertyClassGuid="c38c7283-5478-49be-be77-69bd5a7b99a6">
           <Settings>
@@ -1720,82 +1608,47 @@
                 <ClassReference ClassGuid="c1d15d5e-e60c-4e70-a6d8-fb6f370e2c73" />
               </Classes>
             </InnerContentClassReferences>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/ingredients" />
           </Settings>
         </Property>
         <Property Guid="31f86ec5-f09b-4376-bd0a-340e8ddc3a5f" CodeName="Instructions" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
           <DataValues>
             <LongString Guid="b90ae58b-5779-46c7-b9a1-5bdc22d2622e" Key="Value" Name="instructions" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/recipeInstructions" />
-          </Settings>
         </Property>
         <Property Guid="742b5d7d-5aaa-4d4e-897b-e65d8d645fa3" CodeName="ContentFat" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="ed09e240-fdbd-4072-91f5-9394054ef000" Key="Value" Name="contentfat" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/fatContent" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
-          </Settings>
         </Property>
         <Property Guid="22ea0db9-bca6-48b5-bb75-308e2c20b1df" CodeName="ContentCalories" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="f09c5bb1-072e-4e30-9821-03e453236dc1" Key="Value" Name="contentcalories" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/calories" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
-          </Settings>
         </Property>
         <Property Guid="3928bb21-def6-4054-8884-0456fae70e42" CodeName="ContentFiber" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="2b458a46-8828-4ec3-9931-0fa144c2898b" Key="Value" Name="contentfiber" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/fiberContent" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
-          </Settings>
         </Property>
         <Property Guid="53883b60-c85f-4a4e-b954-decd582655a3" CodeName="ContentProtein" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="5dcc29c5-4267-41d3-bdf5-ff38d6870251" Key="Value" Name="contentprotein" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/proteinContent" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
-          </Settings>
         </Property>
         <Property Guid="4cc7d7cb-8e4c-4f96-b8d9-e030390bdc89" CodeName="ContentCarbs" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="f08334b2-d218-4306-b4a3-d1a9733575ed" Key="Value" Name="contentcarbs" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/carbohydrateContent" />
-            <String Key="SchemaOrgEmbedPathPropMapping" Value="nutrition" />
-            <String Key="SchemaOrgEmbedPathTypeMapping" Value="http://schema.org/NutritionInformation" />
-          </Settings>
         </Property>
         <Property Guid="98209a1b-faed-4f0e-901c-6700d7d39bc3" CodeName="RecipeYield" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="7580628b-0220-4045-abb4-bd95800ab5d5" Key="Value" Name="recipeyield" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/recipeYield" />
-          </Settings>
         </Property>
         <Property Guid="61506720-e488-4420-ac22-6662fd2ca0a7" CodeName="RecipeCategory" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="4128c460-b72b-42bb-a00d-16ad8d042de0" Key="Value" Name="recipecategory" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/recipeCategory" />
-          </Settings>
         </Property>
         <Property Guid="a95da0f0-c56f-4ec3-80ed-1c845e00758f" CodeName="History" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
           <DataValues>
@@ -1814,9 +1667,6 @@
           </DataValues>
         </Property>
       </Properties>
-      <Settings>
-        <String Key="SchemaOrgMapping" Value="http://schema.org/Recipe" />
-      </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQUFBQUGBQUGBgcHBwYIBwgICAkJCQgKCQ0NDQ4ODhAQEBERERASERUVFRgYGB0dHSAiITk5OT4+PkJCQlBQUGhoaGtra21tbXV1dXV2dXd3d31+foaGhouLi4uNjIyMjJCQkJGRkZSUlJWVlZaWlpycnJ+fn6CgoKKioqOjo6Wmpqurq7CwsLGxsbS1tba2tri4uLm5ubu7u729vb/AwMLEw8XFxcbGxsjIyMrKys3NzdHR0dLS0tPT09PU1NXV1dfX19jY2N3d3d7e3uLi4uPj4+Tk5Orq6u/v7+/x8PDw8PLy8vT09PX19fb29vv7+/v9/Pz8/P39/f7+/v7//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAId3/fcAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41Ljg3O4BdAAAAtklEQVQoU03PhRLDIAwA0A7aubu7dJ1b5+6+Qv7/W0bHeht3cLlHIIkAAERfQPUDQGD7qNYnG6rJsQXloEb9SYVWJdF75tCJ+5MlEsQianKoRXyJPAkgUVToB6oSsqRJWMDmGYeV2+QcwNaDQxp/ovWR/AKSsR2/VeCAR8wrrse3D9ijIQvLP9jhHoOi425krHEXgBb+ALXZXdZ+MzLmqMHClPViwFJqsZlz9pMBZPxkf1yn+vhvCyw+tlL0x4EAAAAASUVORK5CYII=</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
     </ContentClass>
@@ -1837,97 +1687,61 @@
           <DataValues>
             <Integer Guid="eec506a1-911d-4025-a1a5-6ea48e6d3937" Key="Value" Name="salary" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/baseSalary" />
-          </Settings>
         </Property>
         <Property Guid="01c2f068-7da5-4c22-a8bc-ea5114570691" CodeName="SalaryCurrency" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="1806be87-3bd8-4cc7-916c-a748e7af39d1" Key="Value" Name="salarycurrency" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/salaryCurrency" />
-          </Settings>
         </Property>
         <Property Guid="0904ede9-5fa2-4cf9-b18f-1a9df65ca41a" CodeName="Responsibilities" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
           <DataValues>
             <LongString Guid="27fab971-586d-4c61-ae94-45f126617361" Key="Value" Name="responsibilities" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/responsibilities" />
-          </Settings>
         </Property>
         <Property Guid="7a27533e-895a-4eef-88b6-2309d0685625" CodeName="EmploymentType" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="00d4b547-8438-4665-a07f-99167898992e" Key="Value" Name="employmenttype" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/employmentType" />
-          </Settings>
         </Property>
         <Property Guid="4c294867-fb94-4f32-9c4d-36d716d9ffd9" CodeName="WorkHours" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="23db5e2e-7b8e-4a95-bb24-109c0db91036" Key="Value" Name="workhours" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/workHours" />
-          </Settings>
         </Property>
         <Property Guid="e6242ba5-8f56-467f-98d2-05223d96d99e" CodeName="Industry" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="3afab358-044e-4c44-a81d-1a7dd64dee1f" Key="Value" Name="industry" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/industry" />
-          </Settings>
         </Property>
         <Property Guid="ce07abde-e367-49cd-b9a7-1aede976adb9" CodeName="Description" PropertyClassGuid="8fce161d-836d-4dc8-bc89-f10baaa069b8">
           <DataValues>
             <LongString Guid="3bc7fa16-e227-419d-af8f-1c251f77c27e" Key="Value" Name="description" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/description" />
-          </Settings>
         </Property>
         <Property Guid="302f8ec1-7228-4091-b8d1-23e386486456" CodeName="Skills" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
           <DataValues>
             <LongString Guid="ffa07e89-50c3-4933-ad4a-a1d1ea2286bb" Key="Value" Name="skills" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/skills" />
-          </Settings>
         </Property>
         <Property Guid="6a4cd1a0-2fb5-4c98-8b47-c641a389cb0e" CodeName="Qualifications" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
           <DataValues>
             <LongString Guid="6eeb1488-6ba2-4c04-be91-3f7958c69faf" Key="Value" Name="qualifications" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/qualifications" />
-          </Settings>
         </Property>
         <Property Guid="9a19f30c-c055-45c4-b913-31158a176bfa" CodeName="Benefits" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="bea3ebe1-c264-4981-a0f7-73a2ceb7f405" Key="Value" Name="benefits" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/benefits" />
-          </Settings>
         </Property>
         <Property Guid="162d585f-dadf-4825-9c43-3d26c9e27138" CodeName="DatePosted" PropertyClassGuid="af7f07f2-d2c0-41a4-902c-ee3e2f110ef7">
           <DataValues>
             <DateTime Guid="8a55dd8d-4fcf-4dfd-a14d-b040e8259776" Key="Value" Name="dateposted" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/datePosted" />
-          </Settings>
         </Property>
         <Property Guid="92744ad4-7e77-46a0-bca4-bfa931d83019" CodeName="HiringOrganization" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
             <ShortString Guid="55829837-cb42-4c29-a0d1-ca6850ddd604" Key="Value" Name="hiringorganization" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/hiringOrganization" />
-          </Settings>
         </Property>
         <Property Guid="1e8c1223-2d8c-4bda-99ec-0d6f205b87a5" CodeName="JobLocation" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
@@ -1938,9 +1752,6 @@
           <DataValues>
             <ShortString Guid="0d04814f-937c-4722-aa52-d6a1c9bf82ea" Key="Value" Name="occupationalcategory" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/occupationalCategory" />
-          </Settings>
         </Property>
         <Property Guid="63455570-9d11-4083-abac-2708704872c6" CodeName="AdditionalInfo" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
           <DataValues>
@@ -1951,22 +1762,13 @@
           <DataValues>
             <ShortString Guid="550c9a30-e6d7-4a78-9cc2-bac2e80521ce" Key="Value" Name="educationrequirements" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/educationRequirements" />
-          </Settings>
         </Property>
         <Property Guid="ffa5564b-d1ea-48fe-9155-8ef2a7b2899f" CodeName="ExperienceRequirements" PropertyClassGuid="004506fc-4a9f-4c0a-8bd0-bfd16fa76876">
           <DataValues>
             <LongString Guid="d84d8f6d-8ebd-4901-80ae-5c50613e0024" Key="Value" Name="experiencerequirements" />
           </DataValues>
-          <Settings>
-            <String Key="SchemaOrgMapping" Value="http://schema.org/experienceRequirements" />
-          </Settings>
         </Property>
       </Properties>
-      <Settings>
-        <String Key="SchemaOrgMapping" Value="http://schema.org/JobPosting" />
-      </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJlSURBVDjLpZNrSJNRGMdlr7qat+zKaoYhjqYphRCWCtKFoCj60CeRpDB0djHUSMOZm0JhGEmlNhczXXunDgy7TNcVcsjGpk6dNsiJyyjWNg3ZnJfef69vMBBkFn34wXMu/995DocTBCDof1h1cvBJnM5RTsBVyYLzBgvfigjopbGDfyUwK+Nfu2RsTNcTDO5aAk4RC1/KQ2BqjetbU+AiOZip/xNyLndQSeCHmMBUIQFzTjDWFDiu0O0qzmJKU4OvPSmYuETAXhKM8WshsOYR0NZlRAUUtOXt+Dk99hYufSu+6x7D8fEAnLozmLEq0V3M8ww1F4QGFEhz+Aa3QQmHsQPeQZJGxdRuEwnp+SRjwCs0FpwIf3guwfayKBE+owxzI50M3oGn0JbuQW323vE7uac2rSpoFB6Pll/M0FjEofDZe2Go2ocu0VGG5dpjUWOEXpPlp72X5h/irhBIcrNYNunp5s+31gFTWmCsAfiQDWiOgXq2H1Q7H1TPSVCfmjBaHY4HFzJfNOQd5vgFZGHmo5n7bEBfQlPMBNGVCqgTQZGxWGjhwivbCKorHb/UybDf5UFekE76Bf3lu5ccz0uxpIgBOvgMlGoXPeZhvnkbHY7GbEMYnHVseKQb4OquQF+JYMEvMIsElFsroTfQL/TqCBYVOzHfsh0++RZ4mqIxJ98Kj2wzc7qtJhLTb6pguJ5A+QXDLZfLTGXxi45762G7TUs6BKtirWZjWByG/opkH52pWvEKEyphRK8oLan9aurkgCSGslRHYVTCwQjNkDgSpptcqrMwafZd2cGUyTZhRMDf+C/8Blefvm4GxFC9AAAAAElFTkSuQmCC</Icon>
       <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
     </ContentClass>

@@ -28,9 +28,9 @@ namespace WAF.Engine.Content.TripsToNorwayDemo {
         get { EnsureContentDataIndependence(); return FilePropertyValue.GetValue(WAFID.GetDataValueId("38c3510e-68b6-4375-94a1-e5e6f02a6ca3"),WAFID.GetDataValueId("92049705-4c92-4389-9d63-f8c85f893676"),WAFID.GetDataValueId("87c6c85b-dd04-435f-adbb-28e883ed47dd"),WAFID.GetDataValueId("c9ef883c-1169-413e-a366-e2d9ec9a0935"),WAFID.GetDataValueId("1c74481f-30ba-4aba-b5e4-31dab855d70d"),WAFID.GetDataValueId("0f344805-25d0-4f4b-aaee-9b66035826aa"), ref _topPicture, this, WAFID.GetDataValueId("d19e0fe5-093b-4dc7-96a8-e188ae1f6cb2")); }
         }
       
-        NodeRelationPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Country> _country;
-        public virtual NodeRelationPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Country> Country{
-        get { EnsureContentDataIndependence(); return NodeRelationPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Country>.GetValue(WAFID.GetDataValueId("b6fdd34c-8460-44f3-a3d6-9338e81d9806"), ref _country, this);}
+        NodeRelationPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.ExplorerCountry> _country;
+        public virtual NodeRelationPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.ExplorerCountry> Country{
+        get { EnsureContentDataIndependence(); return NodeRelationPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.ExplorerCountry>.GetValue(WAFID.GetDataValueId("b6fdd34c-8460-44f3-a3d6-9338e81d9806"), ref _country, this);}
         }
       
         NodeRelationsPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Location> _locations;
@@ -520,7 +520,7 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
 
         public static AqlPropertyRelation Country {
             get {
-                return new AqlPropertyRelation( WAFID.GetPropertyId("b6fdd34c-8460-44f3-a3d6-9338e81d9806"), new AqlAliasRelation(new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasCountry(), new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasRegion(), WAF.Engine.Query.TripsToNorwayDemo.AqlRelCountryRegion.Relation));
+                return new AqlPropertyRelation( WAFID.GetPropertyId("b6fdd34c-8460-44f3-a3d6-9338e81d9806"), new AqlAliasRelation(new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasExplorerCountry(), new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasRegion(), WAF.Engine.Query.TripsToNorwayDemo.AqlRelCountryRegion.Relation));
             }
         }
 

@@ -4,7 +4,7 @@ using WAF.Engine.Content.TripsToNorwayDemo;
 
 namespace ExploreNorway.Controllers
 {
-    public class LocationController : BaseController<Location>
+    public class LocationController : BaseController<WAF.Engine.Content.TripsToNorwayDemo.Location>
     {
         public LocationController(WAFNativeContext wafCtx) : base(wafCtx)
         {

@@ -84,9 +84,9 @@ namespace WAF.Engine.Content.TripsToNorwayDemo {
         set { EnsureContentDataIndependence(); ShortStringPropertyValue.SetValue(WAFID.GetDataValueId("55314461-0b32-4230-98e2-3fb3d5ff0b92"), ref _siteColor, this.Session, this.ContentId, this.ContentData.DataValueById, value); }
         }
       
-        NodeParentPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Country> _country;
-        public virtual NodeParentPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Country> Country{
-        get { EnsureContentDataIndependence(); return NodeParentPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Country>.GetPropValue(WAFID.GetDataValueId("07659598-4795-4304-92e8-6e55f1aa2658"), ref _country, this);}
+        NodeParentPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.ExplorerCountry> _country;
+        public virtual NodeParentPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.ExplorerCountry> Country{
+        get { EnsureContentDataIndependence(); return NodeParentPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.ExplorerCountry>.GetPropValue(WAFID.GetDataValueId("07659598-4795-4304-92e8-6e55f1aa2658"), ref _country, this);}
         }
       
         public override IContent AddCulture(int lcid) {

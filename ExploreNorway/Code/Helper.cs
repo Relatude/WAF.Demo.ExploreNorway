@@ -130,9 +130,9 @@ public class Helper
                     imageUrl = GetRandomPictureUrl(imgWidth, imgHeight);
                 }
             }
-            else if (currentContent is Location)
+            else if (currentContent is WAF.Engine.Content.TripsToNorwayDemo.Location)
             {
-                Location loc = currentContent as Location;
+                WAF.Engine.Content.TripsToNorwayDemo.Location loc = currentContent as WAF.Engine.Content.TripsToNorwayDemo.Location;
                 if (loc.TopPicture.IsImage())
                 {
                     imageUrl = loc.TopPicture.GetUrl(imgWidth, imgHeight);
@@ -309,7 +309,7 @@ public class Helper
                 {
                     Region reg = (Region)hc;
 
-                    var locations = reg.Locations.Query<Location>().OrderBy(AqlLocation.Name, false).Execute();
+                    var locations = reg.Locations.Query<WAF.Engine.Content.TripsToNorwayDemo.Location>().OrderBy(AqlLocation.Name, false).Execute();
                     foreach (var location in locations)
                     {
                         var newFilter = new FilterItem();

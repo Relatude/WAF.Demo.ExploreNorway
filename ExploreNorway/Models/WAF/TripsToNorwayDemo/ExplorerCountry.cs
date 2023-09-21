@@ -22,7 +22,7 @@ using WAF.Presentation.Web;
 
 namespace WAF.Engine.Content.TripsToNorwayDemo {
     [Serializable]
-    public partial class Country: WAF.Engine.Content.Native.HierarchicalContent {
+    public partial class ExplorerCountry: WAF.Engine.Content.Native.HierarchicalContent {
         NodeRelationsPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Region> _regions;
         public virtual NodeRelationsPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Region> Regions{
         get {EnsureContentDataIndependence(); return NodeRelationsPropertyValue<WAF.Engine.Content.TripsToNorwayDemo.Region>.GetValue(WAFID.GetDataValueId("e6a3e7fb-86fb-4cc6-8354-e2755e24f524"), ref _regions, this);}
@@ -57,13 +57,13 @@ namespace WAF.Engine.Content.TripsToNorwayDemo {
         }
       
         public override IContent AddCulture(int lcid) {
-            return _WAFSession.AddCulture<Country>(NodeId, lcid);
+            return _WAFSession.AddCulture<ExplorerCountry>(NodeId, lcid);
         }
         public override IContent AddRevision(int revision) {
-            return _WAFSession.AddRevision<Country>(NodeId, revision);
+            return _WAFSession.AddRevision<ExplorerCountry>(NodeId, revision);
         }
         public override IContent AddContent(int lcid, int revision) {
-            return _WAFSession.AddContent<Country>(NodeId, lcid, revision);
+            return _WAFSession.AddContent<ExplorerCountry>(NodeId, lcid, revision);
         }
         ///<summary>
         ///The internal Id of the Ontology content class
@@ -204,10 +204,10 @@ namespace WAF.Engine.Content.TripsToNorwayDemo {
     }
 }
 namespace WAF.Data.Query.TripsToNorwayDemo {
-    public abstract class SqlCountry {
+    public abstract class SqlExplorerCountry {
         public static SqlTable Table {
             get {
-                return new SqlTable("country", WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new SqlTable("explorer_country", WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
@@ -274,67 +274,67 @@ namespace WAF.Data.Query.TripsToNorwayDemo {
 
         }
     }
-    public class SqlAliasCountry : SqlAlias {
-        public SqlAliasCountry()
-            : base(SqlCountry.Table) {
+    public class SqlAliasExplorerCountry : SqlAlias {
+        public SqlAliasExplorerCountry()
+            : base(SqlExplorerCountry.Table) {
         }
         public SqlExpressionFieldInteger ContentId {
             get {
-                return new SqlExpressionFieldInteger(SqlCountry.Field.ContentId, this);
+                return new SqlExpressionFieldInteger(SqlExplorerCountry.Field.ContentId, this);
             }
         }
 
         public SqlExpressionFieldLongString About {
             get {
-                return new SqlExpressionFieldLongString(SqlCountry.Field.About, this);
+                return new SqlExpressionFieldLongString(SqlExplorerCountry.Field.About, this);
             }
         }
 
         public SqlExpressionFieldShortString Flag_flag_filename {
             get {
-                return new SqlExpressionFieldShortString(SqlCountry.Field.Flag_flag_filename, this);
+                return new SqlExpressionFieldShortString(SqlExplorerCountry.Field.Flag_flag_filename, this);
             }
         }
 
         public SqlExpressionFieldShortString Flag_flag_type_name {
             get {
-                return new SqlExpressionFieldShortString(SqlCountry.Field.Flag_flag_type_name, this);
+                return new SqlExpressionFieldShortString(SqlExplorerCountry.Field.Flag_flag_type_name, this);
             }
         }
 
         public SqlExpressionFieldShortString Flag_flag_extension {
             get {
-                return new SqlExpressionFieldShortString(SqlCountry.Field.Flag_flag_extension, this);
+                return new SqlExpressionFieldShortString(SqlExplorerCountry.Field.Flag_flag_extension, this);
             }
         }
 
         public SqlExpressionFieldFloat Flag_flag_bytes {
             get {
-                return new SqlExpressionFieldFloat(SqlCountry.Field.Flag_flag_bytes, this);
+                return new SqlExpressionFieldFloat(SqlExplorerCountry.Field.Flag_flag_bytes, this);
             }
         }
 
         public SqlExpressionFieldLongString Flag_flag_info {
             get {
-                return new SqlExpressionFieldLongString(SqlCountry.Field.Flag_flag_info, this);
+                return new SqlExpressionFieldLongString(SqlExplorerCountry.Field.Flag_flag_info, this);
             }
         }
 
         public SqlExpressionFieldInteger Flag_flag_reference {
             get {
-                return new SqlExpressionFieldInteger(SqlCountry.Field.Flag_flag_reference, this);
+                return new SqlExpressionFieldInteger(SqlExplorerCountry.Field.Flag_flag_reference, this);
             }
         }
 
         public SqlExpressionFieldShortString Latitude {
             get {
-                return new SqlExpressionFieldShortString(SqlCountry.Field.Latitude, this);
+                return new SqlExpressionFieldShortString(SqlExplorerCountry.Field.Latitude, this);
             }
         }
 
         public SqlExpressionFieldShortString Longitude {
             get {
-                return new SqlExpressionFieldShortString(SqlCountry.Field.Longitude, this);
+                return new SqlExpressionFieldShortString(SqlExplorerCountry.Field.Longitude, this);
             }
         }
 
@@ -342,7 +342,7 @@ namespace WAF.Data.Query.TripsToNorwayDemo {
 }
 namespace WAF.Engine.Query.TripsToNorwayDemo {
     [System.Serializable]
-    public partial class AqlCountry{
+    public partial class AqlExplorerCountry{
         public static AqlPropertyInteger NodeId  {
             get {
                 return new AqlPropertyInteger(Sql.Field.Node.Id, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85")); 
@@ -471,61 +471,61 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
 
         public static AqlPropertyRelation Regions {
             get {
-                return new AqlPropertyRelation( WAFID.GetPropertyId("e6a3e7fb-86fb-4cc6-8354-e2755e24f524"), new AqlAliasRelation(new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasCountry(), new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasRegion(), WAF.Engine.Query.TripsToNorwayDemo.AqlRelCountryRegion.Relation));
+                return new AqlPropertyRelation( WAFID.GetPropertyId("e6a3e7fb-86fb-4cc6-8354-e2755e24f524"), new AqlAliasRelation(new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasExplorerCountry(), new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasRegion(), WAF.Engine.Query.TripsToNorwayDemo.AqlRelCountryRegion.Relation));
             }
         }
 
         public static AqlPropertyLongString About {
             get {
-                return new AqlPropertyLongString(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.About, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyLongString(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.About, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyShortString Flag_flag_filename {
             get {
-                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Flag_flag_filename, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Flag_flag_filename, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyShortString Flag_flag_type_name {
             get {
-                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Flag_flag_type_name, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Flag_flag_type_name, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyShortString Flag_flag_extension {
             get {
-                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Flag_flag_extension, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Flag_flag_extension, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyFloat Flag_flag_bytes {
             get {
-                return new AqlPropertyFloat(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Flag_flag_bytes, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyFloat(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Flag_flag_bytes, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyLongString Flag_flag_info {
             get {
-                return new AqlPropertyLongString(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Flag_flag_info, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyLongString(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Flag_flag_info, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyInteger Flag_flag_reference {
             get {
-                return new AqlPropertyInteger(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Flag_flag_reference, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyInteger(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Flag_flag_reference, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyShortString Latitude {
             get {
-                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Latitude, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Latitude, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
         public static AqlPropertyShortString Longitude {
             get {
-                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlCountry.Field.Longitude, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
+                return new AqlPropertyShortString(WAF.Data.Query.TripsToNorwayDemo.SqlExplorerCountry.Field.Longitude, WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85"));
             }
         }
 
@@ -645,70 +645,70 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
 
     }
     [System.Serializable]
-    public class AqlAliasCountry
+    public class AqlAliasExplorerCountry
         : WAF.Engine.Query.Native.AqlAliasHierarchicalContent{
 
-        public AqlAliasCountry()
+        public AqlAliasExplorerCountry()
             : base(WAFID.GetContentClassId("6469869a-b2e3-433c-ae29-bcbba3c77b85")) {
 
         }
 
-        public AqlAliasCountry(int contentClassId)
+        public AqlAliasExplorerCountry(int contentClassId)
             : base(contentClassId) {
 
         }
 
         public AqlExpressionPropertyLongString About {
             get {
-                return new AqlExpressionPropertyLongString(AqlCountry.About, this);
+                return new AqlExpressionPropertyLongString(AqlExplorerCountry.About, this);
             }
         }
 
         public AqlExpressionPropertyShortString Flag_flag_filename {
             get {
-                return new AqlExpressionPropertyShortString(AqlCountry.Flag_flag_filename, this);
+                return new AqlExpressionPropertyShortString(AqlExplorerCountry.Flag_flag_filename, this);
             }
         }
 
         public AqlExpressionPropertyShortString Flag_flag_type_name {
             get {
-                return new AqlExpressionPropertyShortString(AqlCountry.Flag_flag_type_name, this);
+                return new AqlExpressionPropertyShortString(AqlExplorerCountry.Flag_flag_type_name, this);
             }
         }
 
         public AqlExpressionPropertyShortString Flag_flag_extension {
             get {
-                return new AqlExpressionPropertyShortString(AqlCountry.Flag_flag_extension, this);
+                return new AqlExpressionPropertyShortString(AqlExplorerCountry.Flag_flag_extension, this);
             }
         }
 
         public AqlExpressionPropertyFloat Flag_flag_bytes {
             get {
-                return new AqlExpressionPropertyFloat(AqlCountry.Flag_flag_bytes, this);
+                return new AqlExpressionPropertyFloat(AqlExplorerCountry.Flag_flag_bytes, this);
             }
         }
 
         public AqlExpressionPropertyLongString Flag_flag_info {
             get {
-                return new AqlExpressionPropertyLongString(AqlCountry.Flag_flag_info, this);
+                return new AqlExpressionPropertyLongString(AqlExplorerCountry.Flag_flag_info, this);
             }
         }
 
         public AqlExpressionPropertyInteger Flag_flag_reference {
             get {
-                return new AqlExpressionPropertyInteger(AqlCountry.Flag_flag_reference, this);
+                return new AqlExpressionPropertyInteger(AqlExplorerCountry.Flag_flag_reference, this);
             }
         }
 
         public AqlExpressionPropertyShortString Latitude {
             get {
-                return new AqlExpressionPropertyShortString(AqlCountry.Latitude, this);
+                return new AqlExpressionPropertyShortString(AqlExplorerCountry.Latitude, this);
             }
         }
 
         public AqlExpressionPropertyShortString Longitude {
             get {
-                return new AqlExpressionPropertyShortString(AqlCountry.Longitude, this);
+                return new AqlExpressionPropertyShortString(AqlExplorerCountry.Longitude, this);
             }
         }
 
