@@ -603,39 +603,6 @@ namespace WAF.Data.Query.TripsToNorwayDemo {
 }
 namespace WAF.Data.Query.TripsToNorwayDemo {
 
-    public abstract class SqlNewRelation {
-
-        public static SqlTable Table {
-            get {
-                return new SqlTable("tripstonorwaydemo_newrelation", TableId.RelationAbstract);
-            }
-        }
-
-        public abstract class Field {
-
-            public static SqlFieldInteger ParentId {
-                get {
-                    return new SqlFieldPrimaryInteger("parent_id", Table);
-                }
-            }
-
-            public static SqlFieldInteger ChildId {
-                get {
-                    return new SqlFieldPrimaryInteger("child_id", Table);
-                }
-            }
-
-            public static SqlFieldInteger Listorder {
-                get {
-                    return new SqlFieldInteger("listorder", Table);
-                }
-            }
-
-        }
-    }
-}
-namespace WAF.Data.Query.TripsToNorwayDemo {
-
     public abstract class SqlRelTouristItem_ItemReview {
 
         public static SqlTable Table {
@@ -740,6 +707,39 @@ namespace WAF.Data.Query.TripsToNorwayDemo {
         public static SqlTable Table {
             get {
                 return new SqlTable("rel_rel_modular_page_modules", TableId.RelationAbstract);
+            }
+        }
+
+        public abstract class Field {
+
+            public static SqlFieldInteger ParentId {
+                get {
+                    return new SqlFieldPrimaryInteger("parent_id", Table);
+                }
+            }
+
+            public static SqlFieldInteger ChildId {
+                get {
+                    return new SqlFieldPrimaryInteger("child_id", Table);
+                }
+            }
+
+            public static SqlFieldInteger Listorder {
+                get {
+                    return new SqlFieldInteger("listorder", Table);
+                }
+            }
+
+        }
+    }
+}
+namespace WAF.Data.Query.TripsToNorwayDemo {
+
+    public abstract class SqlRelTouristItemsModules {
+
+        public static SqlTable Table {
+            get {
+                return new SqlTable("rel_rel_tourist_items_modules", TableId.RelationAbstract);
             }
         }
 
@@ -985,18 +985,6 @@ namespace WAF.Engine.Query.TripsToNorwayDemo{
 namespace WAF.Engine.Query.TripsToNorwayDemo{
 
     [System.Serializable]
-    public abstract class AqlNewRelation{
-        public static AqlClassRelation Relation {
-            get {
-                return new AqlClassRelation( WAFID.GetRelationId("18c9e1c9-4906-47e8-a7cb-de5a02acc60f") );
-            }
-        }
-
-    }
-}
-namespace WAF.Engine.Query.TripsToNorwayDemo{
-
-    [System.Serializable]
     public abstract class AqlRelTouristItem_ItemReview{
         public static AqlClassRelation Relation {
             get {
@@ -1037,6 +1025,18 @@ namespace WAF.Engine.Query.TripsToNorwayDemo{
         public static AqlClassRelation Relation {
             get {
                 return new AqlClassRelation( WAFID.GetRelationId("fda6ef4c-9cdf-4337-8f90-65f6f2bee4d0") );
+            }
+        }
+
+    }
+}
+namespace WAF.Engine.Query.TripsToNorwayDemo{
+
+    [System.Serializable]
+    public abstract class AqlRelTouristItemsModules{
+        public static AqlClassRelation Relation {
+            get {
+                return new AqlClassRelation( WAFID.GetRelationId("c6631f21-7188-4317-8dd9-4a9bf5abc289") );
             }
         }
 
@@ -1459,29 +1459,6 @@ namespace WAF.Engine.Query.TripsToNorwayDemo{
 namespace WAF.Engine.Query.TripsToNorwayDemo{
 
     [System.Serializable]
-    public class AqlAliasNewRelation: AqlAliasRelation {
-
-        public AqlAliasNewRelation(AqlAlias parent, AqlAlias child)
-             : base(parent, child, AqlNewRelation.Relation) {
-
-        }
-        public AqlAliasNewRelation(AqlAliasRelation parent, AqlAlias child, AqlAlias onParent)
-             : base(parent, child, AqlNewRelation.Relation, onParent ) {
-
-        }
-        public AqlAliasNewRelation(AqlAlias parent, AqlAliasRelation child, AqlAlias onChild)
-             : base(parent, child, AqlNewRelation.Relation, onChild ) {
-
-        }
-        public AqlAliasNewRelation(AqlAliasRelation parent, AqlAliasRelation child,AqlAlias onParent, AqlAlias onChild)
-             : base(parent, child, AqlNewRelation.Relation, onParent, onChild ) {
-
-        }
-    }
-}
-namespace WAF.Engine.Query.TripsToNorwayDemo{
-
-    [System.Serializable]
     public class AqlAliasRelTouristItem_ItemReview: AqlAliasRelation {
 
         public AqlAliasRelTouristItem_ItemReview(AqlAlias parent, AqlAlias child)
@@ -1567,6 +1544,29 @@ namespace WAF.Engine.Query.TripsToNorwayDemo{
         }
         public AqlAliasRelModularPageModules(AqlAliasRelation parent, AqlAliasRelation child,AqlAlias onParent, AqlAlias onChild)
              : base(parent, child, AqlRelModularPageModules.Relation, onParent, onChild ) {
+
+        }
+    }
+}
+namespace WAF.Engine.Query.TripsToNorwayDemo{
+
+    [System.Serializable]
+    public class AqlAliasRelTouristItemsModules: AqlAliasRelation {
+
+        public AqlAliasRelTouristItemsModules(AqlAlias parent, AqlAlias child)
+             : base(parent, child, AqlRelTouristItemsModules.Relation) {
+
+        }
+        public AqlAliasRelTouristItemsModules(AqlAliasRelation parent, AqlAlias child, AqlAlias onParent)
+             : base(parent, child, AqlRelTouristItemsModules.Relation, onParent ) {
+
+        }
+        public AqlAliasRelTouristItemsModules(AqlAlias parent, AqlAliasRelation child, AqlAlias onChild)
+             : base(parent, child, AqlRelTouristItemsModules.Relation, onChild ) {
+
+        }
+        public AqlAliasRelTouristItemsModules(AqlAliasRelation parent, AqlAliasRelation child,AqlAlias onParent, AqlAlias onChild)
+             : base(parent, child, AqlRelTouristItemsModules.Relation, onParent, onChild ) {
 
         }
     }
@@ -1789,18 +1789,6 @@ namespace WAF.Engine.Content.TripsToNorwayDemo{
 }
 namespace WAF.Engine.Content.TripsToNorwayDemo{
     [System.Serializable]
-    public partial class NewRelation: WAF.Engine.Content.RelationBase {
-
-        public static int RelationId {
-            get {
-                return WAFID.GetRelationId("18c9e1c9-4906-47e8-a7cb-de5a02acc60f");
-            }
-        }
-
-    }
-}
-namespace WAF.Engine.Content.TripsToNorwayDemo{
-    [System.Serializable]
     public partial class RelTouristItem_ItemReview: WAF.Engine.Content.RelationBase {
 
         public static int RelationId {
@@ -1842,6 +1830,18 @@ namespace WAF.Engine.Content.TripsToNorwayDemo{
         public static int RelationId {
             get {
                 return WAFID.GetRelationId("fda6ef4c-9cdf-4337-8f90-65f6f2bee4d0");
+            }
+        }
+
+    }
+}
+namespace WAF.Engine.Content.TripsToNorwayDemo{
+    [System.Serializable]
+    public partial class RelTouristItemsModules: WAF.Engine.Content.RelationBase {
+
+        public static int RelationId {
+            get {
+                return WAFID.GetRelationId("c6631f21-7188-4317-8dd9-4a9bf5abc289");
             }
         }
 

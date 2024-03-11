@@ -1,16 +1,13 @@
 ﻿@{
     Layout = "_BaseLayout.cshtml";
+    
 }
 
-
-
 <div id="splitpage-leftcolumn">
-    @*<asp:ContentPlaceHolder runat="server" ID="cphMainRow" />*@
     @RenderBody()
 </div>
 <div id="splitpage-rightcolumn">
     @RenderSection("sideRow")
-@*    <asp:ContentPlaceHolder runat="server" ID="cphSideRow" />*@
 </div>
 
 

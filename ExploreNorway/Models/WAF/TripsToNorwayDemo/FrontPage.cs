@@ -22,7 +22,7 @@ using WAF.Presentation.Web;
 
 namespace WAF.Engine.Content.TripsToNorwayDemo {
     [Serializable]
-    public partial class FrontPage: WAF.Engine.Content.Native.HierarchicalContent {
+    public partial class FrontPage: WAF.Engine.Content.TripsToNorwayDemo.ModulesPage {
         ShortStringPropertyValue _mainImageTitle;
         public virtual string MainImageTitle {
         get { return ShortStringPropertyValue.GetValue(WAFID.GetDataValueId("9726b9a0-aa0e-4621-8619-f3a45e364cec"), ref _mainImageTitle, this.Session, this.ContentId, this.ContentData.DataValueById, this.ContentParentPath); }
@@ -825,6 +825,12 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
             }
         }
 
+        public static AqlPropertyRelation Modules {
+            get {
+                return new AqlPropertyRelation( WAFID.GetPropertyId("966d366d-0544-4450-ad12-a1501c5669a5"), new AqlAliasRelation(new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasModulesPage(), new WAF.Engine.Query.TripsToNorwayDemo.AqlAliasModuleBase(), WAF.Engine.Query.TripsToNorwayDemo.AqlRelModularPageModules.Relation));
+            }
+        }
+
         public static AqlPropertyShortString TemplatePath {
             get {
                 return new AqlPropertyShortString(WAF.Data.Query.Native.SqlHierarchicalContent.Field.TemplatePath, WAFID.GetContentClassId("c4cc7f94-5263-4cf1-888b-a2c10cabcd29"));
@@ -942,7 +948,7 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
     }
     [System.Serializable]
     public class AqlAliasFrontPage
-        : WAF.Engine.Query.Native.AqlAliasHierarchicalContent{
+        : WAF.Engine.Query.TripsToNorwayDemo.AqlAliasModulesPage{
 
         public AqlAliasFrontPage()
             : base(WAFID.GetContentClassId("c4cc7f94-5263-4cf1-888b-a2c10cabcd29")) {

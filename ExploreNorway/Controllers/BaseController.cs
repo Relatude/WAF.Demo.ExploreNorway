@@ -19,16 +19,7 @@ namespace ExploreNorway.Controllers
                 if (_currentContent != null)
                     return _currentContent;
 
-                var hc = wafContext.Request.GetContent<HierarchicalContent>();
-                //if (hc is Site)
-                //{
-                //    var currentSite = (Site)hc;
-                //    if (currentSite.StartNode.IsSet())
-                //    {
-                //        var startNode = currentSite.StartNode.Get();
-                //        hc = (T)startNode;
-                //    }
-                //}
+                var hc = wafContext.Request.GetContent<HierarchicalContent>();               
                 if (hc is T)
                 {
                     _currentContent = (T)hc;

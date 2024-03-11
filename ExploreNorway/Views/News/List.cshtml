@@ -4,30 +4,26 @@
 @{
     Layout = "~/Views/Shared/Layouts/_TwoColumnLeftWideWithoutPicturesLayout.cshtml";
 }
-
-
 @section header{
     <h1>@Model.Name</h1>
     <p>@Model.Ingress</p>
 }
-
-
-
+<ul class="content-list">
 @foreach (var item in Model.ListItems)
 {
+    <li>
     <h3>
-        <a href="@wafContext.GetUrl(item)">@item.Name</a>
-        <span style="padding-left:0px;color:#666666;font-size:10px;">
-            - @String.Format("{0:d}", item.PublishDate)
-        </span>
+        <a href="@wafContext.GetUrl(item)">@item.Name</a>        
     </h3>
-    <p class="news-item-list-ingress">
-        <img src="@item.IngressPicture.GetUrl(120)" align="left" />
+    <div class="text-image">
+            <img src="@item.IngressPicture.GetUrl(270)" />
+    <p>       
         @item.Ingress
     </p>
-    <div class="clear"></div>
+            </div>
+        </li>
 }
-
+</ul>
 
 @section sideRow{
     @Html.Partial("Partials/_RelatedArticles")

@@ -13,15 +13,16 @@ namespace ExploreNorway.Controllers
 {
     public class ShopController : BaseController<HierarchicalContent>
     {
+        protected WAFNativeContext wafContext;
         public ShopController(WAFNativeContext wafCtx) : base(wafCtx)
         {
-
-        }
+              wafContext = wafCtx;
+    }
         // GET: Shop
-        public ActionResult Index()
+        public ActionResult ShopFrontpage()
         {
-
-            throw new NotImplementedException();
+            var shop = WAFShopHelper.GetCurrentShop(wafContext.Session) as DemoShop;
+            return View(shop);
             //return View(CurrentContent as DemoShop);
         }
 

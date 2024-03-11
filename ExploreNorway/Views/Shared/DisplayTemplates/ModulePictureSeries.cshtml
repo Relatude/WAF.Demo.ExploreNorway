@@ -10,8 +10,8 @@
         <div class="series-container">
             @{
                 var adjust = new ImageAdjustments();
-                adjust.CanvasX = 720;
-                adjust.CanvasY = 576;
+                adjust.CanvasX = 1240;
+                adjust.CanvasY = 776;
                 adjust.ZoomMode = AutoZoomMode.Fit;
                 adjust.BackgroundColor = WAF.Drawing.WColor.White;
             }
@@ -19,7 +19,7 @@
             {
                 if (imgFile.File.IsImage())
                 {
-                    <a class="series-thumb" href="@imgFile.File.GetUrl(adjust)" rel="prettyPhoto[pic-series]"><img src="@imgFile.File.GetUrl(185,127)" alt="" itemprop="contentURL" class="picture-series-picture" /></a>
+                    <a class="series-thumb" href="@imgFile.File.GetUrl(adjust)" rel="prettyPhoto[pic-series]"><img src="@imgFile.File.GetUrl(340,217)" alt="" itemprop="contentURL" class="picture-series-picture" /></a>
                 }
             }
         </div>

@@ -1216,7 +1216,7 @@
         <Int Key="CreateAccessGroupId" Value="369" />
       </Settings>
       <Icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGZSURBVBgZpcHPi41hHMbhz/P2oJijzEKSQn4uFRsNK8lKKWZtFvMPKFulrKxZKGzs2MhismI3S5Qpg0YNZUFiaso5Z973e9+eJ45mYWo015VssxGZYur2qyvAXuAUcBxsTEKmaRJNAkkoWNqUvXBkz/YTyFy9eDRhm8u3Xt71f7r56I0LMr+dprg/+50Rs7bpiXHefloaUmQqeRd/HNq5hSol/undlyFVf9BupsgUtrdSGHj/dch6OCJRZArLmWJ6Ypz1UogqU1hOFJPXnzGQkGHmxlnO3ztHr9dDEpKQRETweGoGK6gyhSWqb/2WM8d2M/PiM1WvN8bBA/uobGOL13PzVO6CqqGwTLU8CFqbn8OOKkIkEqt1EVRSR5UpkkQ1HLb02yAGLZUkbAMGG9tEF1TuVqgyhTEjNn91XSAHlW1kEwoqu6PKFOpkIFE8nV1kpDe2jYUPH2nblpW2JbqgSQ2VZVNkipAWgf1zdy6w2oNLD1mL7R8UmSr0ZPLa88O2TyLtkDqwsAKrAweWsA3YoGVo5imSbTbiFyrGMBGmEu5TAAAAAElFTkSuQmCC</Icon>
-      <InheritGuid>15264b6f-e646-49c4-beb8-9e4911b4f22c</InheritGuid>
+      <InheritGuid>71f7c095-0830-46b5-ba12-cf3a0405182c</InheritGuid>
     </ContentClass>
     <ContentClass Guid="0f78c913-4995-4454-aedd-1c4e31ef09a5" ClassName="TouristItemCategory" Namespace="TripsToNorwayDemo" TableName="touristitem_category">
       <Globalization>
@@ -2078,6 +2078,26 @@
       <IconSVG>mono.filmPlay</IconSVG>
       <InheritGuid>9ee92472-8057-4e1a-aefc-f3fa8af9816c</InheritGuid>
     </ContentClass>
+    <ContentClass Guid="a589a2ba-0466-4849-9f69-ea39a306c6d7" ClassName="ModuleTouristItemsList" Namespace="TripsToNorwayDemo" TableName="module_tourist_items_list">
+      <Properties>
+        <Property Guid="8546f0b2-f4a6-469e-b8cb-f41b1203670d" CodeName="Heading" PropertyClassGuid="95acb333-a3e6-44ae-934e-9702d144bc68">
+          <DataValues>
+            <ShortString Guid="da2a6d8e-aaa5-4442-9087-1f7fe2b5e31f" Key="Value" Name="heading" />
+          </DataValues>
+        </Property>
+        <Property Guid="85751f72-b5f6-4bdb-83bf-e56c50806d6d" CodeName="ShowHeading" PropertyClassGuid="68bb6e0a-f394-4311-a6d4-cca8c9534404">
+          <DataValues>
+            <Boolean Guid="940fde17-54cb-4e81-bfe1-89ed67be8af6" Key="Value" Name="show_heading" />
+          </DataValues>
+        </Property>
+        <Property Guid="d515dd9a-2add-401c-ac73-c7a01b039294" CodeName="TouristItems" PropertyClassGuid="9e798df1-93a2-49f9-86c8-13e5bf5220f5">
+          <Settings>
+            <RelationReference Key="Relation" Value="c6631f21-7188-4317-8dd9-4a9bf5abc289" />
+          </Settings>
+        </Property>
+      </Properties>
+      <InheritGuid>9ee92472-8057-4e1a-aefc-f3fa8af9816c</InheritGuid>
+    </ContentClass>
   </ContentClasses>
   <Enumerations>
     <Enumeration Guid="a0d90a5b-a054-48ed-8cff-3875f47f724f" CodeName="ParagraphPicturePosition" Namespace="TripsToNorwayDemo">
@@ -2353,10 +2373,6 @@
       <NameChildren>child_id</NameChildren>
       <NameParents>parent_id</NameParents>
     </Relation>
-    <Relation Guid="18c9e1c9-4906-47e8-a7cb-de5a02acc60f" ClassName="NewRelation" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_newrelation">
-      <NameChildren>child_id</NameChildren>
-      <NameParents>parent_id</NameParents>
-    </Relation>
     <Relation Guid="96e9894e-6d8f-4d6e-aa1e-038c79b7ae58" ClassName="RelTouristItem_ItemReview" Namespace="TripsToNorwayDemo" TableName="tripstonorwaydemo_RelTouristItem_ItemReview">
       <ClassGuidChildren>
         <ClassReference ClassGuid="35cab70a-9b1c-4b55-b2e1-6395fe17621f" />
@@ -2394,6 +2410,17 @@
       </ClassGuidChildren>
       <ClassGuidParents>
         <ClassReference ClassGuid="71f7c095-0830-46b5-ba12-cf3a0405182c" />
+      </ClassGuidParents>
+      <NameChildren>child_id</NameChildren>
+      <NameParents>parent_id</NameParents>
+      <RelationType>ManyToMany</RelationType>
+    </Relation>
+    <Relation Guid="c6631f21-7188-4317-8dd9-4a9bf5abc289" ClassName="RelTouristItemsModules" Namespace="TripsToNorwayDemo" TableName="rel_rel_tourist_items_modules">
+      <ClassGuidChildren>
+        <ClassReference ClassGuid="a589a2ba-0466-4849-9f69-ea39a306c6d7" />
+      </ClassGuidChildren>
+      <ClassGuidParents>
+        <ClassReference ClassGuid="5bbadc74-378c-4a7a-a994-3719a949c1cd" />
       </ClassGuidParents>
       <NameChildren>child_id</NameChildren>
       <NameParents>parent_id</NameParents>

@@ -67,7 +67,7 @@
     @if (Model.Video.IsVideo())
     {
                
-        <video width="521" height="293" autoplay muted playsinline loop>
+        <video width="100%" height="auto" autoplay muted playsinline loop>
             <source src="@Model.Video.GetUrl()" type="audio/mp4" />
         </video>
     }
@@ -76,53 +76,13 @@
 <div class="text-box-with-background">
     @Html.Raw(Model.IntroductionText)
 </div>
-<div id="selected-articles-container">
-
-    @{
-        var selectedArticles = Model.SelectedArticles.Get();
-        var counter = 1;
-    }
-    @foreach (var article in selectedArticles)
-    {
-        var isRightArticle = counter % 2 == 0;
-
-
-        <div class="small-text-box@(isRightArticle ? " noRightGutter":"")">
-            <h4><a href="@wafContext.GetUrl(article)">@article.Name</a></h4>
-            <p>@Helper.GetArticleIngressClip(article) <a href="@wafContext.GetUrl(article)">More</a></p>
-        </div>
-
-
-        counter++;
-    }
-
-</div>
-
 @{
-    var cp = Helper.GetInstance(wafContext).ControlPanel;
+    var modules = Model.Modules.Get();
 }
-@if (cp.VacantPositionsFolder.IsSet())
-{
 
 
-    var vacantPositions = cp.VacantPositionsFolder.Get().Children.Get();
+    @Html.DisplayFor(model => modules)
 
-    if (vacantPositions.Count > 0)
-    {
-
-        <div class="text-box-with-background">
-            <h2>Vacant positions</h2>
-            <div>
-                <ul>
-                    @foreach (var pos in vacantPositions)
-                    {
-                        <li><a href="@wafContext.GetUrl(pos)">@pos.Name</a></li>
-                    }
-                </ul>
-            </div>
-        </div>
-    }
-}
 
 
 @section sideRow{
@@ -130,16 +90,16 @@
     <h2>Follow us</h2>
     <ul id="followus">
         <li class="twitter">
-            <a rel="nofollow external" title="twitter" href="http://www.twitter.com/webnodes" target="_blank">Twitter</a>
+            <a rel="nofollow external" title="twitter" href="http://www.twitter.com/relatude" target="_blank">Twitter</a>
         </li>
         <li class="youtube">
-            <a rel="nofollow external" title="YouTube" href="http://www.youtube.com/webnodes" target="_blank">YouTube</a>
+            <a rel="nofollow external" title="YouTube" href="https://www.youtube.com/@@relatudecmse-commerce8553" target="_blank">YouTube</a>
         </li>
-        <li class="rss">
+      @*   <li class="rss">
             <a rel="nofollow external" title="RSS Feed" href="http://www.webnodes.com/waf/view/rss.aspx?nid=1886" class="tooltip-anchor" target="_blank">RSS </a>
-        </li>
+        </li> *@
     </ul>
-    <div class="clear"></div>
+    
 
     <h2>Where do you want to go today?</h2>
     <div id="frontpageMap">
@@ -167,8 +127,49 @@
     }
 
 
-    <div class="clear"></div>
+    <div id="selected-articles-container">
 
+        @{
+            var selectedArticles = Model.SelectedArticles.Get();
+            var counter = 1;
+        }
+        @foreach (var article in selectedArticles) {
+            var isRightArticle = counter % 2 == 0;
+
+
+            <div class="small-text-box">
+                <h4><a href="@wafContext.GetUrl(article)">@article.Name</a></h4>
+                <p>@Helper.GetArticleIngressClip(article) <a href="@wafContext.GetUrl(article)">More</a></p>
+            </div>
+
+
+            counter++;
+        }
+
+    </div>
+
+    @{
+        var cp = Helper.GetInstance(wafContext).ControlPanel;
+    }
+    @if (cp.VacantPositionsFolder.IsSet()) {
+
+
+        var vacantPositions = cp.VacantPositionsFolder.Get().Children.Get();
+
+        if (vacantPositions.Count > 0) {
+
+            <div class="small-text-box">
+                <h2>Vacant positions</h2>
+                <div>
+                    <ul>
+                        @foreach (var pos in vacantPositions) {
+                            <li><a href="@wafContext.GetUrl(pos)">@pos.Name</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    }
 
 
 }

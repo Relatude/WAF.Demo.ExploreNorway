@@ -1,0 +1,22 @@
+﻿@model ModuleTouristItemsList
+@inject WAFNativeContext ctx
+
+<div class="module-wrapper">
+    <div class="module touristitems-module">
+        <div class="list-container">
+            @if (Model.ShowHeading) {
+                <h2>@Model.Heading</h2>
+            }
+            <ul>
+                @foreach(var item in Model.TouristItems.Get()) {
+                    <li><a href="@ctx.GetUrl(item)">
+                        @Html.Raw(item.GetPicture()?.GetImageHtml(340,217))
+                        <h3>@item.Name</h3>
+                        <p>@item.Ingress</p>
+                        </a>
+                    </li>
+                }
+           </ul>
+        </div>
+    </div>
+</div>

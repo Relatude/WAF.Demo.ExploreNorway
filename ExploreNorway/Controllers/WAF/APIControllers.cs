@@ -419,3 +419,6 @@ public TripsToNorwayDemo_ModuleCallToActionController(AdminUIAPIControllerContex
 public class TripsToNorwayDemo_ModuleVideoController : WAF.Server.Controllers.ContentController<WAF.API.TripsToNorwayDemo.ModuleVideo> { 
 public TripsToNorwayDemo_ModuleVideoController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
 }
+public class TripsToNorwayDemo_ModuleTouristItemsListController : WAF.Server.Controllers.ContentController<WAF.API.TripsToNorwayDemo.ModuleTouristItemsList> { 
+public TripsToNorwayDemo_ModuleTouristItemsListController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
+}

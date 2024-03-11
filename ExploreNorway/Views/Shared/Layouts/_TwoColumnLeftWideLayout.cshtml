@@ -5,18 +5,15 @@
 
 <div id="main-column">
 
-    <div id="pageHeading">
-        @*<asp:ContentPlaceHolder runat="server" ID="cphHeader" />*@
+    <div id="pageHeading">        
         @RenderSection("header")
-    </div>
-    <div class="clear"></div>
+    </div>    
     @RenderBody()
 
 </div>
 
 <div id="right-side-column">
-    @RenderSection("sideRow")
-    @*        <asp:ContentPlaceHolder runat="server" ID="cphSideRow"></asp:ContentPlaceHolder>*@
+    @RenderSection("sideRow")    
 </div>
 
 

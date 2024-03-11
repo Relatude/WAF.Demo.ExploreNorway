@@ -658,7 +658,7 @@ public SimpleArticle(IContentDataProvider dataProvider)
 
 namespace WAF.API.TripsToNorwayDemo {
 [ClassGuid("c4cc7f94-5263-4cf1-888b-a2c10cabcd29")]
-public class FrontPage : WAF.API.Native.HierarchicalContent {
+public class FrontPage : WAF.API.TripsToNorwayDemo.ModulesPage {
 public FrontPage(IContentDataProvider dataProvider)
 : base(dataProvider) {}
         static Guid _mainImageTitleGuid = new Guid("1680e914-9b7b-4fd9-9f38-3d4c893aab86");
@@ -1558,6 +1558,36 @@ public ModuleVideo(IContentDataProvider dataProvider)
         public string VideoEmbedCode {
         get { return (string)DataProvider.GetPropertyValue(_videoEmbedCodeGuid); }
         set { DataProvider.SetPropertyValue(_videoEmbedCodeGuid, value); }
+        }
+      
+}
+}
+
+namespace WAF.API.TripsToNorwayDemo {
+[ClassGuid("a589a2ba-0466-4849-9f69-ea39a306c6d7")]
+public class ModuleTouristItemsList : WAF.API.TripsToNorwayDemo.ModuleBase {
+public ModuleTouristItemsList(IContentDataProvider dataProvider)
+: base(dataProvider) {}
+        static Guid _headingGuid = new Guid("8546f0b2-f4a6-469e-b8cb-f41b1203670d");
+        [PropertyGuid("8546f0b2-f4a6-469e-b8cb-f41b1203670d")]
+        public string Heading {
+        get { return (string)DataProvider.GetPropertyValue(_headingGuid); }
+        set { DataProvider.SetPropertyValue(_headingGuid, value); }
+        }
+      
+        static Guid _showHeadingGuid = new Guid("85751f72-b5f6-4bdb-83bf-e56c50806d6d");
+        [PropertyGuid("85751f72-b5f6-4bdb-83bf-e56c50806d6d")]
+        public bool ShowHeading {
+        get { return (bool)DataProvider.GetPropertyValue(_showHeadingGuid); }
+        set { DataProvider.SetPropertyValue(_showHeadingGuid, value); }
+        }
+      
+        static Guid _touristItemsGuid = new Guid("d515dd9a-2add-401c-ac73-c7a01b039294");
+        [PropertyGuid("d515dd9a-2add-401c-ac73-c7a01b039294")]
+        public IQueryable<WAF.API.TripsToNorwayDemo.TouristItem>
+        TouristItems {
+        get {return ((IQueryable<WAF.API.IContent>)DataProvider.GetPropertyValue(_touristItemsGuid)).Cast<WAF.API.TripsToNorwayDemo.TouristItem>();}
+        set {DataProvider.SetPropertyValue(_touristItemsGuid, value);}
         }
       
 }
@@ -2517,6 +2547,13 @@ public Task<IQueryable<WAF.API.TripsToNorwayDemo.ModuleCallToAction>> GetModuleC
 [HotChocolate.Data.UseSorting]
 public Task<IQueryable<WAF.API.TripsToNorwayDemo.ModuleVideo>> GetModuleVideoes() {
    return Task.FromResult(_ctx.Session.APISession.Query<WAF.API.TripsToNorwayDemo.ModuleVideo>(QueryOptions.Default).ToList().AsQueryable());
+}
+
+[HotChocolate.Types.UsePaging(IncludeTotalCount=true, DefaultPageSize=25)]
+[HotChocolate.Data.UseFiltering]
+[HotChocolate.Data.UseSorting]
+public Task<IQueryable<WAF.API.TripsToNorwayDemo.ModuleTouristItemsList>> GetModuleTouristItemsLists() {
+   return Task.FromResult(_ctx.Session.APISession.Query<WAF.API.TripsToNorwayDemo.ModuleTouristItemsList>(QueryOptions.Default).ToList().AsQueryable());
 }
 }
 }

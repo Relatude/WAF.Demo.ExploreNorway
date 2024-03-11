@@ -31,11 +31,7 @@
 
         <span class="prop-label"><b>Postal address:</b></span>
         <span class="prop-value">
-@*            @GetStringSpan(Model.AddressCompanyName, true)
-            @GetStringSpan(Model.AddressPostBox, true, "Postbox ")
-            @GetStringSpan(Model.AddressPostalCode, false)
-            @GetStringSpan(Model.AddressLocality, true)
-            @GetStringSpan(Model.AddressRegion, true)*@
+
             @if(!string.IsNullOrEmpty(Model.AddressCompanyName))
             {
                 <span>@Model.AddressCompanyName</span>
@@ -62,19 +58,6 @@
             }
         </span>
         <br />
-    </div>
-    <div class="clear"></div>
+    </div>    
 </div>
 
-@*@helper GetStringSpan(string s, bool breakLine, string pre = "")
-{
-    if (!string.IsNullOrEmpty(s))
-    {
-        <span>@(pre + s)</span>
-        if (breakLine)
-        {
-            <br />
-        }
-    }
-
-}*@

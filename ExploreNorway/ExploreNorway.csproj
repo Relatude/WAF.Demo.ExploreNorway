@@ -24,13 +24,13 @@
     <Content Remove="Views\Shop\Index.cshtml" />
     <Content Remove="Views\Shop\OrderReceived.cshtml" />
     <Content Remove="Views\Shop\Payment.cshtml" />
+    <Content Remove="wwwroot\css\StyleSheetMobile.css" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\ProductCategory\" />
     <Folder Include="Views\Product\" />
     <Folder Include="Views\Shared\Partials\Shop\" />
-    <Folder Include="Views\Shop\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\lib\" />

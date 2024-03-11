@@ -1,4 +1,4 @@
-
+/*
 // WAF Custom. Add your own code here to customize the default behavior.
 using System;
 using WAF.Common;
@@ -16,7 +16,7 @@ using WAF.Data.DataValue;
 
 namespace WAF.Engine.Content.TripsToNorwayDemo {
 
-    public partial class TouristItem {
+    public partial class TouristItemsList {
 
         public override void OnInit() {
 
@@ -52,17 +52,7 @@ namespace WAF.Engine.Content.TripsToNorwayDemo {
 
              base.OnAfterDelete(permanently);
         }
-        public FilePropertyValue GetPicture() {
-            if (this.TopPicture.IsImage()) {
-                return this.TopPicture;
-            } else if (this.Pictures.Count > 0) {
-                var file = this.Pictures.GetByIndex(0);
-                if (file.File.IsImage()) {
-                    return file.File;
-                }
-            }
-            return null;
-        }
 
     }
 }
+*/

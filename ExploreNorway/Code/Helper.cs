@@ -97,7 +97,7 @@ public class Helper
         var currentContent = wafContext.Request.GetContent<HierarchicalContent>();
 
         int imgWidth = 1500;
-        int imgHeight = 335;
+        int imgHeight = 635;
 
         
         string imageUrl = "";
