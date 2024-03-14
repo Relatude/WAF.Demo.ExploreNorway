@@ -82,6 +82,12 @@ h1 {
     padding-bottom: 0px;
 }
 
+@media only screen and (max-width: 727px) {
+    h1 {        
+        font-size: 36px;        
+    }
+}
+
 h2 {
     font-family: 'Aptos', Arial, Helvetica, sans-serif;
     font-size: 32px;
@@ -205,7 +211,16 @@ a img {
 
 #topimagecontainer {
     position: relative;
+    height: auto;
+    width: 100%;
 }
+
+#topimagecontainer img {   
+    height: auto;
+    width: 100%;
+}
+
+
 
 #menubar {
     max-width: var(--wrapperWidth);
@@ -1530,40 +1545,65 @@ a.call-to-action {
     color: grey;    
 }
 
-.touristitems-module ul{
-    list-style:none;
-    margin-left:0;
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    padding-left:0;
-    column-gap:10px;
+.touristitems-module ul {
+    list-style: none;
+    margin-left: 0;
+    display: grid;
+    /*   flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;*/
+    padding-left: 0;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
+@media only screen and (max-width: 727px) {
+    .touristitems-module ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
     .touristitems-module ul li {
         margin-left: 0;
         max-width: 340px;
         margin-bottom: 30px;        
         border-radius:10px;
     }
-        .touristitems-module ul li a:hover {
+@media only screen and (max-width: 500px) {
+    .touristitems-module ul {
+        grid-template-columns: 1fr;
+    }
+
+        .touristitems-module ul li {
+            max-width: 100%;
+        }
+}
+
+
+    .touristitems-module ul li a:hover {
+        text-decoration: none !important;
+        color: #EC3425 !important;
+    }
+
+        .touristitems-module ul li a:hover p, .touristitems-module ul li a:hover h3 {
             text-decoration: none !important;
             color: #EC3425 !important;
         }
-            .touristitems-module ul li a:hover p, .touristitems-module ul li a:hover h3 {
-                text-decoration: none !important;
-                color: #EC3425 !important;
-            }
-        .touristitems-module ul li img {
-            width: 100%;
-            /*   border-radius: 10px 10px 0  0;*/
-        }
-        .touristitems-module ul li h3 {
-            margin-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        .touristitems-module ul li p {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
+
+    .touristitems-module ul li img {
+        width: 100%;
+        height:auto;
+        /*   border-radius: 10px 10px 0  0;*/
+    }
+
+    .touristitems-module ul li h3 {
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .touristitems-module ul li p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
