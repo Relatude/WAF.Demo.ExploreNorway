@@ -10,30 +10,26 @@
   <PropertyGroup>
 	<NoWarn>CS8625;CS8618;CS8602;CS8604;CS8603;CS8600;MVC1000</NoWarn>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\**" />
+    <Content Remove="wwwroot\lib\**" />
+    <EmbeddedResource Remove="wwwroot\lib\**" />
+    <None Remove="wwwroot\lib\**" />
+  </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Views\ProductCategory\Index.cshtml" />
-    <Content Remove="Views\Product\BookProduct.cshtml" />
-    <Content Remove="Views\Product\Index.cshtml" />
     <Content Remove="Views\Shared\Partials\Shop\_PaymentAndShippingOrderDetails.cshtml" />
     <Content Remove="Views\Shared\Partials\Shop\_ShoppingCartOrderItemData.cshtml" />
     <Content Remove="Views\Shared\Partials\Shop\_ShoppingCartOrderTable.cshtml" />
     <Content Remove="Views\Shared\Partials\Shop\_ShoppingCartStatus.cshtml" />
-    <Content Remove="Views\Shop\Cart.cshtml" />
-    <Content Remove="Views\Shop\Checkout.cshtml" />
-    <Content Remove="Views\Shop\Index.cshtml" />
-    <Content Remove="Views\Shop\OrderReceived.cshtml" />
-    <Content Remove="Views\Shop\Payment.cshtml" />
     <Content Remove="wwwroot\css\StyleSheetMobile.css" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\ProductCategory\" />
-    <Folder Include="Views\Product\" />
     <Folder Include="Views\Shared\Partials\Shop\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\js\" />
-    <Folder Include="wwwroot\lib\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
