@@ -576,6 +576,48 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
             }
         }
 
+        public static AqlPropertyRelation ProductLists {
+            get {
+                return new AqlPropertyRelation( WAFID.GetPropertyId("66af9102-0d77-4b90-bd2f-568f6ee3eaca"), new AqlAliasRelation(new WAF.Engine.Query.Native.AqlAliasProductList(), new WAF.Engine.Query.Native.AqlAliasProductBase(), WAF.Engine.Query.Native.AqlRelProductListsProducts.Relation));
+            }
+        }
+
+        public static AqlPropertyBoolean HasShortDescription {
+            get {
+                return new AqlPropertyBoolean(WAF.Data.Query.Native.SqlProductBase.Field.HasShortDescription, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
+            }
+        }
+
+        public static AqlPropertyBoolean HasDescription {
+            get {
+                return new AqlPropertyBoolean(WAF.Data.Query.Native.SqlProductBase.Field.HasDescription, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
+            }
+        }
+
+        public static AqlPropertyBoolean HasCategory {
+            get {
+                return new AqlPropertyBoolean(WAF.Data.Query.Native.SqlProductBase.Field.HasCategory, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
+            }
+        }
+
+        public static AqlPropertyBoolean HasManufacturer {
+            get {
+                return new AqlPropertyBoolean(WAF.Data.Query.Native.SqlProductBase.Field.HasManufacturer, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
+            }
+        }
+
+        public static AqlPropertyBoolean HasMainImage {
+            get {
+                return new AqlPropertyBoolean(WAF.Data.Query.Native.SqlProductBase.Field.HasMainImage, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
+            }
+        }
+
+        public static AqlPropertyBoolean HasMetaDescription {
+            get {
+                return new AqlPropertyBoolean(WAF.Data.Query.Native.SqlProductBase.Field.HasMetaDescription, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
+            }
+        }
+
         public static AqlPropertyShortString TemplatePath {
             get {
                 return new AqlPropertyShortString(WAF.Data.Query.Native.SqlHierarchicalContent.Field.TemplatePath, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));

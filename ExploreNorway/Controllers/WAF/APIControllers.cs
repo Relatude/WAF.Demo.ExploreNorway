@@ -317,6 +317,9 @@ public Native_ContentModuleBaseController(AdminUIAPIControllerContext ctx) : bas
 public class Native_HeadlessServerController : WAF.Server.Controllers.ContentController<WAF.API.Native.HeadlessServer> { 
 public Native_HeadlessServerController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
 }
+public class Native_ProductListController : WAF.Server.Controllers.ContentController<WAF.API.Native.ProductList> { 
+public Native_ProductListController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
+}
 public class TripsToNorwayDemo_ExplorerCountryController : WAF.Server.Controllers.ContentController<WAF.API.TripsToNorwayDemo.ExplorerCountry> { 
 public TripsToNorwayDemo_ExplorerCountryController(AdminUIAPIControllerContext ctx) : base(ctx) {    }
 }
