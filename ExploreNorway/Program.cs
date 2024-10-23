@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using WAF.API;
+using WAF.API.Native.API.GraphQL;
 using WAF.API.Native.API.Web;
 using WAF.API.Web;
 
@@ -6,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+//builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 // WAF Configuration
 WAF.ApiConfig.RegisterDataModel();
@@ -21,7 +24,7 @@ builder.AddWAFAdminUI(configWAFAdmin);
 builder.AddWAFNativeContext();
 builder.AddWAFAuthenticationAndAuthorization(configWAF);
 builder.AddWAFIdentity(configWAF);
-
+builder.AddWAFGraphQL(typeof(WAF.API.GraphQL.RelatudeContentQuery), new List<Type>());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -44,6 +47,7 @@ app.UseAuthorization();
 app.UseWAFAdminUI(configWAFAdmin); // configure admin UI
 app.UseWAFRuntime(configWAFRuntime); // connect db, initalize
 app.UseWAFRouting(configWAF); // configure routing
+app.WAFMapGraphQL();
 
 // ROUTING
 app.MapControllerRoute(
