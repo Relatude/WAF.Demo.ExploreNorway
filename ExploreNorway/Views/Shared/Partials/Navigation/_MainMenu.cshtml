@@ -6,8 +6,21 @@
     var cp = Helper.GetInstance(wafContext).ControlPanel;
     var searchPageUrl = cp.SearchPage.IsSet() ? wafContext.GetUrl(cp.SearchPage.GetId()) : "";
     var startPage = site.StartNode.Get();
-    var menuItems = Helper.GetInstance(wafContext).GetMainMenuItems().Where(x => x.NodeId != startPage.NodeId);
+    var menuItems = Helper.GetInstance(wafContext).GetMainMenuItems().Where(x => x.NodeId != startPage.NodeId).ToList();
+    var loginId = cp.LoginPage.GetId();
 
+    string GetReturnQuery(int nodeId)
+    {
+        // TODO: Delete below line
+        if (nodeId == 0) return String.Empty;
+        var isLoginPage = wafContext.Request.NodeId == loginId;
+        return isLoginPage switch
+        {
+            true when !String.IsNullOrEmpty(ViewBag.ReturnUrl) => "?returnUrl=" + ViewBag.ReturnUrl,
+            false => "?returnUrl=" + wafContext.GetUrl(nodeId),
+            _ => String.Empty
+        };
+    }
 }
 
 <div>
@@ -25,7 +38,7 @@
             <li>
                 @if (wafContext.Session.IsAnonymous())
                 {
-                    @Html.ActionLink("Login", "Index", "Login")
+                    <a href="@wafContext.GetUrl(loginId)@GetReturnQuery(wafContext.Request.NodeId)">Login</a>
                 }
                 else
                 {
@@ -38,15 +51,16 @@
 
 
     <div id="menubar">
-            <div id="logo" style="background-color:@cp.SiteColor;"><a href="@wafContext.GetUrl(startPage)">@site.Name</a></div>
+        <div id="logo" style="background-color: @cp.SiteColor;"><a href="@wafContext.GetUrl(startPage)">@site.Name</a>
+        </div>
         <ul class="navigation">
             @foreach (var item in menuItems)
             {
                 var url = wafContext.GetUrl(item);
                 var name = item is ForumCategory ? "Forum" : item.Name;
 
-                <li class="@(wafContext.Request.NodeId == item.NodeId ? "active": "")">
-                    <a href="@url">@name</a>
+                <li class="@(wafContext.Request.NodeId == item.NodeId ? "active" : "")">
+                    <a href="@url" style="border-bottom-color: @cp.SiteColor;">@name</a>
                 </li>
             }
         </ul>
@@ -60,13 +74,14 @@
                     <input id="q"
                            name="q"
                            class="text"
-                           type="text" />
+                           type="text"/>
 
-                    <input type="image" src="~/images/search_icon.gif" class="searchGoButton" />
+                    <input type="image" src="~/images/search_icon.gif" class="searchGoButton" alt="Search"/>
                 </form>
             </div>
         </div>
-        <div id="mobile-navigation"><img alt="hamburger-menu" src="../images/hamburgerIconWhite.png" width="30px" height="30px" /></div>
+        <div id="mobile-navigation"><img alt="hamburger-menu" src="../images/hamburgerIconWhite.png" width="30px"
+                                         height="30px"/></div>
     </div>
     <div id="mobile-menu">
         <ul>
@@ -75,11 +90,11 @@
                 var url = wafContext.GetUrl(item);
                 var name = item is ForumCategory ? "Forum" : item.Name;
 
-                <li class="@(wafContext.Request.NodeId == item.NodeId ? "active": "")">
+                <li class="@(wafContext.Request.NodeId == item.NodeId ? "active" : "")">
                     <a href="@url">@name</a>
                 </li>
             }
         </ul>
-    </div>    
+    </div>
 </div>
 
