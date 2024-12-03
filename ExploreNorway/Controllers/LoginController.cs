@@ -1,68 +1,43 @@
 ﻿using ExploreNorway.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using WAF.API.Web;
-using WAF.Presentation.Web;
+using WAF.API.Native.API.Web;
 
-namespace ExploreNorway.Controllers
+namespace ExploreNorway.Controllers;
+
+public sealed class LoginController : Controller
 {
-    public class LoginController : Controller
+    private readonly SignInManager<WAFIdentityUser> _signInManager;
+
+    public LoginController(SignInManager<WAFIdentityUser> signInManager) => _signInManager = signInManager;
+
+    /// GET: /API/Login
+    [HttpGet]
+    public ActionResult Index([FromQuery] string returnUrl)
     {
-        protected WAFNativeContext wafContext;
-        public LoginController(WAFNativeContext wafCtx)
+        ViewBag.ReturnUrl = returnUrl;
+        return View();
+    }
+
+    [HttpPost, ValidateAntiForgeryToken]
+    public async Task<ActionResult> Index([FromForm] LoginModel model, int nid, [FromQuery] string returnUrl)
+    {
+        if (ModelState.IsValid)
         {
-            wafContext = wafCtx;
-        }
-
-        // GET: Login
-        public ActionResult Index(string returnUrl)
-        {
-            throw new NotImplementedException();
-
-            //ViewBag.ReturnUrl = returnUrl;
-            //return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(LoginModel model, string returnUrl)
-        {
-            throw new NotImplementedException();
-
-            //if (!ModelState.IsValid)
-            //{
-            //    return View(model);
-
-            //}
-            //if (Membership.ValidateUser(model.Username, model.Password))
-            //{
-            //    WAFContext.LogInView(model.Username);
-            //    FormsAuthentication.SetAuthCookie(model.Username, false);
-            //    return RedirectToLocal(returnUrl);
-            //}
-            //ModelState.AddModelError("", "Your login attempt was not successful. Please try again.");
-
-            //return View(model);
-        }
-
-        public ActionResult LogOff()
-        {
-            throw new NotImplementedException();
-
-            //WAFContext.LogOffView();
-            //FormsAuthentication.SignOut();
-            //return RedirectToLocal(null);
-
-        }
-
-        private ActionResult RedirectToLocal(string returnUrl)
-        {
-
-            if (!string.IsNullOrWhiteSpace(returnUrl))
+            var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, true, false);
+            if (result.Succeeded)
             {
                 return Redirect(returnUrl);
             }
-
-            return Redirect(wafContext.GetUrl(wafContext.Session.GetSite().StartNode.GetId()));
         }
+
+        ModelState.AddModelError("LoginError", "Invalid username or password");
+        return View(model);
+    }
+
+    public async Task<ActionResult> LogOff()
+    {
+        await _signInManager.SignOutAsync();
+        return Redirect("/");
     }
 }

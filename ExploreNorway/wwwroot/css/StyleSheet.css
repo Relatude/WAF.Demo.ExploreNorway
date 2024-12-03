@@ -255,6 +255,10 @@ a img {
         #menubar li.active a:link, #menubar li.active a:visited {
             color: #172C7C;
         }
+        
+        #menubar li.active a {
+            border-bottom: 2px solid transparent;
+        }
 
         #menubar li a:hover {
             color: #375CaC;

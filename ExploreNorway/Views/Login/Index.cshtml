@@ -1,45 +1,47 @@
 ﻿@model LoginModel
+
+@inject WAFNativeContext wafContext
+
 @{
     Layout = "~/Views/Shared/Layouts/_OneColumnLayout.cshtml";
 }
 
 <div>
-    <div style="margin: 200px 0px 0px 200px;">
-        @using (Html.BeginForm("Index", "Login", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    <div style="margin: 200px 0 0 200px;">
+        @using (Html.BeginForm("Index", "Login", new { ViewBag.ReturnUrl }, FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-
-        <table>
-
-            <tr>
-                <td>
-                    @Html.LabelFor(m => m.Username, "User name:")
-                </td>
-                <td>
-                    @Html.TextBoxFor(m => m.Username)
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(m => m.Password, "Password:")
-                </td>
-                <td>
-                    @Html.PasswordFor(m => m.Password)
-                </td>
-            </tr>
+            <input type="hidden" value="@wafContext.Request.NodeId" name="nid"/>
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.Username, "User name:")
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Username)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.Password, "Password:")
+                    </td>
+                    <td>
+                        @Html.PasswordFor(m => m.Password)
+                    </td>
+                </tr>
 
                 <tr>
-                    <td align="left" colspan="2" style="color:red;">
+                    <td colspan="2" style="color: red; text-align: start;">
                         @Html.ValidationSummary()
                     </td>
                 </tr>
-            
-            <tr>
-                <td align="right" colspan="2">
-                    <button type="submit">Log in</button>
-                </td>
-            </tr>
-        </table>
+
+                <tr>
+                    <td colspan="2" style="text-align: end;">
+                        <button type="submit">Log in</button>
+                    </td>
+                </tr>
+            </table>
         }
     </div>
 </div>
