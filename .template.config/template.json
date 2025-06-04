@@ -20,7 +20,8 @@
                 "**/WAF.Data/Temp/**",
                 "**/WAF.Data/Files/**",
                 "**/_cached_*",
-                "**/*.sln"
+                "**/*.sln",
+                "**/README.md"
             ]
         }]
     }]
