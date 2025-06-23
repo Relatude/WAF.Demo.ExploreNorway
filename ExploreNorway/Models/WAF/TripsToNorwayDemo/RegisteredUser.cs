@@ -490,6 +490,18 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
             }
         }
 
+        public static AqlPropertyInteger StartNode {
+            get {
+                return new AqlPropertyInteger(WAF.Data.Query.Native.SqlSystemUser.Field.StartNode, WAFID.GetContentClassId("a9d3c43e-f56d-422e-b005-2f1a4303a7a4"));
+            }
+        }
+
+        public static AqlPropertyShortString StartModule {
+            get {
+                return new AqlPropertyShortString(WAF.Data.Query.Native.SqlSystemUser.Field.StartModule, WAFID.GetContentClassId("a9d3c43e-f56d-422e-b005-2f1a4303a7a4"));
+            }
+        }
+
         public static AqlPropertyShortString TemplatePath {
             get {
                 return new AqlPropertyShortString(WAF.Data.Query.Native.SqlHierarchicalContent.Field.TemplatePath, WAFID.GetContentClassId("a9d3c43e-f56d-422e-b005-2f1a4303a7a4"));

@@ -2317,6 +2317,20 @@ public Task<IQueryable<WAF.API.Native.ProductList>> GetProductLists() {
    return Task.FromResult(_ctx.Session.APISession.Query<WAF.API.Native.ProductList>(QueryOptions.Default).ToList().AsQueryable());
 }
 
+[HotChocolate.Types.UsePaging(IncludeTotalCount=true, DefaultPageSize=25)]
+[HotChocolate.Data.UseFiltering]
+[HotChocolate.Data.UseSorting]
+public Task<IQueryable<WAF.API.Native.StatisticsSettings>> GetStatisticsSettingses() {
+   return Task.FromResult(_ctx.Session.APISession.Query<WAF.API.Native.StatisticsSettings>(QueryOptions.Default).ToList().AsQueryable());
+}
+
+[HotChocolate.Types.UsePaging(IncludeTotalCount=true, DefaultPageSize=25)]
+[HotChocolate.Data.UseFiltering]
+[HotChocolate.Data.UseSorting]
+public Task<IQueryable<WAF.API.Native.SalesChannel>> GetSalesChannels() {
+   return Task.FromResult(_ctx.Session.APISession.Query<WAF.API.Native.SalesChannel>(QueryOptions.Default).ToList().AsQueryable());
+}
+
 
 [HotChocolate.Types.UsePaging(IncludeTotalCount=true, DefaultPageSize=25)]
 [HotChocolate.Data.UseFiltering]

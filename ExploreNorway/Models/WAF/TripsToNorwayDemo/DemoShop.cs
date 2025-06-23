@@ -489,6 +489,24 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
             }
         }
 
+        public static AqlPropertyRelation SalesChannels {
+            get {
+                return new AqlPropertyRelation( WAFID.GetPropertyId("acd58720-651f-43f7-a0a7-cc1f2065005e"), new AqlAliasRelation(new WAF.Engine.Query.Native.AqlAliasShop(), new WAF.Engine.Query.Native.AqlAliasSalesChannel(), WAF.Engine.Query.Native.AqlRelShopsSalesChannels.Relation));
+            }
+        }
+
+        public static AqlPropertyShortString ShopName {
+            get {
+                return new AqlPropertyShortString(WAF.Data.Query.Native.SqlShop.Field.ShopName, WAFID.GetContentClassId("2b34cc81-0b0e-4e8a-8e5a-fbea6e3c0389"));
+            }
+        }
+
+        public static AqlPropertyShortString PostAddress {
+            get {
+                return new AqlPropertyShortString(WAF.Data.Query.Native.SqlShop.Field.PostAddress, WAFID.GetContentClassId("2b34cc81-0b0e-4e8a-8e5a-fbea6e3c0389"));
+            }
+        }
+
         public static AqlPropertyShortString TemplatePath {
             get {
                 return new AqlPropertyShortString(WAF.Data.Query.Native.SqlHierarchicalContent.Field.TemplatePath, WAFID.GetContentClassId("2b34cc81-0b0e-4e8a-8e5a-fbea6e3c0389"));

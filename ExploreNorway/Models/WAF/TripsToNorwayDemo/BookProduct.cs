@@ -486,36 +486,6 @@ namespace WAF.Engine.Query.TripsToNorwayDemo {
             }
         }
 
-        public static AqlPropertyFloat Currency1PriceExVat {
-            get {
-                return new AqlPropertyFloat(WAF.Data.Query.Native.SqlProductBase.Field.Currency1PriceExVat, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
-            }
-        }
-
-        public static AqlPropertyFloat Currency2PriceExVat {
-            get {
-                return new AqlPropertyFloat(WAF.Data.Query.Native.SqlProductBase.Field.Currency2PriceExVat, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
-            }
-        }
-
-        public static AqlPropertyFloat Currency3PriceExVat {
-            get {
-                return new AqlPropertyFloat(WAF.Data.Query.Native.SqlProductBase.Field.Currency3PriceExVat, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
-            }
-        }
-
-        public static AqlPropertyFloat Currency4PriceExVat {
-            get {
-                return new AqlPropertyFloat(WAF.Data.Query.Native.SqlProductBase.Field.Currency4PriceExVat, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
-            }
-        }
-
-        public static AqlPropertyFloat Currency5PriceExVat {
-            get {
-                return new AqlPropertyFloat(WAF.Data.Query.Native.SqlProductBase.Field.Currency5PriceExVat, WAFID.GetContentClassId("b3d34856-0f44-4e9b-a444-39a2fab3e3da"));
-            }
-        }
-
         public static AqlPropertyRelation ProductDiscounts {
             get {
                 return new AqlPropertyRelation( WAFID.GetPropertyId("426899b5-a1f5-4694-8c3f-cd2bc4af99c2"), new AqlAliasRelation(new WAF.Engine.Query.Native.AqlAliasDiscountBase(), new WAF.Engine.Query.Native.AqlAliasProductBase(), WAF.Engine.Query.Native.AqlRelDiscountsApplicableToProducts.Relation));
